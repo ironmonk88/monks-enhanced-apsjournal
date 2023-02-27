@@ -1,0 +1,67 @@
+<form class="slide-text" autocomplete="off" onsubmit="event.preventDefault();">
+    <div class="form-group">
+        <label for="top">{{localize 'MonksEnhancedJournal.Top'}}</label>
+        <div class="form-fields">
+            <input type="number" name="top" step="any" data-dtype="Number" value="{{object.top}}" style="max-width:100px;text-align:right;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="top">{{localize 'MonksEnhancedJournal.Left'}}</label>
+        <div class="form-fields">
+            <input type="number" name="left" step="any" data-dtype="Number" value="{{object.left}}" style="max-width: 100px; text-align: right;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="top">{{localize 'MonksEnhancedJournal.Right'}}</label>
+        <div class="form-fields">
+            <input type="number" name="right" step="any" data-dtype="Number" value="{{object.right}}" style="max-width: 100px; text-align: right;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="top">{{localize 'MonksEnhancedJournal.Bottom'}}</label>
+        <div class="form-fields">
+            <input type="number" name="bottom" step="any" data-dtype="Number" value="{{object.bottom}}" style="max-width: 100px; text-align: right;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="align">{{localize 'MonksEnhancedJournal.Justification'}}</label>
+        <div class="form-fields">
+            <select name="align">
+                {{ selectOptions alignOptions selected=object.align localize=true }}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="color">{{localize 'MonksEnhancedJournal.TextColour'}}</label>
+        <div class="form-fields">
+            <input type="text" name="color" data-dtype="String" value="{{object.color}}">
+            <input type="color" data-edit="color" value="{{object.color}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="color">{{localize 'MonksEnhancedJournal.BackgroundColour'}}</label>
+        <div class="form-fields">
+            <input type="text" name="background" data-dtype="String" value="{{object.background}}">
+            <input type="color" data-edit="background" value="{{object.background}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="top">{{localize 'MonksEnhancedJournal.BackgroundOpacity'}}</label>
+        <div class="form-fields">
+            <input type="range" name="opacity" data-dtype="String" min="0" max="1" step="0.05" value="{{object.opacity}}">
+            <span class="range-value">{{object.opacity}}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="fadein">{{localize 'MonksEnhancedJournal.FadeIn'}}</label>
+        <div class="form-fields">
+            <input type="number" name="fadein" step="any" data-dtype="Number" value="{{object.fadein}}" style="max-width: 100px; text-align: right;">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="fadeout">{{localize 'MonksEnhancedJournal.TextDuration'}}</label>
+        <div class="form-fields">
+            <input type="number" name="fadeout" step="any" data-dtype="Number" value="{{object.fadeout}}" style="max-width: 100px; text-align: right;">
+        </div>
+    </div>
+</form>

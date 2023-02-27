@@ -1,0 +1,42 @@
+<form>
+    <div class="form-group">
+        <label>{{localize 'MonksEnhancedJournal.RollableTable'}}</label>
+        <select name="rollable-table">
+            {{ selectGroups rollTables selected=lastrolltable }}
+        </select>
+    </div>
+    <div class="form-group">
+        <label>{{localize 'MonksEnhancedJournal.NumberOfItems'}}</label>
+        <input name="numberof" type="text" value="1" style="text-align:right;flex: 0 0 50px;" />
+    </div>
+    <div class="form-group">
+        <label>Roll Table formula</label>
+        <span class="roll-formula" style="text-align:right;">{{rollformula}}</span>
+    </div>
+    <div class="form-group">
+        <label>Reset once all drawn</label>
+        <input name="reset" type="checkbox" />
+    </div>
+    <div class="form-group">
+        <label>{{localize 'MonksEnhancedJournal.QuantityOfItems'}}</label>
+        <input name="quantity" type="text" value="1" style="text-align:right;flex: 0 0 50px;" />
+    </div>
+    {{#if useFrom}}
+    <div class="form-group">
+        <label>{{localize 'MonksEnhancedJournal.UseRolltableName'}}</label>
+        <input name="from" type="checkbox" />
+    </div>
+    {{/if}}
+    <div class="form-group">
+        <label>{{localize 'MonksEnhancedJournal.ClearItems'}}</label>
+        <input name="clear" type="checkbox" />
+    </div>
+    <div class="form-group">
+        <label>{{localize 'MonksEnhancedJournal.DuplicateItems'}}</label>
+        <select name="duplicate">
+            <option value="increase">{{localize 'MonksEnhancedJournal.IncreaseQuantity'}}</option>
+            <option value="additional">{{localize 'MonksEnhancedJournal.AddAdditional'}}</option>
+            <option value="nothing">{{localize 'MonksEnhancedJournal.DoNotAdd'}}</option>
+        </select>
+    </div>
+</form>
