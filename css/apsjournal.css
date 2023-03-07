@@ -29,7 +29,7 @@
     --apsj-dark-0: rgb(0, 0, 0);
 
     --apsj-background-cyan: rgba(7, 103, 144, 0.75);
-    --apsj-background-purple: rgba(52, 26, 255, 0.75);
+    --apsj-background-purple: rgba(60, 30, 180, 0.75);
     --apsj-background-blue: rgba(18, 69, 170, 0.75);
     --apsj-background-green: rgba(0, 128, 0, 0.75);
     --apsj-background-yellow: rgba(214, 150, 0, 0.75);
@@ -72,13 +72,21 @@
 
     --apsj-box-shadow: rgba(0, 0, 0, 0.33);
 
+    --apsj-theme-red-light: rgb(210, 0, 0);
+    --apsj-theme-orange-light: rgb(255, 210, 0);
+    --apsj-theme-yellow-light: rgb(255, 250, 57);
+    --apsj-theme-green-light: rgb(50, 242, 50);
+    --apsj-theme-cyan-light: rgb(50, 186, 245);
+    --apsj-theme-blue-light: rgb(51, 136, 255);
+    --apsj-theme-purple-light: rgb(110, 80, 240);
+
     --apsj-theme-red: rgb(160, 0, 0);
     --apsj-theme-orange: rgb(255, 160, 0);
     --apsj-theme-yellow: rgb(246, 190, 7);
     --apsj-theme-green: rgb(0, 192, 0);
     --apsj-theme-cyan: rgb(0, 136, 195);
     --apsj-theme-blue: rgb(1, 86, 255);
-    --apsj-theme-purple: rgb(120, 103, 255);
+    --apsj-theme-purple: rgb(60, 30, 180);
 
     --apsj-theme-red-dark: rgb(130, 0, 0);
     --apsj-theme-orange-dark: rgb(225, 130, 0);
@@ -86,7 +94,7 @@
     --apsj-theme-green-dark: rgb(0, 162, 0);
     --apsj-theme-cyan-dark: rgb(0, 106, 165);
     --apsj-theme-blue-dark: rgb(0, 56, 225);
-    --apsj-theme-purple-dark: rgb(90, 73, 225);
+    --apsj-theme-purple-dark: rgb(30, 0, 150);
 
     --font-apsj-awesome: 'FontAwesome';
     --font-apsj-bookinsanity: 'Bookinsanity', serif;
@@ -156,13 +164,13 @@
 }
 
 :root.purple {
-    --apsj-primary-light: rgb(112, 86, 255);
-    --apsj-primary: rgb(52, 26, 255);
-    --apsj-primary-dark: rgb(32, 6, 235);
-    --apsj-primary-75: rgba(52, 26, 255, 0.75);
-    --apsj-theme-primary-light: rgb(180, 163, 255);
-    --apsj-theme-primary: rgb(120, 103, 255);
-    --apsj-theme-primary-dark: rgb(100, 83, 235);
+    --apsj-primary-light: rgb(120, 90, 240);
+    --apsj-primary: rgb(60, 30, 180);
+    --apsj-primary-dark: rgb(40, 10, 160);
+    --apsj-primary-75: rgba(60, 30, 180, 0.75);
+    --apsj-theme-primary-light: rgb(140, 110, 255);
+    --apsj-theme-primary: rgb(80, 50, 200);
+    --apsj-theme-primary-dark: rgb(60, 30, 180);
 }
 
 /**
@@ -524,7 +532,7 @@ a.inline-roll i,
 .apsj-block.apsj-card,
 .apsj-block.purple-item {
     color: var(--apsj-light-0);
-    border: 2px solid rgb(120, 103, 255);
+    border: 2px solid var(--apsj-theme-purple-light);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/purple-item-bg.webp')
         no-repeat center;
@@ -566,7 +574,7 @@ a.inline-roll i,
 .apsj-block.purple-item h6 {
     color: var(--apsj-light-0);
     text-shadow: 1px 1px 2px var(--apsj-dark-0);
-    border-bottom: 2px solid rgb(120, 103, 255);
+    border-bottom: 2px solid var(--apsj-theme-purple-light);
 }
 
 .apsj-block.apsj-card .apsj-text,
@@ -578,7 +586,7 @@ a.inline-roll i,
 .apsj-block.purple-item hr {
     color: var(--apsj-theme-blue);
     text-shadow: 1px 1px 2px var(--apsj-dark-0);
-    border-bottom: 2px solid rgb(120, 103, 255);
+    border-bottom: 2px solid var(--apsj-theme-purple-light);
 }
 
 .apsj-block.apsj-card a.entity-link,
@@ -588,7 +596,7 @@ a.inline-roll i,
 .apsj-block.purple-item a.content-link,
 .apsj-block.purple-item a.inline-roll {
     color: var(--apsj-light-0);
-    border: 1px solid rgb(120, 103, 255);
+    border: 1px solid var(--apsj-theme-purple-light);
     text-shadow: 1px 1px 2px var(--apsj-dark-0);
 }
 
