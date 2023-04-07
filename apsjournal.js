@@ -137,7 +137,10 @@ export class APSJ {
      * Change to the selected theme in local storage
      **/
     static setTheme(theme) {
-        document.documentElement.className = theme;
+        if (theme == "none")
+            document.documentElement.removeAttribute("mejtheme");
+        else
+            document.documentElement.setAttribute("mejtheme", theme);
     }
     /**
      * Define HTML Elements for Blocks
