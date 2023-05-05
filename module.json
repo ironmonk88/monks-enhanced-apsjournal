@@ -70,8 +70,10 @@
   ],
   "styles": [
     "css/monks-enhanced-journal.css",
+    "css/monks-journal-sheet.css",
     "css/editor.css",
     "css/slide-transition.css",
+    "css/system.css",
     "css/apsjournal.css"
   ],
   "url": "https://github.com/ironmonk88/monks-enhanced-journal",
