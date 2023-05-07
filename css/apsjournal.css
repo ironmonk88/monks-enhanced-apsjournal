@@ -250,6 +250,7 @@
         repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp')
         repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
 }
 
 .monks-enhanced-journal[background-image='parchment']
