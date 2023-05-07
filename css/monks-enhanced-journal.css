@@ -1,4 +1,40 @@
 ﻿:root {
+    --mej-light-0: rgb(255, 255, 255);
+    --mej-light-1: rgb(238, 238, 238);
+    --mej-light-2: rgb(221, 221, 221);
+    --mej-light-3: rgb(204, 204, 204);
+    --mej-light-4: rgb(187, 187, 187);
+    --mej-light-5: rgb(170, 170, 170);
+    --mej-light-6: rgb(153, 153, 153);
+    --mej-light-7: rgb(136, 136, 136);
+    --mej-dark-7: rgb(119, 119, 119);
+    --mej-dark-6: rgb(102, 102, 102);
+    --mej-dark-5: rgb(85, 85, 85);
+    --mej-dark-4: rgb(68, 68, 68);
+    --mej-dark-3: rgb(51, 51, 51);
+    --mej-dark-2: rgb(34, 34, 34);
+    --mej-dark-1: rgb(17, 17, 17);
+    --mej-dark-0: rgb(0, 0, 0);
+
+    --mej-light-750: rgba(255, 255, 255, 0.75);
+    --mej-light-751: rgba(238, 238, 238, 0.75);
+    --mej-light-752: rgba(221, 221, 221, 0.75);
+    --mej-light-753: rgba(204, 204, 204, 0.75);
+    --mej-light-754: rgba(187, 187, 187, 0.75);
+    --mej-light-755: rgba(170, 170, 170, 0.75);
+    --mej-light-756: rgba(153, 153, 153, 0.75);
+    --mej-light-757: rgba(136, 136, 136, 0.75);
+    --mej-dark-757: rgba(119, 119, 119, 0.75);
+    --mej-dark-756: rgba(102, 102, 102, 0.75);
+    --mej-dark-755: rgba(85, 85, 85, 0.75);
+    --mej-dark-754: rgba(68, 68, 68, 0.75);
+    --mej-dark-753: rgba(51, 51, 51, 0.75);
+    --mej-dark-752: rgba(34, 34, 34, 0.75);
+    --mej-dark-751: rgba(17, 17, 17, 0.75);
+    --mej-dark-750: rgba(0, 0, 0, 0.75);
+
+    --mej-cream: rgba(255, 255, 240, 0.8);
+
     --mej-font-family: 'Modesto Condensed', 'Palatino Linotype', serif;
     --mej-background: url(../../../ui/parchment.jpg) repeat;
     --mej-header-border-color: rgb(192, 192, 192);
@@ -17,7 +53,7 @@
     --mej-header-bookmark-hover: rgba(0, 0, 0, 0.1);
     --mej-header-nav-color: var(--mej-header-color);
     --mej-header-nav-background: rgb(233, 231, 225);
-    --mej-header-nav-btn-background: rgba(255, 255, 240, 0.8);
+    --mej-header-nav-btn-background: var(--mej-cream);
     --mej-header-nav-btn-border: rgb(192, 192, 192);
     --mej-header-nav-btn-disabled: rgb(136, 136, 136);
     --mej-header-nav-input-border: rgb(122, 121, 113);
@@ -28,9 +64,9 @@
     --mej-header-nav-input-error-background: rgba(255, 0, 0, 0.1);
     --mej-header-nav-vertical-line: rgb(238, 237, 224);
     --mej-footer-color: var(--color-text-dark-primary);
-    --mej-footer-background: transparent;
+    --mej-footer-background: rgb(220, 220, 220);
     --mej-footer-border: rgb(192, 192, 192);
-    --mej-footer-btn-background: rgba(255, 255, 240, 0.8);
+    --mej-footer-btn-background: var(--mej-cream);
     --mej-footer-btn-border: rgb(192, 192, 192);
     --mej-footer-btn-disabled: rgb(136, 136, 136);
     --mej-sheet-color: var(--color-text-dark-primary);
@@ -51,7 +87,7 @@
     --mej-sheet-tab-border-active: rgb(68, 25, 26);
     --mej-sheet-tab-border-items: rgb(187, 178, 114);
     --mej-sheet-page-control-color: var(--mej-sheet-color);
-    --mej-sheet-page-control-background: rgba(255, 255, 240, 0.8);
+    --mej-sheet-page-control-background: var(--mej-cream);
     --mej-sheet-details-section-border: rgb(238, 237, 224);
     --mej-sheet-input-border: 1px solid rgb(122, 121, 113);
     --mej-sheet-input-background: rgba(0, 0, 0, 0.05);
@@ -84,7 +120,7 @@
     --mej-list-progress-border: rgb(178, 195, 255);
     --mej-list-progress-background: rgb(93, 73, 255);
     --mej-request-card-border: rgb(255, 255, 255);
-    --mej-request-card-img-border: 1px solid #C0C0C0;
+    --mej-request-card-img-border: 1px solid #c0c0c0;
     --mej-active-color: rgb(255, 100, 0);
     --mej-instruction: rgb(128, 128, 128);
     --mej-icon-background: rgba(236, 233, 223, 1);
@@ -98,7 +134,7 @@
     --mej-sidebar-button-background: rgba(0, 0, 0, 0.1);
     --mej-sidebar-button-border: rgb(238, 237, 224);
     --mej-sidebar-input-border: rgb(192, 192, 192);
-    --mej-sidebar-input-background: rgba(255, 255, 240, 0.8);
+    --mej-sidebar-input-background: var(--mej-cream);
     --mej-sidebar-label-color: var(--mej-sheet-color);
     --mej-sidebar-folder-border-collapsed: rgb(139, 138, 131);
     --mej-sidebar-folder-border: rgb(116, 115, 109);
@@ -152,7 +188,9 @@
 }
 
 .window-app.image-popout.monks-enhanced-journal.sheet .header-name,
-.window-app.image-popout.monks-enhanced-journal.sheet .header-name button.play-journal-sound:not(.active) {
+.window-app.image-popout.monks-enhanced-journal.sheet
+    .header-name
+    button.play-journal-sound:not(.active) {
     color: #fff;
 }
 
@@ -191,7 +229,10 @@
     display: none;
 }
 
-.monks-enhanced-journal .enhanced-journal.collapse .enhanced-journal-header .tab-bar {
+.monks-enhanced-journal
+    .enhanced-journal.collapse
+    .enhanced-journal-header
+    .tab-bar {
     padding-right: 30px;
 }
 
@@ -255,7 +296,11 @@
     text-shadow: 0 0 8px red;
 }
 
-.monks-enhanced-journal .enhanced-journal .enhanced-journal-header .tab-bar .tab-button.sidebar-toggle {
+.monks-enhanced-journal
+    .enhanced-journal
+    .enhanced-journal-header
+    .tab-bar
+    .tab-button.sidebar-toggle {
     float: left;
     position: absolute;
     top: 4px;
@@ -265,7 +310,11 @@
     transition: right 0.5s;
 }
 
-.monks-enhanced-journal .enhanced-journal.collapse .enhanced-journal-header .tab-bar .tab-button.sidebar-toggle {
+.monks-enhanced-journal
+    .enhanced-journal.collapse
+    .enhanced-journal-header
+    .tab-bar
+    .tab-button.sidebar-toggle {
     right: 0px;
     top: 4px;
 }
@@ -298,7 +347,10 @@
     display: none;
 }
 
-.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .bookmark-bar
+    .bookmark-button {
     height: 28px;
     border-radius: 28px;
     margin-left: 4px;
@@ -314,7 +366,10 @@
     background-color: var(--mej-header-bookmark-background);
 }
 
-.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button.add-bookmark {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .bookmark-bar
+    .bookmark-button.add-bookmark {
     border-radius: 4px;
     flex: 0 0 24px;
     height: 24px;
@@ -327,19 +382,30 @@
     overflow: hidden;
 }
 
-.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button > div {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .bookmark-bar
+    .bookmark-button
+    > div {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
 
-.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button:not(.add-bookmark) i {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .bookmark-bar
+    .bookmark-button:not(.add-bookmark)
+    i {
     margin-top: 4px;
     margin-right: 2px;
 }
 
-.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button:hover {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .bookmark-bar
+    .bookmark-button:hover {
     background-color: var(--mej-header-bookmark-hover);
 }
 
@@ -376,12 +442,18 @@
     background: var(--mej-header-nav-btn-background);
 }
 
-.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:not(.disabled):hover {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .navigation
+    .nav-button:not(.disabled):hover {
     box-shadow: 0 0 5px red;
     cursor: pointer;
 }
 
-.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button.disabled {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .navigation
+    .nav-button.disabled {
     color: var(--mej-header-nav-btn-disabled);
 }
 
@@ -423,7 +495,12 @@
     background-color: var(--mej-header-nav-input-error-background);
 }
 
-.monks-enhanced-journal .enhanced-journal-header .navigation .button-group .nav-text i.fa-search {
+.monks-enhanced-journal
+    .enhanced-journal-header
+    .navigation
+    .button-group
+    .nav-text
+    i.fa-search {
     padding-top: 4px;
 }
 
@@ -461,16 +538,23 @@
     flex: 0 0 50px;
 }
 
-.monks-enhanced-journal .enhanced-journal-footer .nav-button.navigate i:first-child {
+.monks-enhanced-journal
+    .enhanced-journal-footer
+    .nav-button.navigate
+    i:first-child {
     margin-right: 4px;
 }
 
-.monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
+.monks-enhanced-journal
+    .enhanced-journal-footer
+    .nav-button:not(.disabled):hover {
     box-shadow: 0 0 5px red;
     cursor: pointer;
 }
 
-.monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
+.monks-enhanced-journal
+    .enhanced-journal-footer
+    .nav-button:not(.disabled):hover {
     text-shadow: 0 0 8px red;
 }
 
@@ -482,7 +566,9 @@
     padding-right: 26px;
 }
 
-.monks-enhanced-journal .content[document-type='actor'] + .enhanced-journal-footer {
+.monks-enhanced-journal
+    .content[document-type='actor']
+    + .enhanced-journal-footer {
     display: none;
 }
 
@@ -498,7 +584,11 @@
     width: 100%;
 }
 
-.monks-enhanced-journal .enhanced-journal .enhanced-journal-body .content[document-type='actor'] form {
+.monks-enhanced-journal
+    .enhanced-journal
+    .enhanced-journal-body
+    .content[document-type='actor']
+    form {
     overflow-y: auto;
 }
 
@@ -524,7 +614,10 @@
     min-width: unset;
 }
 
-.monks-enhanced-journal .enhanced-journal .journal-subsheet .window-resizable-handle {
+.monks-enhanced-journal
+    .enhanced-journal
+    .journal-subsheet
+    .window-resizable-handle {
     display: none;
 }
 
@@ -558,13 +651,21 @@
     padding-left: 30px;
 }
 
-.monks-enhanced-journal .sidebar-directory.directory .directory-header .header-actions button {
+.monks-enhanced-journal
+    .sidebar-directory.directory
+    .directory-header
+    .header-actions
+    button {
     line-height: 24px;
     background: var(--mej-sidebar-button-background);
     border: 2px groove var(--mej-sidebar-button-border);
 }
 
-.monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input {
+.monks-enhanced-journal
+    .sidebar-directory.directory
+    .directory-header
+    .header-search
+    input {
     height: var(--form-field-height);
     border: 1px solid var(--mej-sidebar-input-border);
     background: var(--mej-sidebar-input-background);
@@ -601,12 +702,18 @@
     color: var(--color-text-light-highlight);
 }
 
-.monks-enhanced-journal .sidebar-directory li.folder:not(.collapsed) > .folder-header {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.folder:not(.collapsed)
+    > .folder-header {
     border-top: 1px solid var(--mej-sidebar-folder-border);
     background: var(--mej-sidebar-folder-background);
 }
 
-.monks-enhanced-journal .sidebar-directory li.folder.collapsed > .folder-header:not(.customcolor) {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.folder.collapsed
+    > .folder-header:not(.customcolor) {
     color: var(--mej-sidebar-folder-color-collapsed);
 }
 
@@ -670,38 +777,60 @@
 }
     */
 
-.monks-enhanced-journal .sidebar-directory li.journalentry:not(.folder) .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry:not(.folder)
+    .document-name {
     margin: 0 0.25em;
 }
 
 #journal li.journalentry[status] .document-name i,
-.monks-enhanced-journal .sidebar-directory li.journalentry[status] .document-name i {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry[status]
+    .document-name
+    i {
     margin-left: 1px;
 }
 
 #journal li.journalentry[status] .document-name,
-.monks-enhanced-journal .sidebar-directory li.journalentry[status] .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry[status]
+    .document-name {
     border-left: 0.45em solid var(--mej-quest-status-default);
     margin-left: 0px;
 }
 
 #journal li.journalentry[status='available'] .document-name,
-.monks-enhanced-journal .sidebar-directory li.journalentry[status='available'] .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry[status='available']
+    .document-name {
     border-left-color: var(--mej-quest-status-available);
 }
 
 #journal li.journalentry[status='inprogress'] .document-name,
-.monks-enhanced-journal .sidebar-directory li.journalentry[status='inprogress'] .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry[status='inprogress']
+    .document-name {
     border-left-color: var(--mej-quest-status-inprogress);
 }
 
 #journal li.journalentry[status='completed'] .document-name,
-.monks-enhanced-journal .sidebar-directory li.journalentry[status='completed'] .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry[status='completed']
+    .document-name {
     border-left-color: var(--mej-quest-status-completed);
 }
 
 #journal li.journalentry[status='failed'] .document-name,
-.monks-enhanced-journal .sidebar-directory li.journalentry[status='failed'] .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    li.journalentry[status='failed']
+    .document-name {
     border-left-color: var(--mej-quest-status-failed);
 }
 
@@ -717,7 +846,10 @@
     line-height: 14px;
 }
 
-.monks-enhanced-journal .sidebar-directory .directory-item.journalentry .permissions {
+.monks-enhanced-journal
+    .sidebar-directory
+    .directory-item.journalentry
+    .permissions {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -770,7 +902,10 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.monks-enhanced-journal .sidebar-directory .directory-item.journalentry.folder > .document-name {
+.monks-enhanced-journal
+    .sidebar-directory
+    .directory-item.journalentry.folder
+    > .document-name {
     background: rgba(0, 0, 0, 0.1);
 }
 
@@ -960,24 +1095,44 @@ span.unknown-link {
     background-color: var(--mej-adventure-toc-item-background);
 }
 
-.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar .directory-header,
-.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar .action-buttons,
-.monks-enhanced-journal .enhanced-journal .journal-sheet-container .window-resizable-handle {
+.monks-enhanced-journal
+    .enhanced-journal
+    .journal-sheet-container
+    .sidebar
+    .directory-header,
+.monks-enhanced-journal
+    .enhanced-journal
+    .journal-sheet-container
+    .sidebar
+    .action-buttons,
+.monks-enhanced-journal
+    .enhanced-journal
+    .journal-sheet-container
+    .window-resizable-handle {
     display: none;
 }
 
-.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar.directory {
+.monks-enhanced-journal
+    .enhanced-journal
+    .journal-sheet-container
+    .sidebar.directory {
     background: var(--mej-adventure-toc-background);
 }
 
-.monks-enhanced-journal .enhanced-journal .sheet.journal-entry .journal-sheet-container {
+.monks-enhanced-journal
+    .enhanced-journal
+    .sheet.journal-entry
+    .journal-sheet-container {
     width: unset !important;
     height: unset !important;
     left: unset !important;
     pointer-events: all !important;
 }
 
-.monks-enhanced-journal .enhanced-journal .sheet.journal-entry .journal-entry-content {
+.monks-enhanced-journal
+    .enhanced-journal
+    .sheet.journal-entry
+    .journal-entry-content {
     border: 0px;
 }
 
@@ -1114,7 +1269,10 @@ span.unknown-link {
     margin-right: 8px;
 }
 
-.journal-list .journal-item.folder.collapse .journal-title i.fa-folder-open:before {
+.journal-list
+    .journal-item.folder.collapse
+    .journal-title
+    i.fa-folder-open:before {
     content: '\f07b';
 }
 

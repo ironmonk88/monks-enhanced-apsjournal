@@ -51,6 +51,7 @@ export class APSJ {
         APSJ.setTheme(setting('background-colour'));
 
         CONFIG.TinyMCE.content_css.push(
+            'modules/monks-enhanced-journal/css/monks-enhanced-journal.css',
             'modules/monks-enhanced-journal/css/apsjournal.css'
         );
 
@@ -137,17 +138,16 @@ export class APSJ {
      * Change to the selected theme in local storage
      **/
     static setTheme(theme) {
-        if (theme == "none")
-            document.documentElement.removeAttribute("mejtheme");
-        else
-            document.documentElement.setAttribute("mejtheme", theme);
+        if (theme == 'none')
+            document.documentElement.removeAttribute('mejtheme');
+        else document.documentElement.setAttribute('mejtheme', theme);
     }
     /**
      * Define HTML Elements for Blocks
      **/
 
     static async getBlock(colour) {
-        if (['card', 'scroll', 'encounter', 'readAloud'].includes(colour)) {
+        if (['card', 'scroll', 'encounter', 'read-aloud'].includes(colour)) {
             let content = await renderTemplate(
                 `modules/monks-enhanced-journal/templates/apsjournal/${colour}.html`
             );
@@ -182,7 +182,7 @@ export class APSJ {
             icon: [
                 'bonus',
                 'effect',
-                'information',
+                'info',
                 'loot',
                 'note',
                 'trap',
@@ -197,7 +197,7 @@ export class APSJ {
             case 'effect':
                 data.colour = 'purple';
                 break;
-            case 'information':
+            case 'info':
                 data.colour = 'blue';
                 break;
             case 'loot':
