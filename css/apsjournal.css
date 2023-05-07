@@ -82,34 +82,18 @@
 }
 
 :root[mejtheme] {
+    --mej-footer-background: var(--apsj-primary);
+    --mej-footer-btn-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
+    --mej-footer-color: var(--mej-dark-0);
     --mej-header-background: var(--apsj-primary);
     --mej-header-nav-background: var(--mej-light-750);
-    --mej-header-nav-button-background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
-    --mej-header-nav-btn-background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
+    --mej-header-nav-button-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
+    --mej-header-nav-btn-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
     --mej-header-tab-color: var(--mej-header-color);
     --mej-header-tab-btn-color: var(--mej-dark-0);
     --mej-header-tab-hover: var(--mej-cream);
-    --mej-footer-background: var(--apsj-primary);
-    --mej-footer-btn-background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
-    --mej-footer-color: var(--mej-dark-0);
     --mej-sheet-header-input-color: var(--mej-light-0);
-    --mej-sidebar-button-background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
+    --mej-sidebar-button-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
 }
 
 /**
@@ -170,11 +154,9 @@
     line-height: 1.5em;
     border: 1px solid var(--mej-dark-0);
     border-radius: 0.35em;
-    background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
+    text-shadow: 1px 1px 1px var(--mej-light-4);
+    box-shadow: 0 0 4px var(--mej-dark-750);
+    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
     text-shadow: 1px 1px 2px var(--mej-dark-0);
 }
 
@@ -193,17 +175,11 @@
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
 
-:root[mejtheme]
-    .sheet.journal-entry
-    .pages-list
-    .directory-item.active:first-of-type {
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type {
     border-top: 1px solid var(--apsj-primary);
 }
 
-:root[mejtheme]
-    .sheet.journal-entry
-    .pages-list
-    .directory-item.active:last-of-type {
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:last-of-type {
     border-bottom: 1px solid var(--apsj-primary-dark);
 }
 
@@ -215,16 +191,8 @@
     border-top: 1px solid var(--apsj-primary);
 }
 
-:root[mejtheme]
-    .sheet.journal-entry
-    .pages-list
-    .directory-item.active
-    + :not(.active),
-:root[mejtheme]
-    .sheet.journal-entry
-    .pages-list
-    .directory-item:not(.active)
-    + .active {
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active + :not(.active),
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) + .active {
     border-top: 1px solid var(--apsj-primary-light);
 }
 
@@ -244,31 +212,22 @@
 **/
 
 .monks-enhanced-journal[background-image='parchment'] {
-    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp')
-        repeat;
-    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp')
-        repeat;
-    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp')
-        repeat;
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
     --mej-sidebar-document-color: var(--mej-light-0);
 }
 
-.monks-enhanced-journal[background-image='parchment']
-    .enhanced-journal
-    .sheet.journal-entry
-    .journal-entry-content {
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp')
-        repeat;
+.monks-enhanced-journal[background-image='parchment'] .enhanced-journal .sheet.journal-entry .journal-entry-content {
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
 }
 
 .monks-enhanced-journal[background-image='parchment'] .window-content {
     background-size: cover;
 }
 
-.monks-enhanced-journal[background-image='parchment']
-    .content[entity-type='encounter'] {
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-bloody.webp')
-        no-repeat center;
+.monks-enhanced-journal[background-image='parchment'] .content[entity-type='encounter'] {
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-bloody.webp') no-repeat center;
     background-size: cover;
 }
 
@@ -319,84 +278,41 @@
 }
 
 :root[mejtheme] .monks-enhanced-journal .mainbar .navigation .nav-button:hover,
-:root[mejtheme]
-    .monks-enhanced-journal
-    .mainbar
-    .bookmark-bar
-    .bookmark-button.add-bookmark:hover {
+:root[mejtheme] .monks-enhanced-journal .mainbar .bookmark-bar .bookmark-button.add-bookmark:hover {
     background: var(--mej-light-0) !important;
 }
 
 :root[mejtheme] .monks-enhanced-journal .mainbar .navigation .nav-input,
-:root[mejtheme]
-    .monks-enhanced-journal
-    .bookmark-bar
-    .bookmark-button.add-bookmark:hover {
+:root[mejtheme] .monks-enhanced-journal .bookmark-bar .bookmark-button.add-bookmark:hover {
     background: var(--mej-light-750);
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    .bookmark-bar
-    .bookmark-button.add-bookmark,
+:root[mejtheme] .monks-enhanced-journal .bookmark-bar .bookmark-button.add-bookmark,
 :root[mejtheme] .monks-enhanced-journal .editor-edit,
-:root[mejtheme]
-    .monks-enhanced-journal
-    .enhanced-journal-header
-    .navigation
-    .nav-button {
+:root[mejtheme] .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button {
     text-shadow: 1px 1px 1px var(--mej-light-4);
-    background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
+    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-tab.directory
-    .directory-item.journalentry
-    .permissions {
+:root[mejtheme] .monks-enhanced-journal .sidebar-tab.directory .directory-item.journalentry .permissions {
     line-height: 20px;
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-directory
-    .action-buttons
-    button,
+:root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate {
     text-shadow: 1px 1px 1px var(--mej-light-4);
     box-shadow: 0 0 8px var(--mej-dark-750);
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-directory
-    .action-buttons
-    button:hover,
-:root[mejtheme]
-    .monks-enhanced-journal
-    footer.navigation
-    .nav-button.navigate:hover {
+:root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button:hover,
+:root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate:hover {
     color: var(--mej-light-1);
     box-shadow: 0 0 8px red;
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    footer.navigation
-    .nav-button.navigate.disabled,
-:root[mejtheme]
-    .monks-enhanced-journal
-    footer.navigation
-    .nav-button.navigate.disabled:hover {
-    background: linear-gradient(
-        var(--mej-dark-6),
-        var(--mej-light-2),
-        var(--mej-dark-6)
-    );
+:root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled,
+:root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled:hover {
+    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
     color: var(--mej-light-5);
     box-shadow: 0 0 8px var(--mej-dark-750);
 }
@@ -430,77 +346,30 @@
     background-color: var(--mej-light-750);
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-directory.directory
-    .directory-header
-    .header-search
-    input {
+:root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input {
     background-color: var(--mej-light-750);
 }
 
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-directory.directory
-    .directory-header
-    .header-search
-    input:hover,
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-directory.directory
-    .directory-header
-    .header-search
-    input:active,
-:root[mejtheme]
-    .monks-enhanced-journal
-    .sidebar-directory.directory
-    .directory-header
-    .header-search
-    input:focus {
+:root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:hover,
+:root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:active,
+:root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:focus {
     background-color: var(--mej-light-750);
 }
 
-:root[mejtheme]
-    .monks-journal-sheet
-    .journal-subsheet
-    .encounter-buttons
-    > div {
+:root[mejtheme] .monks-journal-sheet .journal-subsheet .encounter-buttons > div {
     color: var(--mej-dark-0);
     background: var(--apsj-cream) !important;
 }
 
-:root[mejtheme]
-    .monks-journal-sheet
-    .journal-subsheet
-    .encounter-buttons
-    > div:hover {
+:root[mejtheme] .monks-journal-sheet .journal-subsheet .encounter-buttons > div:hover {
     color: var(--mej-dark-2);
     background: var(--mej-light-0) !important;
 }
 
-:root[mejtheme]
-    .monks-journal-sheet.sheet
-    .journal-subsheet
-    .items-list
-    .item-controls.item-quantity
-    input[type='text'],
-:root[mejtheme]
-    .monks-journal-sheet.sheet
-    .journal-subsheet
-    .items-list
-    .item-controls.item-quantity
-    input[type='number'],
-:root[mejtheme]
-    .monks-journal-sheet.sheet
-    .journal-subsheet
-    .items-list
-    .item-controls.item-remaining
-    input[type='number'],
-:root[mejtheme]
-    .monks-journal-sheet.sheet
-    .items-list
-    .item-from
-    input[type='text'] {
+:root[mejtheme] .monks-journal-sheet.sheet .journal-subsheet .items-list .item-controls.item-quantity input[type='text'],
+:root[mejtheme] .monks-journal-sheet.sheet .journal-subsheet .items-list .item-controls.item-quantity input[type='number'],
+:root[mejtheme] .monks-journal-sheet.sheet .journal-subsheet .items-list .item-controls.item-remaining input[type='number'],
+:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-from input[type='text'] {
     background: var(--apsj-cream);
     border-color: var(--mej-dark-3) !important;
 }
@@ -555,6 +424,13 @@
 :root[mejtheme] .monks-journal-sheet.sheet .checklist button {
     background-color: var(--mej-background-primary);
     color: var(--mej-light-0);
+}
+
+:root[mejtheme] .monks-journal-sheet .page-controls button {
+    text-shadow: 1px 1px 1px var(--mej-light-4);
+    box-shadow: 0 0 8px var(--mej-dark-750);
+    border: 2px groove var(--mej-sidebar-button-border);
+    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
 }
 
 /**
@@ -657,8 +533,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-purple-light);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/purple-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/purple-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -667,8 +542,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/cards.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/cards.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -677,8 +551,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/purple-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/purple-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -742,8 +615,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-green);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/green-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/green-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -752,8 +624,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/scroll.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/scroll.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -762,8 +633,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/green-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/green-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -826,8 +696,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--mej-light-7);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/black-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/black-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -836,8 +705,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/black-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/black-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -885,8 +753,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-blue);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/blue-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/blue-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -895,8 +762,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/blue-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/blue-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -944,8 +810,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-cyan);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/cyan-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/cyan-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -954,8 +819,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/cyan-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/cyan-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -1003,8 +867,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-orange);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/orange-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/orange-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -1013,8 +876,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/orange-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/orange-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -1062,8 +924,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-primary);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/red-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/red-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -1072,8 +933,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/red-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/red-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -1121,8 +981,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-yellow);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/yellow-item-bg.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/yellow-item-bg.webp') no-repeat center;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -1131,8 +990,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/yellow-item.webp')
-        no-repeat center;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/yellow-item.webp') no-repeat center;
     min-height: 270px;
     min-width: 270px;
 }
@@ -1180,8 +1038,7 @@
     color: var(--mej-light-0);
     border: 2px solid var(--apsj-red);
     border-radius: 0.5em;
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-bloody.webp')
-        no-repeat;
+    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-bloody.webp') no-repeat;
     background-size: cover;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
@@ -1228,11 +1085,7 @@
     border: 3px solid var(--apsj-blue);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-blue),
-        var(--apsj-blue-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-blue), var(--apsj-blue-dark));
 }
 
 .apsj-icon-right.apsj-blue::before {
@@ -1247,22 +1100,14 @@
     border-bottom: 2px solid var(--apsj-blue);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-blue),
-        var(--apsj-blue-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-blue), var(--apsj-blue-dark));
 }
 
 .apsj-block.apsj-dialogue.apsj-cyan {
     border: 3px solid var(--apsj-cyan);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-cyan),
-        var(--apsj-cyan-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-cyan), var(--apsj-cyan-dark));
 }
 
 .apsj-icon-right.apsj-cyan::before {
@@ -1277,22 +1122,14 @@
     border-bottom: 2px solid var(--apsj-cyan);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-cyan),
-        var(--apsj-cyan-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-cyan), var(--apsj-cyan-dark));
 }
 
 .apsj-block.apsj-dialogue.apsj-green {
     border: 3px solid var(--apsj-green);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-green),
-        var(--apsj-green-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-green), var(--apsj-green-dark));
 }
 
 .apsj-icon-right.apsj-green::before {
@@ -1307,22 +1144,14 @@
     border-bottom: 2px solid var(--apsj-green);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-green),
-        var(--apsj-green-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-green), var(--apsj-green-dark));
 }
 
 .apsj-block.apsj-dialogue.apsj-orange {
     border: 3px solid var(--apsj-orange);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-orange),
-        var(--apsj-orange-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-orange), var(--apsj-orange-dark));
 }
 
 .apsj-icon-right.apsj-orange::before {
@@ -1337,22 +1166,14 @@
     border-bottom: 2px solid var(--apsj-orange);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-orange),
-        var(--apsj-orange-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-orange), var(--apsj-orange-dark));
 }
 
 .apsj-block.apsj-dialogue.apsj-purple {
     border: 3px solid var(--apsj-purple);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-purple),
-        var(--apsj-purple-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-purple), var(--apsj-purple-dark));
 }
 
 .apsj-icon-right.apsj-purple::before {
@@ -1367,22 +1188,14 @@
     border-bottom: 2px solid var(--apsj-purple);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-purple),
-        var(--apsj-purple-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-purple), var(--apsj-purple-dark));
 }
 
 .apsj-block.apsj-dialogue.apsj-red {
     border: 3px solid var(--apsj-red);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-red),
-        var(--apsj-red-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-red), var(--apsj-red-dark));
 }
 
 .apsj-icon-right.apsj-red::before {
@@ -1397,22 +1210,14 @@
     border-bottom: 2px solid var(--apsj-red);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-red),
-        var(--apsj-red-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-red), var(--apsj-red-dark));
 }
 
 .apsj-block.apsj-dialogue.apsj-yellow {
     border: 3px solid var(--apsj-yellow);
     border-image-slice: 1;
     border-width: 3px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-yellow),
-        var(--apsj-yellow-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-yellow), var(--apsj-yellow-dark));
 }
 
 .apsj-icon-right.apsj-yellow::before {
@@ -1427,11 +1232,7 @@
     border-bottom: 2px solid var(--apsj-yellow);
     border-image-slice: 1;
     border-width: 2px;
-    border-image-source: linear-gradient(
-        to left,
-        var(--apsj-yellow),
-        var(--apsj-yellow-dark)
-    );
+    border-image-source: linear-gradient(to left, var(--apsj-yellow), var(--apsj-yellow-dark));
 }
 
 /**

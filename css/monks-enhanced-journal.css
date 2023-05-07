@@ -229,10 +229,7 @@
     display: none;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal.collapse
-    .enhanced-journal-header
-    .tab-bar {
+.monks-enhanced-journal .enhanced-journal.collapse .enhanced-journal-header .tab-bar {
     padding-right: 30px;
 }
 
@@ -296,11 +293,7 @@
     text-shadow: 0 0 8px red;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .enhanced-journal-header
-    .tab-bar
-    .tab-button.sidebar-toggle {
+.monks-enhanced-journal .enhanced-journal .enhanced-journal-header .tab-bar .tab-button.sidebar-toggle {
     float: left;
     position: absolute;
     top: 4px;
@@ -310,11 +303,7 @@
     transition: right 0.5s;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal.collapse
-    .enhanced-journal-header
-    .tab-bar
-    .tab-button.sidebar-toggle {
+.monks-enhanced-journal .enhanced-journal.collapse .enhanced-journal-header .tab-bar .tab-button.sidebar-toggle {
     right: 0px;
     top: 4px;
 }
@@ -347,10 +336,7 @@
     display: none;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .bookmark-bar
-    .bookmark-button {
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button {
     height: 28px;
     border-radius: 28px;
     margin-left: 4px;
@@ -366,10 +352,7 @@
     background-color: var(--mej-header-bookmark-background);
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .bookmark-bar
-    .bookmark-button.add-bookmark {
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button.add-bookmark {
     border-radius: 4px;
     flex: 0 0 24px;
     height: 24px;
@@ -382,30 +365,19 @@
     overflow: hidden;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .bookmark-bar
-    .bookmark-button
-    > div {
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button > div {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .bookmark-bar
-    .bookmark-button:not(.add-bookmark)
-    i {
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button:not(.add-bookmark) i {
     margin-top: 4px;
     margin-right: 2px;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .bookmark-bar
-    .bookmark-button:hover {
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button:hover {
     background-color: var(--mej-header-bookmark-hover);
 }
 
@@ -442,18 +414,12 @@
     background: var(--mej-header-nav-btn-background);
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .navigation
-    .nav-button:not(.disabled):hover {
+.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:not(.disabled):hover {
     box-shadow: 0 0 5px red;
     cursor: pointer;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .navigation
-    .nav-button.disabled {
+.monks-enhanced-journal .enhanced-journal-header .navigation .nav-button.disabled {
     color: var(--mej-header-nav-btn-disabled);
 }
 
@@ -495,12 +461,7 @@
     background-color: var(--mej-header-nav-input-error-background);
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-header
-    .navigation
-    .button-group
-    .nav-text
-    i.fa-search {
+.monks-enhanced-journal .enhanced-journal-header .navigation .button-group .nav-text i.fa-search {
     padding-top: 4px;
 }
 
@@ -538,23 +499,16 @@
     flex: 0 0 50px;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-footer
-    .nav-button.navigate
-    i:first-child {
+.monks-enhanced-journal .enhanced-journal-footer .nav-button.navigate i:first-child {
     margin-right: 4px;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-footer
-    .nav-button:not(.disabled):hover {
+.monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
     box-shadow: 0 0 5px red;
     cursor: pointer;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal-footer
-    .nav-button:not(.disabled):hover {
+.monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
     text-shadow: 0 0 8px red;
 }
 
@@ -566,9 +520,7 @@
     padding-right: 26px;
 }
 
-.monks-enhanced-journal
-    .content[document-type='actor']
-    + .enhanced-journal-footer {
+.monks-enhanced-journal .content[document-type='actor'] + .enhanced-journal-footer {
     display: none;
 }
 
@@ -584,10 +536,7 @@
     width: 100%;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .enhanced-journal-body
-    .content[document-type='actor']
+.monks-enhanced-journal .enhanced-journal .enhanced-journal-body .content[document-type='actor']
     form {
     overflow-y: auto;
 }
@@ -614,10 +563,7 @@
     min-width: unset;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .journal-subsheet
-    .window-resizable-handle {
+.monks-enhanced-journal .enhanced-journal .journal-subsheet .window-resizable-handle {
     display: none;
 }
 
@@ -651,21 +597,13 @@
     padding-left: 30px;
 }
 
-.monks-enhanced-journal
-    .sidebar-directory.directory
-    .directory-header
-    .header-actions
-    button {
+.monks-enhanced-journal .sidebar-directory.directory .directory-header .header-actions button {
     line-height: 24px;
     background: var(--mej-sidebar-button-background);
     border: 2px groove var(--mej-sidebar-button-border);
 }
 
-.monks-enhanced-journal
-    .sidebar-directory.directory
-    .directory-header
-    .header-search
-    input {
+.monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input {
     height: var(--form-field-height);
     border: 1px solid var(--mej-sidebar-input-border);
     background: var(--mej-sidebar-input-background);
@@ -702,18 +640,12 @@
     color: var(--color-text-light-highlight);
 }
 
-.monks-enhanced-journal
-    .sidebar-directory
-    li.folder:not(.collapsed)
-    > .folder-header {
+.monks-enhanced-journal .sidebar-directory li.folder:not(.collapsed) > .folder-header {
     border-top: 1px solid var(--mej-sidebar-folder-border);
     background: var(--mej-sidebar-folder-background);
 }
 
-.monks-enhanced-journal
-    .sidebar-directory
-    li.folder.collapsed
-    > .folder-header:not(.customcolor) {
+.monks-enhanced-journal .sidebar-directory li.folder.collapsed > .folder-header:not(.customcolor) {
     color: var(--mej-sidebar-folder-color-collapsed);
 }
 
@@ -777,60 +709,38 @@
 }
     */
 
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry:not(.folder)
-    .document-name {
+.monks-enhanced-journal .sidebar-directory li.journalentry:not(.folder) .document-name {
     margin: 0 0.25em;
 }
 
 #journal li.journalentry[status] .document-name i,
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry[status]
-    .document-name
-    i {
+.monks-enhanced-journal .sidebar-directory li.journalentry[status] .document-name i {
     margin-left: 1px;
 }
 
 #journal li.journalentry[status] .document-name,
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry[status]
-    .document-name {
+.monks-enhanced-journal .sidebar-directory li.journalentry[status] .document-name {
     border-left: 0.45em solid var(--mej-quest-status-default);
     margin-left: 0px;
 }
 
 #journal li.journalentry[status='available'] .document-name,
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry[status='available']
-    .document-name {
+.monks-enhanced-journal .sidebar-directory li.journalentry[status='available'] .document-name {
     border-left-color: var(--mej-quest-status-available);
 }
 
 #journal li.journalentry[status='inprogress'] .document-name,
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry[status='inprogress']
-    .document-name {
+.monks-enhanced-journal .sidebar-directory li.journalentry[status='inprogress'] .document-name {
     border-left-color: var(--mej-quest-status-inprogress);
 }
 
 #journal li.journalentry[status='completed'] .document-name,
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry[status='completed']
-    .document-name {
+.monks-enhanced-journal .sidebar-directory li.journalentry[status='completed'] .document-name {
     border-left-color: var(--mej-quest-status-completed);
 }
 
 #journal li.journalentry[status='failed'] .document-name,
-.monks-enhanced-journal
-    .sidebar-directory
-    li.journalentry[status='failed']
-    .document-name {
+.monks-enhanced-journal .sidebar-directory li.journalentry[status='failed'] .document-name {
     border-left-color: var(--mej-quest-status-failed);
 }
 
@@ -846,10 +756,7 @@
     line-height: 14px;
 }
 
-.monks-enhanced-journal
-    .sidebar-directory
-    .directory-item.journalentry
-    .permissions {
+.monks-enhanced-journal .sidebar-directory .directory-item.journalentry .permissions {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -902,10 +809,7 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.monks-enhanced-journal
-    .sidebar-directory
-    .directory-item.journalentry.folder
-    > .document-name {
+.monks-enhanced-journal .sidebar-directory .directory-item.journalentry.folder > .document-name {
     background: rgba(0, 0, 0, 0.1);
 }
 
@@ -1095,44 +999,24 @@ span.unknown-link {
     background-color: var(--mej-adventure-toc-item-background);
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .journal-sheet-container
-    .sidebar
-    .directory-header,
-.monks-enhanced-journal
-    .enhanced-journal
-    .journal-sheet-container
-    .sidebar
-    .action-buttons,
-.monks-enhanced-journal
-    .enhanced-journal
-    .journal-sheet-container
-    .window-resizable-handle {
+.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar .directory-header,
+.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar .action-buttons,
+.monks-enhanced-journal .enhanced-journal .journal-sheet-container .window-resizable-handle {
     display: none;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .journal-sheet-container
-    .sidebar.directory {
+.monks-enhanced-journal .enhanced-journal .journal-sheet-container .sidebar.directory {
     background: var(--mej-adventure-toc-background);
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .sheet.journal-entry
-    .journal-sheet-container {
+.monks-enhanced-journal .enhanced-journal .sheet.journal-entry .journal-sheet-container {
     width: unset !important;
     height: unset !important;
     left: unset !important;
     pointer-events: all !important;
 }
 
-.monks-enhanced-journal
-    .enhanced-journal
-    .sheet.journal-entry
-    .journal-entry-content {
+.monks-enhanced-journal .enhanced-journal .sheet.journal-entry .journal-entry-content {
     border: 0px;
 }
 
