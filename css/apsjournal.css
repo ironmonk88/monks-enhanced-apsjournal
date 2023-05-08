@@ -37,6 +37,7 @@
     --apsj-primary: rgb(160, 0, 0);
     --apsj-primary-dark: rgb(120, 0, 0);
     --apsj-primary-75: rgba(160, 0, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='orange'] {
@@ -44,6 +45,7 @@
     --apsj-primary: rgb(255, 128, 0);
     --apsj-primary-dark: rgb(215, 88, 0);
     --apsj-primary-75: rgba(255, 128, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='yellow'] {
@@ -51,6 +53,7 @@
     --apsj-primary: rgb(215, 215, 0);
     --apsj-primary-dark: rgb(175, 175, 0);
     --apsj-primary-75: rgba(215, 215, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-dark-0);
 }
 
 :root[mejtheme='green'] {
@@ -58,6 +61,7 @@
     --apsj-primary: rgb(0, 128, 0);
     --apsj-primary-dark: rgb(0, 88, 0);
     --apsj-primary-75: rgba(0, 128, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='cyan'] {
@@ -65,6 +69,7 @@
     --apsj-primary: rgb(0, 255, 255);
     --apsj-primary-dark: rgb(0, 195, 195);
     --apsj-primary-75: rgba(0, 255, 255, 0.75);
+	--mej-sidebar-document-color: var(--mej-dark-0);
 }
 
 :root[mejtheme='blue'] {
@@ -72,6 +77,7 @@
     --apsj-primary: rgb(1, 86, 255);
     --apsj-primary-dark: rgb(0, 46, 215);
     --apsj-primary-75: rgba(1, 86, 255, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='purple'] {
@@ -79,6 +85,7 @@
     --apsj-primary: rgb(104, 25, 193);
     --apsj-primary-dark: rgb(64, 0, 153);
     --apsj-primary-75: rgba(104, 25, 193, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme] {
@@ -86,8 +93,8 @@
     --mej-footer-btn-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
     --mej-footer-color: var(--mej-dark-0);
     --mej-header-background: var(--apsj-primary);
+	--mej-header-bookmark-hover: var(--mej-cream);
     --mej-header-nav-background: var(--mej-light-750);
-    --mej-header-nav-button-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
     --mej-header-nav-btn-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
     --mej-header-tab-color: var(--mej-header-color);
     --mej-header-tab-btn-color: var(--mej-dark-0);
@@ -213,9 +220,8 @@
 
 .monks-enhanced-journal[background-image='parchment'] {
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
-    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
-    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/light-leather.webp') repeat;
+    /* --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat; */
 }
 
 .monks-enhanced-journal[background-image='parchment'] .enhanced-journal .sheet.journal-entry .journal-entry-content {
@@ -248,9 +254,10 @@
     border-left: 0 transparent;
 }
 
-:root[mejtheme] #journal-directory li.journalentry .document-name {
-    background: var(--mej-background-primary);
-    color: var(--mej-light-0);
+:root[mejtheme] #journal-directory li.journalentry {
+    background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
+    /* color: var(--mej-light-0); */
+	opacity: 75%;
 }
 
 :root[mejtheme] .directory .directory-item:last-child {
@@ -294,6 +301,10 @@
     background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
 }
 
+:root[mejtheme] .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:not(.disabled):hover {
+    background: var(--mej-light-750);
+}
+
 :root[mejtheme] .monks-enhanced-journal .sidebar-tab.directory .directory-item.journalentry .permissions {
     line-height: 20px;
 }
@@ -306,7 +317,7 @@
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button:hover,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate:hover {
-    color: var(--mej-light-1);
+    background: var(--mej-light-750);
     box-shadow: 0 0 8px red;
 }
 
@@ -431,6 +442,11 @@
     box-shadow: 0 0 8px var(--mej-dark-750);
     border: 2px groove var(--mej-sidebar-button-border);
     background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
+}
+
+:root[mejtheme] .monks-journal-sheet .page-controls button:hover {
+    box-shadow: 0 0 8px red;
+    background: var(--mej-light-750);
 }
 
 /**
