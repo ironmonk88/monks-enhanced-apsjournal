@@ -3,18 +3,26 @@
 **/
 
 :root {
+    --apsj-red-light: rgb(200, 40, 40);
+    --apsj-orange-light: rgb(255, 168, 40);
+    --apsj-yellow-light: rgb(255, 255, 40);
+    --apsj-green-light: rgb(40, 188, 40);
+    --apsj-cyan-light: rgb(112, 217, 255);
+    --apsj-blue-light: rgb(41, 126, 255);
+    --apsj-purple-light: rgb(144, 65, 233);
+
     --apsj-red: rgb(160, 0, 0);
-    --apsj-orange: rgb(255, 160, 0);
-    --apsj-yellow: rgb(246, 190, 7);
-    --apsj-green: rgb(0, 192, 0);
-    --apsj-cyan: rgb(0, 136, 195);
+    --apsj-orange: rgb(255, 128, 0);
+    --apsj-yellow: rgb(215, 215, 0);
+    --apsj-green: rgb(0, 128, 0);
+    --apsj-cyan: rgb(72, 177, 224);
     --apsj-blue: rgb(1, 86, 255);
     --apsj-purple: rgb(104, 25, 193);
     --apsj-red-dark: rgb(120, 0, 0);
-    --apsj-orange-dark: rgb(215, 120, 0);
-    --apsj-yellow-dark: rgb(206, 150, 0);
-    --apsj-green-dark: rgb(0, 152, 0);
-    --apsj-cyan-dark: rgb(0, 96, 155);
+    --apsj-orange-dark: rgb(215, 88, 0);
+    --apsj-yellow-dark: rgb(175, 175, 0);
+    --apsj-green-dark: rgb(0, 88, 0);
+    --apsj-cyan-dark: rgb(32, 137, 184);
     --apsj-blue-dark: rgb(0, 46, 215);
     --apsj-purple-dark: rgb(64, 0, 153);
     --apsj-font-awesome: 'FontAwesome';
@@ -79,6 +87,7 @@
     --apsj-primary-dark: rgb(120, 0, 0);
     --apsj-primary-bright: rgb(231, 191, 191);
     --apsj-primary-75: rgba(160, 0, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='orange'] {
@@ -87,6 +96,7 @@
     --apsj-primary-dark: rgb(215, 88, 0);
     --apsj-primary-bright: rgb(255, 223, 191);
     --apsj-primary-75: rgba(255, 128, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='yellow'] {
@@ -96,6 +106,7 @@
     --apsj-primary-bright: rgb(245, 245, 191);
     --apsj-primary-75: rgba(215, 215, 0, 0.75);
     --mej-header-bookmark-color: var( --mej-dark-6);
+	--mej-sidebar-document-color: var(--mej-dark-0);
 }
 
 :root[mejtheme='green'] {
@@ -104,6 +115,7 @@
     --apsj-primary-dark: rgb(0, 88, 0);
     --apsj-primary-bright: rgb(191, 223, 191);
     --apsj-primary-75: rgba(0, 128, 0, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='cyan'] {
@@ -113,6 +125,7 @@
     --apsj-primary-bright: rgb(191, 255, 255);
     --apsj-primary-75: rgba(0, 255, 255, 0.75);
     --mej-header-bookmark-color: var( --mej-dark-6);
+    --mej-sidebar-document-color: var(--mej-dark-0);
 }
 
 :root[mejtheme='blue'] {
@@ -121,6 +134,7 @@
     --apsj-primary-dark: rgb(0, 46, 215);
     --apsj-primary-bright: rgb(191, 213, 255);
     --apsj-primary-75: rgba(1, 86, 255, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='purple'] {
@@ -129,6 +143,7 @@
     --apsj-primary-dark: rgb(64, 0, 153);
     --apsj-primary-bright: rgb(217, 197, 239);
     --apsj-primary-75: rgba(104, 25, 193, 0.75);
+	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 /**
@@ -217,8 +232,17 @@
     --mej-sidebar-document-color: var(--mej-light-0);
 }
 
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type {
-    border-top: 1px solid var(--apsj-primary);
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active {
+    background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
+	opacity: 75%;
+    box-shadow: 0 3px 15px var(--mej-dark-750);
+}
+
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type,
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active),
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active + :not(.active),
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) + .active {
+    border-top: 1px solid var(--apsj-primary-light);
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:last-of-type {
@@ -226,16 +250,7 @@
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) {
-    background: var(--mej-background-primary-dark);
-}
-
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) {
-    border-top: 1px solid var(--apsj-primary);
-}
-
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active + :not(.active),
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) + .active {
-    border-top: 1px solid var(--apsj-primary-light);
+    background: var(--apsj-primary-dark);
 }
 
 :root[mejtheme] .journal-sheet .journal-header .title {
@@ -246,7 +261,7 @@
     height: 60px;
     color: var(--mej-light-0);
     text-shadow: 1px 1px 2px var(--mej-dark-0);
-    background: var(--mej-background-primary);
+    background: var(--apsj-primary);
 }
 
 /**
@@ -274,6 +289,11 @@
 
 :root[mejtheme] .monks-journal-sheet.sheet .currency-group .form-fields input {
     background: var(--mej-light-750);
+}
+
+:root[mejtheme] #journal-directory li.journalentry {
+    background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
+	opacity: 75%;
 }
 
 :root[mejtheme] .directory .directory-item:last-child {
@@ -323,7 +343,7 @@
 **/
 
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .items-header {
-    background: var(--mej-background-primary) !important;
+    background: var(--apsj-primary) !important;
     color: var(--mej-light-0);
     box-shadow: 0 0 8px var(--mej-dark-750);
 }
@@ -386,7 +406,7 @@
 
 :root[mejtheme] .monks-journal-sheet.sheet .tab.items .currency-group {
     width: 100%;
-    background: var(--mej-background-primary);
+    background: var(--apsj-primary);
     border: 2px groove #eeede0;
 }
 
