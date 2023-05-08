@@ -3,19 +3,27 @@
 **/
 
 :root {
+    --apsj-red-light: rgb(200, 40, 40);
+    --apsj-orange-light: rgb(255, 168, 40);
+    --apsj-yellow-light: rgb(255, 255, 40);
+    --apsj-green-light: rgb(40, 188, 40);
+    --apsj-cyan-light: rgb(112, 217, 255);
+    --apsj-blue-light: rgb(41, 126, 255);
+    --apsj-purple-light: rgb(144, 65, 233);
+
     --apsj-red: rgb(160, 0, 0);
-    --apsj-orange: rgb(255, 160, 0);
-    --apsj-yellow: rgb(246, 190, 7);
-    --apsj-green: rgb(0, 192, 0);
-    --apsj-cyan: rgb(0, 136, 195);
+    --apsj-orange: rgb(255, 128, 0);
+    --apsj-yellow: rgb(215, 215, 0);
+    --apsj-green: rgb(0, 128, 0);
+    --apsj-cyan: rgb(72, 177, 224);
     --apsj-blue: rgb(1, 86, 255);
     --apsj-purple: rgb(104, 25, 193);
 
     --apsj-red-dark: rgb(120, 0, 0);
-    --apsj-orange-dark: rgb(215, 120, 0);
-    --apsj-yellow-dark: rgb(206, 150, 0);
-    --apsj-green-dark: rgb(0, 152, 0);
-    --apsj-cyan-dark: rgb(0, 96, 155);
+    --apsj-orange-dark: rgb(215, 88, 0);
+    --apsj-yellow-dark: rgb(175, 175, 0);
+    --apsj-green-dark: rgb(0, 88, 0);
+    --apsj-cyan-dark: rgb(32, 137, 184);
     --apsj-blue-dark: rgb(0, 46, 215);
     --apsj-purple-dark: rgb(64, 0, 153);
 
@@ -65,10 +73,10 @@
 }
 
 :root[mejtheme='cyan'] {
-    --apsj-primary-light: rgb(60, 255, 255);
-    --apsj-primary: rgb(0, 255, 255);
-    --apsj-primary-dark: rgb(0, 195, 195);
-    --apsj-primary-75: rgba(0, 255, 255, 0.75);
+    --apsj-primary-light: rgb(112, 217, 255);
+    --apsj-primary: rgb(72, 177, 224);
+    --apsj-primary-dark: rgb(32, 137, 184);
+    --apsj-primary-75: rgba(72, 177, 224, 0.75);
 	--mej-sidebar-document-color: var(--mej-dark-0);
 }
 
@@ -135,7 +143,7 @@
 :root[mejtheme] table thead,
 :root[mejtheme] table tfoot {
     color: var(--mej-light-0);
-    background: var(--mej-background-primary);
+    background: var(--apsj-primary);
     font-family: var(--apsj-font-scalycaps);
     font-weight: 700;
     text-shadow: 1px 1px 2px var(--mej-dark-0);
@@ -206,7 +214,7 @@
     height: 60px;
     color: var(--mej-light-0);
     text-shadow: 1px 1px 2px var(--mej-dark-0);
-    background: var(--mej-background-primary);
+    background: var(--apsj-primary);
 }
 
 /**
@@ -216,7 +224,6 @@
 .monks-enhanced-journal[background-image='parchment'] {
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/light-leather.webp') repeat;
-    /* --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat; */
 }
 
 .monks-enhanced-journal[background-image='parchment'] .enhanced-journal .sheet.journal-entry .journal-entry-content {
@@ -274,7 +281,7 @@
 }
 
 :root[mejtheme] .monks-enhanced-journal .mainbar .bookmark-bar {
-    background: var(--mej-background-primary) !important;
+    background: var(--apsj-primary) !important;
 }
 
 :root[mejtheme] .monks-enhanced-journal .mainbar .navigation .nav-button:hover,
@@ -327,7 +334,7 @@
 **/
 
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .items-header {
-    background: var(--mej-background-primary) !important;
+    background: var(--apsj-primary) !important;
     color: var(--mej-light-0);
     box-shadow: 0 0 8px var(--mej-dark-750);
 }
@@ -392,7 +399,7 @@
 
 :root[mejtheme] .monks-journal-sheet.sheet .tab.items .currency-group {
     width: 100%;
-    background: var(--mej-background-primary);
+    background: var(--apsj-primary);
     border: 2px groove #eeede0;
 }
 
@@ -427,7 +434,7 @@
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .checklist button {
-    background-color: var(--mej-background-primary);
+    background-color: var(--apsj-primary);
     color: var(--mej-light-0);
 }
 
