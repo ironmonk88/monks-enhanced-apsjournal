@@ -178,12 +178,16 @@
 **/
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active {
-    background: var(--mej-background-primary);
+    background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
+	opacity: 75%;
     box-shadow: 0 3px 15px var(--mej-dark-750);
 }
 
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type {
-    border-top: 1px solid var(--apsj-primary);
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type,
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active),
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active + :not(.active),
+:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) + .active {
+    border-top: 1px solid var(--apsj-primary-light);
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:last-of-type {
@@ -191,16 +195,7 @@
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) {
-    background: var(--mej-background-primary-dark);
-}
-
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) {
-    border-top: 1px solid var(--apsj-primary);
-}
-
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active + :not(.active),
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item:not(.active) + .active {
-    border-top: 1px solid var(--apsj-primary-light);
+    background: var(--apsj-primary-dark);
 }
 
 :root[mejtheme] .journal-sheet .journal-header .title {
@@ -250,13 +245,11 @@
 }
 
 :root[mejtheme] .monks-enhanced-journal .directory-sidebar {
-    /* background: transparent !important; */
     border-left: 0 transparent;
 }
 
 :root[mejtheme] #journal-directory li.journalentry {
     background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
-    /* color: var(--mej-light-0); */
 	opacity: 75%;
 }
 
@@ -299,6 +292,7 @@
 :root[mejtheme] .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button {
     text-shadow: 1px 1px 1px var(--mej-light-4);
     background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
+	box-shadow: 0 0 8px var(--mej-dark-750);
 }
 
 :root[mejtheme] .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:not(.disabled):hover {
