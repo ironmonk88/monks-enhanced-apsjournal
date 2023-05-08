@@ -24,6 +24,11 @@ export const registerSettings = function () {
 		'parchment': "Parchment"
 	};
 
+	let sidebarImages = {
+		'none': "None",
+		'leather': "Leather"
+	};
+
 	let backgroundColour = {
 		'none': "None",
 		'blue': "Blue",
@@ -62,9 +67,22 @@ export const registerSettings = function () {
 		type: EditPlaceAttributes
 	});
 
+	game.settings.register(modulename, 'background-colour', {
+		name: i18n('APSJournal.background-colour.name'),
+		hint: i18n('APSJournal.background-colour.hint'),
+		scope: 'world',
+		config: true,
+		default: "none",
+		choices: backgroundColour,
+		type: String,
+		onChange: (value) => {
+			APSJ.setTheme(value);
+		},
+	});
+
 	game.settings.register(modulename, 'background-image', {
-		name: game.i18n.format('APSJournal.background-image.name'),
-		hint: game.i18n.format('APSJournal.background-image.hint'),
+		name: i18n('APSJournal.background-image.name'),
+		hint: i18n('APSJournal.background-image.hint'),
 		scope: 'world',
 		config: true,
 		default: "none",
@@ -75,16 +93,16 @@ export const registerSettings = function () {
 		},
 	});
 
-	game.settings.register(modulename, 'background-colour', {
-		name: game.i18n.format('APSJournal.background-colour.name'),
-		hint: game.i18n.format('APSJournal.background-colour.hint'),
+	game.settings.register(modulename, 'sidebar-image', {
+		name: i18n('APSJournal.sidebar-image.name'),
+		hint: i18n('APSJournal.sidebar-image.hint'),
 		scope: 'world',
 		config: true,
 		default: "none",
-		choices: backgroundColour,
+		choices: sidebarImages,
 		type: String,
 		onChange: (value) => {
-			APSJ.setTheme(value);
+			$('#MonksEnhancedJournal').attr("sidebar-image", value);
 		},
 	});
 

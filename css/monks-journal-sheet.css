@@ -204,6 +204,10 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 }
 
 .monks-journal-sheet .journal-sheet-header .header-details button {
+    margin-right: 4px;
+}
+
+.monks-journal-sheet .journal-sheet-header .header-details button:last-child {
     margin-right: 8px;
 }
 
@@ -236,6 +240,10 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     border-bottom: var(--mej-sheet-tab-border);
     color: var(--mej-sheet-tab-color);
     max-width: 150px;
+}
+
+.monks-journal-sheet.sheet .sheet-navigation .item:hover {
+    color: var(--mej-sheet-tab-color-hover);
 }
 
 .monks-journal-sheet.sheet .sheet-navigation .item.hasitems {
@@ -279,6 +287,10 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     height: calc(100% - 200px);
 }
 
+.monks-journal-sheet.sheet .sheet-container button {
+    background: var(--mej-sheet-button-background);
+    color: var(--mej-sheet-button-color);
+}
 /* Dialog */
 .monks-journal-sheet.sheet .dialog-content {
     margin-bottom: 8px;
@@ -489,8 +501,12 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 
 .monks-journal-sheet.sheet .editor-content .polyglot-journal {
     cursor: help;
+    background-color: transparent;
 }
 
+.monks-journal-sheet.sheet .editor-content .polyglot-journal:hover {
+    background-color: rgba(var(--polyglot-journal-color), var(--polyglot-journal-opacity));
+}
 /*
 .monks-journal-sheet.sheet .editor-content .polyglot-container {
     background-color: rgba(255, 180, 0, 0.25);
@@ -546,7 +562,6 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     white-space: nowrap;
 }
     */
-
 /* Item List */
 .monks-journal-sheet .items-list {
     list-style: none;
@@ -1127,6 +1142,15 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     flex: 0 0 19px;
     padding: 0px 4px;
     cursor: pointer;
+}
+
+.monks-journal-sheet .list .list-list .list-item .poll-description {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .monks-journal-sheet .list .list-list .list-item .poll-description.collapsed {

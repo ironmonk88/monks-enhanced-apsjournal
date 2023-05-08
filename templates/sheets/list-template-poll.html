@@ -1,6 +1,6 @@
 <li class="list-item document item flexrow" data-document-id="{{this.data.id}}">
     <div class="flexrow">
-        <div  class="poll-toggle"><i class="fas fa-caret-up"></i></div>
+        <div  class="poll-toggle">{{#if this.data.text}}<i class="fas fa-caret-up"></i>{{/if}}</div>
         <div class="flexcol">
             <h3 class="noborder">{{this.data.title}}</h3>
             <div class="flexrow">

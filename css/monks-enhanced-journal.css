@@ -15,7 +15,6 @@
     --mej-dark-2: rgb(34, 34, 34);
     --mej-dark-1: rgb(17, 17, 17);
     --mej-dark-0: rgb(0, 0, 0);
-
     --mej-light-750: rgba(255, 255, 255, 0.75);
     --mej-light-751: rgba(238, 238, 238, 0.75);
     --mej-light-752: rgba(221, 221, 221, 0.75);
@@ -32,9 +31,8 @@
     --mej-dark-752: rgba(34, 34, 34, 0.75);
     --mej-dark-751: rgba(17, 17, 17, 0.75);
     --mej-dark-750: rgba(0, 0, 0, 0.75);
-
+    --mej-light-250: rgba(255, 255, 255, 0.25);
     --mej-cream: rgba(255, 255, 240, 0.8);
-
     --mej-font-family: 'Modesto Condensed', 'Palatino Linotype', serif;
     --mej-background: url(../../../ui/parchment.jpg) repeat;
     --mej-header-border-color: rgb(192, 192, 192);
@@ -51,11 +49,18 @@
     --mej-header-bookmark-background: rgba(255, 255, 255, 0.3);
     --mej-header-bookmark-border: rgb(192, 192, 192);
     --mej-header-bookmark-hover: rgba(0, 0, 0, 0.1);
+    --mej-header-add-bookmark-background: var(--mej-header-bookmark-background);
+    --mej-header-add-bookmark-border: var(--mej-header-bookmark-border);
+    --mej-header-add-bookmark-color: var(--mej-header-bookmark-color);
+    --mej-header-add-bookmark-hover: var(--mej-header-bookmark-hover);
     --mej-header-nav-color: var(--mej-header-color);
     --mej-header-nav-background: rgb(233, 231, 225);
     --mej-header-nav-btn-background: var(--mej-cream);
     --mej-header-nav-btn-border: rgb(192, 192, 192);
     --mej-header-nav-btn-disabled: rgb(136, 136, 136);
+    --mej-header-nav-btn-background-disabled: inherit;
+    --mej-header-nav-btn-border-disabled: inherit;
+    --mej-header-nav-btn-background-hover: var(--mej-header-nav-btn-background);
     --mej-header-nav-input-border: rgb(122, 121, 113);
     --mej-header-nav-input-background: rgba(0, 0, 0, 0.05);
     --mej-header-nav-input-color: rgb(25, 24, 19);
@@ -64,11 +69,14 @@
     --mej-header-nav-input-error-background: rgba(255, 0, 0, 0.1);
     --mej-header-nav-vertical-line: rgb(238, 237, 224);
     --mej-footer-color: var(--color-text-dark-primary);
-    --mej-footer-background: rgb(220, 220, 220);
+    --mej-footer-background: rgb(233, 231, 225);
     --mej-footer-border: rgb(192, 192, 192);
     --mej-footer-btn-background: var(--mej-cream);
+    --mej-footer-btn-background-hover: var(--mej-footer-btn-background);
     --mej-footer-btn-border: rgb(192, 192, 192);
     --mej-footer-btn-disabled: rgb(136, 136, 136);
+    --mej-footer-btn-background-disabled: inherit;
+    --mej-footer-btn-border-disabled: inherit;
     --mej-sheet-color: var(--color-text-dark-primary);
     --mej-sheet-header-border: rgb(120, 46, 34);
     --mej-sheet-header-input-color: var(--color-text-dark-primary);
@@ -80,6 +88,7 @@
     --mej-sheet-header-detail-input-color: rgb(25, 24, 19);
     --mej-sheet-detailed-header-border: rgb(238, 237, 224);
     --mej-sheet-tab-color: var(--mej-sheet-color);
+    --mej-sheet-tab-color-hover: inherit;
     --mej-sheet-tab-color-active: var(--mej-sheet-tab-color);
     --mej-sheet-tab-background: rgba(255, 255, 255, 0.3);
     --mej-sheet-tab-bottom-border: rgb(238, 237, 224);
@@ -87,7 +96,7 @@
     --mej-sheet-tab-border-active: rgb(68, 25, 26);
     --mej-sheet-tab-border-items: rgb(187, 178, 114);
     --mej-sheet-page-control-color: var(--mej-sheet-color);
-    --mej-sheet-page-control-background: var(--mej-cream);
+    --mej-sheet-page-control-background: rgb(192, 192, 192);
     --mej-sheet-details-section-border: rgb(238, 237, 224);
     --mej-sheet-input-border: 1px solid rgb(122, 121, 113);
     --mej-sheet-input-background: rgba(0, 0, 0, 0.05);
@@ -148,6 +157,9 @@
     --mej-sidebar-document-border-botom: rgb(154, 152, 144);
     --mej-adventure-toc-background: url(../../../ui/denim075.png) repeat;
     --mej-adventure-toc-item-background: rgba(0, 0, 0, 0.4);
+    --mej-adventure-toc-border-highlight: var(--color-border-highlight);
+    --mej-sheet-button-background: rgb(192, 192, 192);
+    --mej-sheet-button-color: var(--mej-sheet-color);
 }
 
 .monks-enhanced-journal .window-content {
@@ -188,9 +200,7 @@
 }
 
 .window-app.image-popout.monks-enhanced-journal.sheet .header-name,
-.window-app.image-popout.monks-enhanced-journal.sheet
-    .header-name
-    button.play-journal-sound:not(.active) {
+.window-app.image-popout.monks-enhanced-journal.sheet .header-name button.play-journal-sound:not(.active) {
     color: #fff;
 }
 
@@ -199,10 +209,6 @@
     height: 100%;
     width: 100%;
     margin-top: 0px;
-}
-
-.monks-journal-sheet.condensed .mainbar {
-    flex: 0 0 30px;
 }
 
 /* Header */
@@ -349,7 +355,7 @@
     flex-grow: 0;
     white-space: nowrap;
     border: 1px solid var(--mej-header-bookmark-border);
-    background-color: var(--mej-header-bookmark-background);
+    background: var(--mej-header-bookmark-background);
 }
 
 .monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button.add-bookmark {
@@ -363,6 +369,9 @@
     text-overflow: clip;
     margin-left: 2px;
     overflow: hidden;
+    border: 1px solid var(--mej-header-add-bookmark-border);
+    background: var(--mej-header-add-bookmark-background);
+    color: var(--mej-header-add-bookmark-color);
 }
 
 .monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button > div {
@@ -378,13 +387,16 @@
 }
 
 .monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button:hover {
-    background-color: var(--mej-header-bookmark-hover);
+    background: var(--mej-header-bookmark-hover);
 }
 
+.monks-enhanced-journal .enhanced-journal-header .bookmark-bar .bookmark-button.add-bookmark:hover {
+    background: var(--mej-header-add-bookmark-hover);
+}
 /* Navigation bar */
 .monks-enhanced-journal .enhanced-journal-header .navigation {
     color: var(--mej-header-nav-color);
-    background-color: var(--mej-header-nav-background);
+    background: var(--mej-header-nav-background);
     padding: 2px;
 }
 
@@ -398,6 +410,7 @@
 
 .monks-enhanced-journal .enhanced-journal-header .navigation .button-group {
     justify-content: flex-end;
+    flex-wrap: nowrap;
 }
 
 .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button {
@@ -417,10 +430,13 @@
 .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button:not(.disabled):hover {
     box-shadow: 0 0 5px red;
     cursor: pointer;
+    background: var(--mej-header-nav-btn-background-hover);
 }
 
 .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button.disabled {
     color: var(--mej-header-nav-btn-disabled);
+    background: var(--mej-header-nav-btn-background-disabled);
+    border-color: var(--mej-header-nav-btn-border-disabled);
 }
 
 .monks-enhanced-journal .enhanced-journal-header .navigation .nav-input {
@@ -506,14 +522,14 @@
 .monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
     box-shadow: 0 0 5px red;
     cursor: pointer;
-}
-
-.monks-enhanced-journal .enhanced-journal-footer .nav-button:not(.disabled):hover {
+    background: var(--mej-footer-btn-background-hover);
     text-shadow: 0 0 8px red;
 }
 
 .monks-enhanced-journal .enhanced-journal-footer .nav-button.disabled {
     color: var(--mej-footer-btn-disabled);
+    background: var(--mej-footer-btn-background-disabled);
+    border-color: var(--mej-footer-btn-border-disabled);
 }
 
 .monks-enhanced-journal .enhanced-journal.collapse .enhanced-journal-footer {
@@ -855,10 +871,12 @@ a.picture-link {
     word-break: break-all;
 }
 
+/*
 a.picture-link i,
 a.inline-request-roll i {
     color: #7a7971;
 }
+    */
 
 a.picture-link.broken {
     background: rgba(255, 0, 0, 0.05);
@@ -878,7 +896,9 @@ span.unknown-link {
     position: relative;
 }
 
-.inline-roll-styling a.content-link {
+.inline-roll-styling a.content-link,
+.inline-roll-styling a.picture-link,
+.inline-roll-styling a.inline-request-roll {
     color: var(--color-text-hyperlink);
     background: transparent;
     padding: 0px;
@@ -967,6 +987,22 @@ span.unknown-link {
     margin-right: 4px;
 }
 
+.sheet.journal-entry .pages-list .directory-item.active:first-of-type {
+    border-top: 1px solid var(--mej-adventure-toc-border-highlight);
+}
+
+.sheet.journal-entry .pages-list .directory-item.active:last-of-type {
+    border-bottom: 1px solid var(--mej-adventure-toc-border-highlight);
+}
+
+.sheet.journal-entry .pages-list .directory-item:not(.active) + .active {
+    border-top: 1px solid var(--mej-adventure-toc-border-highlight);
+}
+
+.sheet.journal-entry .pages-list .directory-item.active + :not(.active) {
+    border-top: 1px solid var(--mej-adventure-toc-border-highlight);
+}
+
 /*
 .sheet.journal-entry .pages-list .directory-item.active:last-of-type,
 .sheet.journal-entry .pages-list .directory-item.active:first-of-type {
@@ -1018,6 +1054,7 @@ span.unknown-link {
 
 .monks-enhanced-journal .enhanced-journal .sheet.journal-entry .journal-entry-content {
     border: 0px;
+    background: var(--mej-background);
 }
 
 .sheet.journal-entry .no-file-notification {
@@ -1153,10 +1190,7 @@ span.unknown-link {
     margin-right: 8px;
 }
 
-.journal-list
-    .journal-item.folder.collapse
-    .journal-title
-    i.fa-folder-open:before {
+.journal-list .journal-item.folder.collapse .journal-title i.fa-folder-open:before {
     content: '\f07b';
 }
 

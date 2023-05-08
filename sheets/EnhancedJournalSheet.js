@@ -1,4 +1,4 @@
-﻿import { setting, i18n, format, log, warn, makeid, MonksEnhancedJournal, quantityname, pricename, currencyname } from "../monks-enhanced-journal.js";
+﻿import { setting, i18n, format, log, warn, makeid, MonksEnhancedJournal, quantityname, pricename, currencyname, getVolume } from "../monks-enhanced-journal.js";
 import { EditFields } from "../apps/editfields.js";
 import { EditSound } from "../apps/editsound.js";
 import { MakeOffering } from "../apps/make-offering.js";
@@ -226,8 +226,8 @@ export class EnhancedJournalSheet extends JournalPageSheet {
                 });
             }
 
-            this._soundHook = Hooks.on("globalInterfaceVolumeChanged", (volume) => {
-                this._backgroundsound.volume = volume * game.settings.get("core", "globalInterfaceVolume");
+            this._soundHook = Hooks.on(game.modules.get("monks-sound-enhancements")?.active ? "globalSoundEffectVolumeChanged" : "globalInterfaceVolumeChanged", (volume) => {
+                this._backgroundsound.volume = volume * getVolume();
             });
         }
 
@@ -881,12 +881,18 @@ export class EnhancedJournalSheet extends JournalPageSheet {
                 loop: sound.loop,
                 volume: 0
             }).then((soundfile) => {
+                if (game.modules.get("monks-sound-enhancements")?.active) {
+                    game.MonksSoundEnhancements.addSoundEffect(soundfile, this.object.name);
+                }
                 $('.play-journal-sound', this.element).addClass("active").removeClass("loading").find("i").attr("class", "fas fa-volume-up");
-                soundfile.fade(volume * game.settings.get("core", "globalInterfaceVolume"), { duration: 500 });
+                soundfile.fade(volume * getVolume(), { duration: 500 });
                 soundfile.on("end", () => {
                     $('.play-journal-sound', this.element).removeClass("active").find("i").attr("class", "fas fa-volume-off");
                 });
-                soundfile._mejvolume = volume;
+                soundfile.on("stop", () => {
+                    $('.play-journal-sound', this.element).removeClass("active").find("i").attr("class", "fas fa-volume-off");
+                });
+                soundfile.effectiveVolume = volume;
                 return soundfile;
             });
         } else {
@@ -896,6 +902,9 @@ export class EnhancedJournalSheet extends JournalPageSheet {
                 sound.load({ autoplay: true, autoplayOptions: options });
             else
                 sound.play(options);
+            if (game.modules.get("monks-sound-enhancements")?.active) {
+                game.MonksSoundEnhancements.addSoundEffect(sound, this.object.name);
+            }
             $('.play-journal-sound', this.element).addClass("active").find("i").attr("class", "fas fa-volume-up");
         }
 
@@ -906,7 +915,6 @@ export class EnhancedJournalSheet extends JournalPageSheet {
         if (sound && sound.stop) {
             sound.fade(0, { duration: 500 }).then(() => {
                 sound.stop();
-                $('.play-journal-sound', this.element).removeClass("active").find("i").removeClass('fa-volume-up').addClass('fa-volume-off');
             });
         }
     }
@@ -1933,7 +1941,7 @@ export class EnhancedJournalSheet extends JournalPageSheet {
                 // check to see if there's a sound playing and stop it playing.
                 this._stopSound(this._backgroundsound);
                 delete this._backgroundsound;
-                Hooks.off("globalInterfaceVolumeChanged", this._soundHook);
+                Hooks.off(game.modules.get("monks-sound-enhancements")?.active ? "globalSoundEffectVolumeChanged" : "globalInterfaceVolumeChanged", this._soundHook);
             }
 
             return super.close(options);

@@ -6,11 +6,7 @@
     {
       "name": "IronMonk",
       "discord": "ironmonk88#4075",
-	  "flags": {
-		  "github": "https://github.com/ironmonk88",
-		  "patreon": "https://www.patreon.com/ironmonk",
-		  "ko-fi": "https://ko-fi.com/ironmonk88"
-	  }
+      "flags": {}
     }
   ],
   "socket": true,
@@ -18,47 +14,74 @@
     {
       "lang": "en",
       "name": "English",
-      "path": "lang/en.json"
+      "path": "lang/en.json",
+      "flags": {}
     },
     {
       "lang": "it",
       "name": "Italiano",
-      "path": "lang/it.json"
+      "path": "lang/it.json",
+      "flags": {}
     },
     {
       "lang": "es",
       "name": "Español",
-      "path": "lang/es.json"
+      "path": "lang/es.json",
+      "flags": {}
     },
     {
       "lang": "fr",
       "name": "Français",
-      "path": "lang/fr.json"
+      "path": "lang/fr.json",
+      "flags": {}
     },
     {
       "lang": "ja",
       "name": "日本語",
-      "path": "lang/ja.json"
+      "path": "lang/ja.json",
+      "flags": {}
     },
     {
       "lang": "sv",
       "name": "Svenska",
-      "path": "lang/sv.json"
+      "path": "lang/sv.json",
+      "flags": {}
     },
     {
       "lang": "zh-tw",
       "name": "正體中文",
-      "path": "lang/zh-tw.json"
+      "path": "lang/zh-tw.json",
+      "flags": {}
     },
     {
       "lang": "de",
       "name": "Deutsch",
-      "path": "lang/de.json"
+      "path": "lang/de.json",
+      "flags": {}
     },
     {
       "lang": "pt-BR",
       "name": "Português",
-      "path": "lang/pt-BR.json"
+      "path": "lang/pt-BR.json",
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "name": "shop-names",
+      "label": "Shop Names",
+      "path": "packs/shop-names.db",
+      "type": "RollTable",
+      "private": false,
+      "flags": {}
+    },
+    {
+      "name": "person-names",
+      "label": "Person Names",
+      "path": "packs/person-names.db",
+      "type": "RollTable",
+      "private": false,
+      "flags": {}
     }
   ],
   "esmodules": [
@@ -80,13 +103,9 @@
   "download": "https://github.com/ironmonk88/monks-enhanced-journal/archive/10.14.zip",
   "manifest": "https://github.com/ironmonk88/monks-enhanced-journal/releases/latest/download/module.json",
   "bugs": "https://github.com/ironmonk88/monks-enhanced-journal/issues",
-  "allowBugReporter": true,
   "id": "monks-enhanced-journal",
   "compatibility": {
     "minimum": "10",
     "verified": "10"
-  },
-  "name": "monks-enhanced-journal",
-  "minimumCoreVersion": "10",
-  "compatibleCoreVersion": "10"
+  }
 }

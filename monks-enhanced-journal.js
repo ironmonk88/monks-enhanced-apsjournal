@@ -66,6 +66,13 @@ export let oldSheetClass = () => {
     return MonksEnhancedJournal._oldSheetClass;
 };
 
+export let getVolume = () => {
+    if (game.modules.get("monks-sound-enhancement")?.active)
+        return game.settings.get("core", "globalSoundEffectVolume");
+    else
+        return game.settings.get("core", "globalInterfaceVolume");
+}
+
 export class MonksEnhancedJournal {
     static _oldSheetClass;
     static journal;
@@ -2382,7 +2389,7 @@ export class MonksEnhancedJournal {
                         if (MonksEnhancedJournal.slideshow)
                             MonksEnhancedJournal.slideshow.sound = sound;
                         MonksEnhancedJournal.sounds.push(sound);
-                        sound._mejvolume = volume;
+                        sound.effectiveVolume = volume;
                         return sound;
                     });
                 }
@@ -2463,7 +2470,7 @@ export class MonksEnhancedJournal {
                                         }).then((sound) => {
                                             MonksEnhancedJournal.slideshow.slidesound = sound;
                                             MonksEnhancedJournal.sounds.push(sound);
-                                            sound._mejvolume = volume;
+                                            sound.effectiveVolume = volume;
                                             return sound;
                                         });
                                     }
@@ -2485,7 +2492,7 @@ export class MonksEnhancedJournal {
                                 }).then((sound) => {
                                     MonksEnhancedJournal.slideshow.slidesound = sound;
                                     MonksEnhancedJournal.sounds.push(sound);
-                                    sound._mejvolume = volume;
+                                    sound.effectiveVolume = volume;
                                     return sound;
                                 });
                             }
@@ -4039,8 +4046,16 @@ Hooks.on("renderItemSheet", (sheet, html, data) => {
 });
 
 Hooks.on("globalInterfaceVolumeChanged", (volume) => {
+    if (!game.modules.get("monks-sound-enhancements")?.active) {
+        for (let sound of MonksEnhancedJournal.sounds) {
+            sound.volume = (sound.effectiveVolume ?? 1) * volume;
+        }
+    }
+});
+
+Hooks.on("globalSoundEffectVolumeChanged", (volume) => {
     for (let sound of MonksEnhancedJournal.sounds) {
-        sound.volume = (sound._mejvolume ?? 1) * volume;
+        sound.volume = (sound.effectiveVolume ?? 1) * volume;
     }
 });
 

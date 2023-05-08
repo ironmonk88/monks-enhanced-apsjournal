@@ -385,7 +385,7 @@ export class SlideshowSheet extends EnhancedJournalSheet {
                 }).then((sound) => {
                     this.object.sound = sound;
                     MonksEnhancedJournal.sounds.push(sound);
-                    sound._mejvolume = volume;
+                    sound.effectiveVolume = volume;
                     return sound;
                 });
             }
@@ -557,7 +557,7 @@ export class SlideshowSheet extends EnhancedJournalSheet {
                             }).then((sound) => {
                                 that.object.slidesound = sound;
                                 MonksEnhancedJournal.sounds.push(sound);
-                                sound._mejvolume = volume;
+                                sound.effectiveVolume = volume;
                                 return sound;
                             });
                         }
@@ -581,7 +581,7 @@ export class SlideshowSheet extends EnhancedJournalSheet {
                     }).then((sound) => {
                         that.object.slidesound = sound;
                         MonksEnhancedJournal.sounds.push(sound);
-                        sound._mejvolume = volume;
+                        sound.effectiveVolume = volume;
                         return sound;
                     });
                 }

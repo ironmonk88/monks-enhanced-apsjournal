@@ -91,6 +91,8 @@ export class ShopSheet extends EnhancedJournalSheet {
             relationships: Object.keys(data.relationships || {})?.length
         }
 
+        data.hasRollTables = !!game.packs.get("monks-enhanced-journal.shop-names");
+
         return data;
     }
 
@@ -127,6 +129,8 @@ export class ShopSheet extends EnhancedJournalSheet {
 
         //$('.actor-img img', html).click(this.openActor.bind(this));
         $('.relationships .items-list h4', html).click(this.openRelationship.bind(this));
+
+        $(".generate-name", html).click(this.generateName.bind(this));
 
         //item
         $('.item-icon', html).click(this.clickItem.bind(this));
@@ -857,5 +861,18 @@ export class ShopSheet extends EnhancedJournalSheet {
                 }
             }
         ];
+    }
+
+    async generateName() {
+        let pack = game.packs.get("monks-enhanced-journal.shop-names");
+        await pack.getDocuments();
+
+        let first = pack.contents.find(c => c._id == "LR5awmz5mlyapceL");
+        let second = pack.contents.find(c => c._id == "wCg3vbUVBWB6g0TG");
+
+        let firstName = await first.draw({ displayChat: false });
+        let secondName = await second.draw({ displayChat: false });
+
+        $('[name="name"]', this.element).val(`${firstName.results[0].text} ${secondName.results[0].text}`).change();
     }
 }

@@ -1,5 +1,5 @@
 import { makeid } from "../monks-enhanced-journal.js";
-import { MonksEnhancedJournal, log, i18n, error, setting } from "../monks-enhanced-journal.js"
+import { MonksEnhancedJournal, log, i18n, error, setting, getVolume } from "../monks-enhanced-journal.js"
 import { EnhancedJournalSheet } from "../sheets/EnhancedJournalSheet.js"
 import { JournalEntrySheet } from "../sheets/JournalEntrySheet.js"
 
@@ -39,9 +39,9 @@ export class EnhancedJournal extends Application {
         if (object != undefined)
             this.open(object, options?.newtab, { anchor: options?.anchor });
 
-        this._soundHook = Hooks.on("globalInterfaceVolumeChanged", (volume) => {
+        this._soundHook = Hooks.on(game.modules.get("monks-sound-enhancements")?.active ? "globalSoundEffectVolumeChanged" : "globalInterfaceVolumeChanged", (volume) => {
             for (let sound of Object.values(this._backgroundsound)) {
-                sound.volume = volume * game.settings.get("core", "globalInterfaceVolume")
+                sound.volume = volume * getVolume()
             }
         });
     }
@@ -621,7 +621,7 @@ export class EnhancedJournal extends Application {
                 sound.stop();
             }
 
-            Hooks.off("globalInterfaceVolumeChanged", this._soundHook);
+            Hooks.off(game.modules.get("monks-sound-enhancements")?.active ? "globalSoundEffectVolumeChanged" : "globalInterfaceVolumeChanged", this._soundHook);
 
             return super.close(options);
         }

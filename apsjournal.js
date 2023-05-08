@@ -140,7 +140,8 @@ export class APSJ {
     static setTheme(theme) {
         if (theme == 'none')
             document.documentElement.removeAttribute('mejtheme');
-        else document.documentElement.setAttribute('mejtheme', theme);
+        else
+            document.documentElement.setAttribute('mejtheme', theme);
     }
     /**
      * Define HTML Elements for Blocks

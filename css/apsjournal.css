@@ -10,7 +10,6 @@
     --apsj-cyan: rgb(0, 136, 195);
     --apsj-blue: rgb(1, 86, 255);
     --apsj-purple: rgb(104, 25, 193);
-
     --apsj-red-dark: rgb(120, 0, 0);
     --apsj-orange-dark: rgb(215, 120, 0);
     --apsj-yellow-dark: rgb(206, 150, 0);
@@ -18,7 +17,6 @@
     --apsj-cyan-dark: rgb(0, 96, 155);
     --apsj-blue-dark: rgb(0, 46, 215);
     --apsj-purple-dark: rgb(64, 0, 153);
-
     --apsj-font-awesome: 'FontAwesome';
     --apsj-font-bookinsanity: 'Bookinsanity', serif;
     --apsj-font-dungeon: 'DungeonDropCase', serif;
@@ -26,16 +24,60 @@
     --apsj-font-scalysans: 'ScalySans', sans-serif;
     --apsj-font-scalycaps: 'ScalySansCaps', sans-serif;
     --apsj-font-signika: 'Signika', sans-serif;
+    --apsj-btn-background: linear-gradient(var(--mej-light-5), var(--mej-light-2), var(--mej-light-5));
 }
 
 /**
 * Color Themes
 **/
 
+:root[mejtheme] {
+    --mej-footer-background: var(--apsj-primary-bright);
+    --mej-footer-btn-background: var(--apsj-btn-background);
+    --mej-footer-color: var(--mej-dark-2);
+    --mej-footer-btn-border: var(--mej-dark-7);
+    --mej-footer-btn-background-hover: var(--mej-light-2);
+    --mej-header-background: var(--apsj-primary);
+    --mej-header-nav-background: var(--apsj-primary-bright);
+    --mej-header-tab-color: var(--mej-header-color);
+    --mej-header-tab-btn-color: var(--mej-dark-0);
+    --mej-header-tab-hover: var(--mej-cream);
+    --mej-sheet-header-input-color: var(--mej-light-0);
+    --mej-sidebar-button-background: var(--apsj-btn-background);
+    --mej-sheet-tab-color: var(--mej-dark-5);
+    --mej-sheet-tab-color-active: var(--mej-sheet-color);
+    --mej-header-nav-btn-background: var(--apsj-btn-background);
+    --mej-header-nav-btn-border: var(--mej-dark-7);
+    --mej-header-add-bookmark-background: var(--apsj-btn-background);
+    --mej-header-add-bookmark-border: rgb(192, 192, 192);
+    --mej-header-add-bookmark-color: var(--mej-dark-2);
+    --mej-header-bookmark-color: var( --mej-light-2);
+    --mej-header-bookmark-hover: rgba(255, 255, 255, 0.3);
+    --mej-header-bookmark-background: rgba(0, 0, 0, 0.1);
+    --mej-header-nav-btn-background-hover: var(--mej-light-2);
+    --mej-header-add-bookmark-hover: var(--mej-light-2);
+    --mej-sheet-tab-color-hover: var(--mej-dark-3);
+    --mej-adventure-toc-border-highlight: var(--apsj-primary);
+    --mej-header-tab-active: var(--mej-cream);
+    --mej-header-tab-active-hover: var(--mej-light-0);
+    --mej-header-nav-btn-disabled: var(--mej-light-5);
+    --mej-footer-btn-disabled: var(--mej-light-5);
+    --mej-header-nav-btn-background-disabled: var(--mej-light-3);
+    --mej-footer-btn-background-disabled: var(--mej-light-3);
+    --mej-header-nav-btn-border-disabled: var(--mej-light-5);
+    --mej-footer-btn-border-disabled: var(--mej-light-5);
+    --mej-sheet-page-control-background: var(--apsj-btn-background);
+    --mej-sheet-page-control-color: var(--mej-dark-2);
+    --mej-sheet-button-background: var(--apsj-btn-background);
+    --mej-sheet-button-color: var(--mej-dark-2);
+    --mej-sheet-header-input-color: var(--mej-light-0);
+}
+
 :root[mejtheme='red'] {
     --apsj-primary-light: rgb(200, 40, 40);
     --apsj-primary: rgb(160, 0, 0);
     --apsj-primary-dark: rgb(120, 0, 0);
+    --apsj-primary-bright: rgb(231, 191, 191);
     --apsj-primary-75: rgba(160, 0, 0, 0.75);
 }
 
@@ -43,6 +85,7 @@
     --apsj-primary-light: rgb(255, 168, 40);
     --apsj-primary: rgb(255, 128, 0);
     --apsj-primary-dark: rgb(215, 88, 0);
+    --apsj-primary-bright: rgb(255, 223, 191);
     --apsj-primary-75: rgba(255, 128, 0, 0.75);
 }
 
@@ -50,13 +93,16 @@
     --apsj-primary-light: rgb(255, 255, 40);
     --apsj-primary: rgb(215, 215, 0);
     --apsj-primary-dark: rgb(175, 175, 0);
+    --apsj-primary-bright: rgb(245, 245, 191);
     --apsj-primary-75: rgba(215, 215, 0, 0.75);
+    --mej-header-bookmark-color: var( --mej-dark-6);
 }
 
 :root[mejtheme='green'] {
     --apsj-primary-light: rgb(40, 188, 40);
     --apsj-primary: rgb(0, 128, 0);
     --apsj-primary-dark: rgb(0, 88, 0);
+    --apsj-primary-bright: rgb(191, 223, 191);
     --apsj-primary-75: rgba(0, 128, 0, 0.75);
 }
 
@@ -64,13 +110,16 @@
     --apsj-primary-light: rgb(60, 255, 255);
     --apsj-primary: rgb(0, 255, 255);
     --apsj-primary-dark: rgb(0, 195, 195);
+    --apsj-primary-bright: rgb(191, 255, 255);
     --apsj-primary-75: rgba(0, 255, 255, 0.75);
+    --mej-header-bookmark-color: var( --mej-dark-6);
 }
 
 :root[mejtheme='blue'] {
     --apsj-primary-light: rgb(41, 126, 255);
     --apsj-primary: rgb(1, 86, 255);
     --apsj-primary-dark: rgb(0, 46, 215);
+    --apsj-primary-bright: rgb(191, 213, 255);
     --apsj-primary-75: rgba(1, 86, 255, 0.75);
 }
 
@@ -78,22 +127,8 @@
     --apsj-primary-light: rgb(144, 65, 233);
     --apsj-primary: rgb(104, 25, 193);
     --apsj-primary-dark: rgb(64, 0, 153);
+    --apsj-primary-bright: rgb(217, 197, 239);
     --apsj-primary-75: rgba(104, 25, 193, 0.75);
-}
-
-:root[mejtheme] {
-    --mej-footer-background: var(--apsj-primary);
-    --mej-footer-btn-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
-    --mej-footer-color: var(--mej-dark-0);
-    --mej-header-background: var(--apsj-primary);
-    --mej-header-nav-background: var(--mej-light-750);
-    --mej-header-nav-button-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
-    --mej-header-nav-btn-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
-    --mej-header-tab-color: var(--mej-header-color);
-    --mej-header-tab-btn-color: var(--mej-dark-0);
-    --mej-header-tab-hover: var(--mej-cream);
-    --mej-sheet-header-input-color: var(--mej-light-0);
-    --mej-sidebar-button-background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
 }
 
 /**
@@ -112,15 +147,15 @@
 }
 
 :root[mejtheme] .editor-content {
-    padding-right: 5px;
-    overflow-x: hidden;
+    overflow-x: hidden; /* TODO Are you sure you need this?*/
 }
 
+/* TODO These are way too broad and will affect other people's modules.  They should be limited to monks-journal-sheet*/
 :root[mejtheme] li > .entity-link {
     line-height: 1.75em;
 }
 
-:root[mejtheme] table {
+:root[mejtheme] .monks-journal-sheet table {
     width: 90%;
     margin: 1em 5%;
 }
@@ -128,7 +163,7 @@
 :root[mejtheme] table thead,
 :root[mejtheme] table tfoot {
     color: var(--mej-light-0);
-    background: var(--mej-background-primary);
+    background: var(--apsj-primary);
     font-family: var(--apsj-font-scalycaps);
     font-weight: 700;
     text-shadow: 1px 1px 2px var(--mej-dark-0);
@@ -144,9 +179,11 @@
     font-weight: 400;
 }
 
-:root[mejtheme] a.entity-link,
-:root[mejtheme] a.content-link,
-:root[mejtheme] a.inline-roll {
+:root[mejtheme] body:not(.inline-roll-styling) a.entity-link,
+:root[mejtheme] body:not(.inline-roll-styling) a.content-link,
+:root[mejtheme] body:not(.inline-roll-styling) a.inline-roll,
+:root[mejtheme] body:not(.inline-roll-styling) a.picture-link,
+:root[mejtheme] body:not(.inline-roll-styling) a.inline-request-roll {
     padding: 3px 5px;
     color: var(--mej-light-0);
     font-family: var(--apsj-font-scalysans);
@@ -156,13 +193,15 @@
     border-radius: 0.35em;
     text-shadow: 1px 1px 1px var(--mej-light-4);
     box-shadow: 0 0 4px var(--mej-dark-750);
-    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
+    background: var(--apsj-btn-background);
     text-shadow: 1px 1px 2px var(--mej-dark-0);
 }
 
-:root[mejtheme] a.entity-link i,
-:root[mejtheme] a.content-link i,
-:root[mejtheme] a.inline-roll i {
+:root[mejtheme] body:not(.inline-roll-styling) a.entity-link i,
+:root[mejtheme] body:not(.inline-roll-styling) a.content-link i,
+:root[mejtheme] body:not(.inline-roll-styling) a.inline-roll i,
+:root[mejtheme] body:not(.inline-roll-styling) a.picture-link i,
+:root[mejtheme] body:not(.inline-roll-styling) a.inline-request-roll i {
     color: var(--mej-light-0);
 }
 
@@ -170,9 +209,12 @@
 * V10 Journal Overrides
 **/
 
-:root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active {
-    background: var(--mej-background-primary);
+.monks-enhanced-journal[sidebar-image='leather'] .sheet.journal-entry .pages-list .directory-item.active {
     box-shadow: 0 3px 15px var(--mej-dark-750);
+}
+
+.monks-enhanced-journal[sidebar-image='leather'] .sheet.journal-entry .sidebar-directory li.journalentry {
+    --mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type {
@@ -213,13 +255,12 @@
 
 .monks-enhanced-journal[background-image='parchment'] {
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
+}
+
+.monks-enhanced-journal[sidebar-image='leather'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
     --mej-sidebar-document-color: var(--mej-light-0);
-}
-
-.monks-enhanced-journal[background-image='parchment'] .enhanced-journal .sheet.journal-entry .journal-entry-content {
-    background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
 }
 
 .monks-enhanced-journal[background-image='parchment'] .window-content {
@@ -231,26 +272,8 @@
     background-size: cover;
 }
 
-:root[mejtheme] .monks-enhanced-journal .tab-bar .journal-tab.active {
-    --mej-header-tab-active: var(--mej-cream);
-}
-
-:root[mejtheme] .monks-enhanced-journal .tab-bar .journal-tab.active:hover {
-    --mej-header-tab-active-hover: var(--mej-light-0);
-}
-
 :root[mejtheme] .monks-journal-sheet.sheet .currency-group .form-fields input {
     background: var(--mej-light-750);
-}
-
-:root[mejtheme] .monks-enhanced-journal .directory-sidebar {
-    /* background: transparent !important; */
-    border-left: 0 transparent;
-}
-
-:root[mejtheme] #journal-directory li.journalentry .document-name {
-    background: var(--mej-background-primary);
-    color: var(--mej-light-0);
 }
 
 :root[mejtheme] .directory .directory-item:last-child {
@@ -269,29 +292,9 @@
     text-shadow: 2px 3px 5px var(--mej-dark-750);
 }
 
-:root[mejtheme] .monks-enhanced-journal .mainbar .navigation {
-    background-color: var(--mej-dark-750);
-}
-
-:root[mejtheme] .monks-enhanced-journal .mainbar .bookmark-bar {
-    background: var(--mej-background-primary) !important;
-}
-
-:root[mejtheme] .monks-enhanced-journal .mainbar .navigation .nav-button:hover,
-:root[mejtheme] .monks-enhanced-journal .mainbar .bookmark-bar .bookmark-button.add-bookmark:hover {
-    background: var(--mej-light-0) !important;
-}
-
-:root[mejtheme] .monks-enhanced-journal .mainbar .navigation .nav-input,
-:root[mejtheme] .monks-enhanced-journal .bookmark-bar .bookmark-button.add-bookmark:hover {
-    background: var(--mej-light-750);
-}
-
-:root[mejtheme] .monks-enhanced-journal .bookmark-bar .bookmark-button.add-bookmark,
-:root[mejtheme] .monks-enhanced-journal .editor-edit,
-:root[mejtheme] .monks-enhanced-journal .enhanced-journal-header .navigation .nav-button {
+:root[mejtheme] .monks-enhanced-journal .editor-edit {
     text-shadow: 1px 1px 1px var(--mej-light-4);
-    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
+    background: linear-gradient(var(--mej-light-5), var(--mej-light-2), var(--mej-light-5));
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-tab.directory .directory-item.journalentry .permissions {
@@ -305,15 +308,13 @@
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button:hover,
-:root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate:hover {
-    color: var(--mej-light-1);
+:root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate:not(.disabled):hover {
+    color: var(--mej-dark-0);
     box-shadow: 0 0 8px red;
 }
 
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled:hover {
-    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
-    color: var(--mej-light-5);
     box-shadow: 0 0 8px var(--mej-dark-750);
 }
 
@@ -328,13 +329,11 @@
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .sheet-navigation {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px var(--mej-light-0);
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name,
 :root[mejtheme] .monks-journal-sheet .header-name input {
-    color: var(--mej-light-0) !important;
     text-shadow: 1px 1px 2px var(--mej-dark-0);
 }
 
@@ -343,11 +342,11 @@
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name input:hover {
-    background-color: var(--mej-light-750);
+    background-color: var(--mej-light-250);
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input {
-    background-color: var(--mej-light-750);
+    background-color: var(--mej-light-250);
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:hover,
@@ -404,39 +403,29 @@
     color: var(--mej-dark-0);
 }
 
+:root[mejtheme] .monks-journal-sheet .header-name .header-search {
+    color: var(--mej-dark-3);
+    text-shadow: none;
+}
+
 :root[mejtheme] .monks-journal-sheet .header-name .header-search input {
-    background-color: var(--apsj-cream);
+    background: var(--apsj-cream);
     border: var(--mej-dark-0) 1px solid;
     font-family: var(--apsj-font-signika);
     color: var(--mej-dark-3);
-    text-shadow: 0 0 0 var(--apsj-cream);
-}
-
-:root[mejtheme] .monks-journal-sheet .header-name .header-search i {
-    color: var(--mej-dark-3);
-    text-shadow: 0 0 0 var(--apsj-cream);
+    text-shadow: none;
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name .header-search input:focus {
     color: var(--mej-dark-0) !important;
 }
 
-:root[mejtheme] .monks-journal-sheet.sheet .checklist button {
-    background-color: var(--mej-background-primary);
-    color: var(--mej-light-0);
+:root[mejtheme] .monks-journal-sheet.sheet .list button:hover {
+    background: var(--mej-light-2);
 }
-
-:root[mejtheme] .monks-journal-sheet .page-controls button {
-    text-shadow: 1px 1px 1px var(--mej-light-4);
-    box-shadow: 0 0 8px var(--mej-dark-750);
-    border: 2px groove var(--mej-sidebar-button-border);
-    background: linear-gradient(var(--mej-dark-6), var(--mej-light-2), var(--mej-dark-6));
-}
-
 /**
 * Stylish Text
 **/
-
 .apsj-title {
     font-family: var(--mej-font-family);
     font-weight: 700;

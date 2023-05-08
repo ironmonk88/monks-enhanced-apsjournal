@@ -554,9 +554,11 @@
   "MonksEnhancedJournal.purchasing.visible": "Visible",
 
   "APSJournal.background-image.name": "Background Image",
-  "APSJournal.background-image.hint": "Replace the default white parchment background",
+  "APSJournal.background-image.hint": "Replace the default background",
   "APSJournal.background-colour.name": "Background Colour",
   "APSJournal.background-colour.hint": "Change the colour of the enhanced journal",
+  "APSJournal.sidebar-image.name": "Sidebar Menu Image",
+  "APSJournal.sidebar-image.hint": "Replace the default background",
 
   "APSJournal.color-theme.name": "Color Theme",
   "APSJournal.color-theme-none.name": "None",

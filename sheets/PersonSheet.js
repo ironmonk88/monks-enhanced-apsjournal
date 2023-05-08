@@ -87,6 +87,8 @@ export class PersonSheet extends EnhancedJournalSheet {
             offerings: data.offerings?.length
         }
 
+        data.hasRollTables = !!game.packs.get("monks-enhanced-journal.person-names");
+
         return data;
     }
 
@@ -122,6 +124,8 @@ export class PersonSheet extends EnhancedJournalSheet {
 
         //$('.journal-header .actor-img img', html).click(this.openActor.bind(this));
         html.on('dragstart', ".actor-img img", TextEditor._onDragContentLink);
+
+        $(".generate-name", html).click(this.generateName.bind(this));
 
         //onkeyup="textAreaAdjust(this)" style="overflow:hidden"
         $('.document-details textarea', html).keyup(this.textAreaAdjust.bind(this));
@@ -298,5 +302,24 @@ export class PersonSheet extends EnhancedJournalSheet {
                 }
             }
         ];
+    }
+
+    async generateName() {
+        let pack = game.packs.get("monks-enhanced-journal.person-names");
+        await pack.getDocuments();
+
+        let race = getProperty(this.object, "flags.monks-enhanced-journal.attributes.race.value") || "Human"
+
+        let first = pack.contents.find(c => c.name.toLowerCase() == (`${race} First Name`).toLowerCase());
+        if (!first)
+            first = first = pack.contents.find(c => c.name == "Human First Name");
+        let second = pack.contents.find(c => c.name.toLowerCase() == (`${race} Last name`).toLowerCase());
+        if (!second)
+            second = pack.contents.find(c => c.name == "Human Last Name");
+
+        let firstName = await first.draw({ displayChat: false });
+        let secondName = await second.draw({ displayChat: false });
+
+        $('[name="name"]', this.element).val(`${firstName.results[0].text} ${secondName.results[0].text}`).change();
     }
 }
