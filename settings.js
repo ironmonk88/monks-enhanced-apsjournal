@@ -31,13 +31,14 @@ export const registerSettings = function () {
 
 	let backgroundColour = {
 		'none': "None",
-		'blue': "Blue",
-		'cyan': "Cyan",
-		'green': "Green",
-		'orange': "Orange",
-		'purple': "Purple",
+		'clear': "Clear",
 		'red': "Red",
-		'yellow': "Yellow"
+		'orange': "Orange",
+		'yellow': "Yellow",
+		'green': "Green",
+		'cyan': "Cyan",
+		'blue': "Blue",
+		'purple': "Purple"
 	};
 
 	let lootsheetoptions = MonksEnhancedJournal.getLootSheetOptions();

@@ -39,15 +39,18 @@
 * Color Themes
 **/
 
-:root[mejtheme] {
+:root[mejtheme]:not([mejtheme="clear"]) {
     --mej-footer-background: var(--apsj-primary-bright);
+    --mej-adventure-toc-border-highlight: var(--apsj-primary);
+    --mej-header-background: var(--apsj-primary);
+    --mej-header-nav-background: var(--apsj-primary-bright);
+}
+:root[mejtheme] {
+    --mej-header-tab-color: var(--mej-header-color);
     --mej-footer-btn-background: var(--apsj-btn-background);
     --mej-footer-color: var(--mej-dark-2);
     --mej-footer-btn-border: var(--mej-dark-7);
     --mej-footer-btn-background-hover: var(--mej-light-2);
-    --mej-header-background: var(--apsj-primary);
-    --mej-header-nav-background: var(--apsj-primary-bright);
-    --mej-header-tab-color: var(--mej-header-color);
     --mej-header-tab-btn-color: var(--mej-dark-0);
     --mej-header-tab-hover: var(--mej-cream);
     --mej-sheet-header-input-color: var(--mej-light-0);
@@ -65,7 +68,6 @@
     --mej-header-nav-btn-background-hover: var(--mej-light-2);
     --mej-header-add-bookmark-hover: var(--mej-light-2);
     --mej-sheet-tab-color-hover: var(--mej-dark-3);
-    --mej-adventure-toc-border-highlight: var(--apsj-primary);
     --mej-header-tab-active: var(--mej-cream);
     --mej-header-tab-active-hover: var(--mej-light-0);
     --mej-header-nav-btn-disabled: var(--mej-light-5);
@@ -79,6 +81,10 @@
     --mej-sheet-button-background: var(--apsj-btn-background);
     --mej-sheet-button-color: var(--mej-dark-2);
     --mej-sheet-header-input-color: var(--mej-light-0);
+}
+
+:root[mejtheme='clear'] {
+    --mej-header-bookmark-color: var( --mej-dark-6);
 }
 
 :root[mejtheme='red'] {
