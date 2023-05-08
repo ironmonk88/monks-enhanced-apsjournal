@@ -1,7 +1,7 @@
 <li class="list-item document item flexrow" data-document-id="{{this.data.id}}">
     <div class="flexcol">
         <h3 class="noborder" style="text-align:center;">{{this.data.title}}</h3>
-        <div>{{this.data.text}}</div>
+        <div>{{{this.data.text}}}</div>
         {{#unless this.noprogress}}
         <div class="flexrow">
             {{#if @root.owner}}<button type="button" class="progress-button decrease"><i class="fas fa-minus"></i></button>{{/if}}

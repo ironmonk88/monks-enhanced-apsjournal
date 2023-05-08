@@ -57,7 +57,7 @@
     --mej-header-nav-btn-background: var(--apsj-btn-background);
     --mej-header-nav-btn-border: var(--mej-dark-7);
     --mej-header-add-bookmark-background: var(--apsj-btn-background);
-    --mej-header-add-bookmark-border: rgb(192, 192, 192);
+    --mej-header-add-bookmark-border: var(--mej-dark-7);
     --mej-header-add-bookmark-color: var(--mej-dark-2);
     --mej-header-bookmark-color: var( --mej-light-2);
     --mej-header-bookmark-hover: rgba(255, 255, 255, 0.3);

@@ -287,10 +287,6 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     height: calc(100% - 200px);
 }
 
-.monks-journal-sheet.sheet .sheet-container button {
-    background: var(--mej-sheet-button-background);
-    color: var(--mej-sheet-button-color);
-}
 /* Dialog */
 .monks-journal-sheet.sheet .dialog-content {
     margin-bottom: 8px;
@@ -1111,11 +1107,15 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     padding: 0px 5px;
     padding-left: 5px;
     padding-right: 2px;
+    background: var(--mej-sheet-button-background);
+    color: var(--mej-sheet-button-color);
 }
 
 .monks-journal-sheet .list .list-list .vote-button {
     height: 34px;
     flex: 0 0 100px;
+    background: var(--mej-sheet-button-background);
+    color: var(--mej-sheet-button-color);
 }
 
 .monks-journal-sheet .list .list-list .players-voted {
@@ -1156,6 +1156,7 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 .monks-journal-sheet .list .list-list .list-item .poll-description.collapsed {
     display: none;
 }
+
 /* Quest */
 .monks-journal-sheet.sheet .quest-container .reward-container {
     overflow: hidden;

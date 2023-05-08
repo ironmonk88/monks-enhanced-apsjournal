@@ -1,5 +1,6 @@
 import { setting, i18n, log, makeid, MonksEnhancedJournal } from "../monks-enhanced-journal.js";
 import { EnhancedJournalSheet } from "../sheets/EnhancedJournalSheet.js";
+import { ListEdit } from "../apps/listedit.js";
 
 export class ListSheet extends EnhancedJournalSheet {
     constructor(data, options) {
@@ -597,11 +598,11 @@ export class ListSheet extends EnhancedJournalSheet {
                 name: i18n("MonksEnhancedJournal.EditItem"),
                 icon: '<i class="fas fa-edit"></i>',
                 condition: game.user.isGM || this.object.isOwner,
-                callback: li => {
+                callback: async (li) => {
                     const item = that.items.find(i => i.id == li[0].dataset.documentId);
                     if (!item) return;
-                    const options = { top: li.offsetTop, left: window.innerWidth - 310 - FolderConfig.defaultOptions.width, type: 'item' };
-                    this.createDialog(item.data, options);
+
+                    new ListEdit(item, that).render(true);
                 }
             },
             {
