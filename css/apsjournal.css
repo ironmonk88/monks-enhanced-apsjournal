@@ -289,6 +289,26 @@
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-brushed.webp') repeat;
 }
 
+.monks-enhanced-journal[background-image='paperCotton'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/paper-cotton.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='paperCrumpled'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/paper-crumpled.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='paperCrumpledYellowed'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/paper-crumpled-yellowed.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='paperRecycled'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/paper-recycled.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='paperRice'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/paper-rice.webp') repeat;
+}
+
 .monks-enhanced-journal[background-image='woodAlpine'] {
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-alpine.webp') repeat;
 }
@@ -301,12 +321,6 @@
 .monks-enhanced-journal[sidebar-image='granite'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
-}
-
-.monks-enhanced-journal[sidebar-image='marbleBlack'] {
-    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-black.webp') repeat;
-    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-black.webp') repeat;
     --mej-sidebar-document-color: var(--mej-light-0);
 }
 

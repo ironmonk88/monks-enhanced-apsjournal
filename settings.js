@@ -25,6 +25,11 @@ export const registerSettings = function () {
 		'parchment': "Parchment - Light",
 		"marbleWhite": "Marble - White",
 		"metalBrushed": "Metal - Brushed",
+		"paperCotton": "Paper - Cotton",
+		"paperCrumpled": "Paper - Crumpled",
+		"paperCrumpledYellowed": "Paper - Crumpled Yellowed",
+		"paperRecycled": "Paper - Recycled",
+		"paperRice": "Paper - Rice",
 		"woodAlpine": "Wood - Alpine",
 		"woodPine": "Wood - Pine"
 	};
@@ -32,7 +37,6 @@ export const registerSettings = function () {
 	let sidebarImages = {
 		'none': "None",
 		"granite": "Granite",
-		"marbleBlack": "Marble - Black",
 		"marbleWhite": "Marble - White",
 		"metalBrushed": "Metal - Brushed",
 		"metalGalvanized": "Metal - Galvanized",
