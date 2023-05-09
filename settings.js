@@ -21,12 +21,17 @@ export const registerSettings = function () {
 
 	let backgroundImages = {
 		'none': "None",
-		'parchment': "Parchment"
+		'darkParchment': "Parchment - Dark",
+		'parchment': "Parchment - Light"
 	};
 
 	let sidebarImages = {
 		'none': "None",
-		'leather': "Leather"
+		"granite": "Granite",
+		'darkParchment': "Parchment - Dark",
+		'parchment': "Parchment - Light",
+		'darkLeather': "Leather - Dark",
+		'leather': "Leather - Light"
 	};
 
 	let backgroundColour = {

@@ -5,7 +5,7 @@
 :root {
     --apsj-red-light: rgb(200, 40, 40);
     --apsj-orange-light: rgb(255, 168, 40);
-    --apsj-yellow-light: rgb(255, 255, 40);
+    --apsj-yellow-light: rgb(255, 231, 115);
     --apsj-green-light: rgb(40, 188, 40);
     --apsj-cyan-light: rgb(112, 217, 255);
     --apsj-blue-light: rgb(41, 126, 255);
@@ -13,18 +13,20 @@
 
     --apsj-red: rgb(160, 0, 0);
     --apsj-orange: rgb(255, 128, 0);
-    --apsj-yellow: rgb(215, 215, 0);
+    --apsj-yellow: rgb(221, 191, 75);
     --apsj-green: rgb(0, 128, 0);
     --apsj-cyan: rgb(72, 177, 224);
     --apsj-blue: rgb(1, 86, 255);
     --apsj-purple: rgb(104, 25, 193);
+
     --apsj-red-dark: rgb(120, 0, 0);
     --apsj-orange-dark: rgb(215, 88, 0);
-    --apsj-yellow-dark: rgb(175, 175, 0);
+    --apsj-yellow-dark: rgb(181, 151, 35);
     --apsj-green-dark: rgb(0, 88, 0);
     --apsj-cyan-dark: rgb(32, 137, 184);
     --apsj-blue-dark: rgb(0, 46, 215);
     --apsj-purple-dark: rgb(64, 0, 153);
+
     --apsj-font-awesome: 'FontAwesome';
     --apsj-font-bookinsanity: 'Bookinsanity', serif;
     --apsj-font-dungeon: 'DungeonDropCase', serif;
@@ -32,6 +34,7 @@
     --apsj-font-scalysans: 'ScalySans', sans-serif;
     --apsj-font-scalycaps: 'ScalySansCaps', sans-serif;
     --apsj-font-signika: 'Signika', sans-serif;
+
     --apsj-btn-background: linear-gradient(var(--mej-light-5), var(--mej-light-2), var(--mej-light-5));
 }
 
@@ -40,47 +43,51 @@
 **/
 
 :root[mejtheme]:not([mejtheme="clear"]) {
-    --mej-footer-background: var(--apsj-primary-bright);
     --mej-adventure-toc-border-highlight: var(--apsj-primary);
+    --mej-footer-background: var(--apsj-primary-bright);
     --mej-header-background: var(--apsj-primary);
     --mej-header-nav-background: var(--apsj-primary-bright);
 }
+
 :root[mejtheme] {
-    --mej-header-tab-color: var(--mej-header-color);
-    --mej-footer-btn-background: var(--apsj-btn-background);
-    --mej-footer-color: var(--mej-dark-2);
-    --mej-footer-btn-border: var(--mej-dark-7);
+	--mej-footer-btn-background: var(--apsj-btn-background);
+    --mej-footer-btn-background-disabled: var(--mej-light-3);
     --mej-footer-btn-background-hover: var(--mej-light-2);
-    --mej-header-tab-btn-color: var(--mej-dark-0);
-    --mej-header-tab-hover: var(--mej-cream);
-    --mej-sheet-header-input-color: var(--mej-light-0);
-    --mej-sidebar-button-background: var(--apsj-btn-background);
-    --mej-sheet-tab-color: var(--mej-dark-5);
-    --mej-sheet-tab-color-active: var(--mej-sheet-color);
+    --mej-footer-btn-border: var(--mej-dark-7);
+    --mej-footer-btn-border-disabled: var(--mej-light-5);
+    --mej-footer-btn-disabled: var(--mej-light-5);
+    --mej-footer-color: var(--mej-dark-2);
     --mej-header-nav-btn-background: var(--apsj-btn-background);
+    --mej-header-nav-btn-background-disabled: var(--mej-light-3);
+    --mej-header-nav-btn-background-hover: var(--mej-light-2);
     --mej-header-nav-btn-border: var(--mej-dark-7);
+    --mej-header-nav-btn-border-disabled: var(--mej-light-5);
+    --mej-header-nav-btn-disabled: var(--mej-light-5);
     --mej-header-add-bookmark-background: var(--apsj-btn-background);
     --mej-header-add-bookmark-border: var(--mej-dark-7);
     --mej-header-add-bookmark-color: var(--mej-dark-2);
-    --mej-header-bookmark-color: var( --mej-light-2);
-    --mej-header-bookmark-hover: rgba(255, 255, 255, 0.3);
-    --mej-header-bookmark-background: rgba(0, 0, 0, 0.1);
-    --mej-header-nav-btn-background-hover: var(--mej-light-2);
     --mej-header-add-bookmark-hover: var(--mej-light-2);
-    --mej-sheet-tab-color-hover: var(--mej-dark-3);
+    --mej-header-bookmark-background: var(--mej-header-tab-background);
+    --mej-header-bookmark-color: var(--mej-dark-0);
+    --mej-header-bookmark-hover: var(--mej-cream);
     --mej-header-tab-active: var(--mej-cream);
     --mej-header-tab-active-hover: var(--mej-light-0);
-    --mej-header-nav-btn-disabled: var(--mej-light-5);
-    --mej-footer-btn-disabled: var(--mej-light-5);
-    --mej-header-nav-btn-background-disabled: var(--mej-light-3);
-    --mej-footer-btn-background-disabled: var(--mej-light-3);
-    --mej-header-nav-btn-border-disabled: var(--mej-light-5);
-    --mej-footer-btn-border-disabled: var(--mej-light-5);
-    --mej-sheet-page-control-background: var(--apsj-btn-background);
-    --mej-sheet-page-control-color: var(--mej-dark-2);
+    --mej-header-tab-btn-color: var(--mej-dark-0);
+    --mej-header-tab-color: var(--mej-header-color);
+    --mej-header-tab-hover: var(--mej-cream);
+	--mej-itemlist-background: var(--apsj-primary-bright);
+	--mej-itemlist-colour: var(--mej-dark-0);
+	--mej-itemlist-control-background: var(--apsj-btn-background);
     --mej-sheet-button-background: var(--apsj-btn-background);
     --mej-sheet-button-color: var(--mej-dark-2);
     --mej-sheet-header-input-color: var(--mej-light-0);
+    --mej-sheet-page-control-background: var(--apsj-btn-background);
+    --mej-sheet-page-control-color: var(--mej-dark-2);
+	--mej-sheet-tab-background: var(--apsj-primary-light);
+    --mej-sheet-tab-color: var(--mej-light-0);
+    --mej-sheet-tab-color-active: var(--mej-sheet-color);
+    --mej-sheet-tab-color-hover: var(--mej-dark-3);
+    --mej-sidebar-button-background: var(--apsj-btn-background);
 }
 
 :root[mejtheme='clear'] {
@@ -88,66 +95,66 @@
 }
 
 :root[mejtheme='red'] {
+    --apsj-primary-bright: rgb(231, 191, 191);
     --apsj-primary-light: rgb(200, 40, 40);
     --apsj-primary: rgb(160, 0, 0);
     --apsj-primary-dark: rgb(120, 0, 0);
-    --apsj-primary-bright: rgb(231, 191, 191);
     --apsj-primary-75: rgba(160, 0, 0, 0.75);
 	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='orange'] {
+    --apsj-primary-bright: rgb(255, 223, 191);
     --apsj-primary-light: rgb(255, 168, 40);
     --apsj-primary: rgb(255, 128, 0);
     --apsj-primary-dark: rgb(215, 88, 0);
-    --apsj-primary-bright: rgb(255, 223, 191);
     --apsj-primary-75: rgba(255, 128, 0, 0.75);
 	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='yellow'] {
+    --apsj-primary-bright: rgb(245, 245, 191);
     --apsj-primary-light: rgb(255, 255, 40);
     --apsj-primary: rgb(215, 215, 0);
     --apsj-primary-dark: rgb(175, 175, 0);
-    --apsj-primary-bright: rgb(245, 245, 191);
     --apsj-primary-75: rgba(215, 215, 0, 0.75);
     --mej-header-bookmark-color: var( --mej-dark-6);
 	--mej-sidebar-document-color: var(--mej-dark-0);
 }
 
 :root[mejtheme='green'] {
+    --apsj-primary-bright: rgb(191, 223, 191);
     --apsj-primary-light: rgb(40, 188, 40);
     --apsj-primary: rgb(0, 128, 0);
     --apsj-primary-dark: rgb(0, 88, 0);
-    --apsj-primary-bright: rgb(191, 223, 191);
     --apsj-primary-75: rgba(0, 128, 0, 0.75);
 	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='cyan'] {
+    --apsj-primary-bright: rgb(191, 255, 255);
     --apsj-primary-light: rgb(60, 255, 255);
     --apsj-primary: rgb(0, 255, 255);
     --apsj-primary-dark: rgb(0, 195, 195);
-    --apsj-primary-bright: rgb(191, 255, 255);
     --apsj-primary-75: rgba(0, 255, 255, 0.75);
     --mej-header-bookmark-color: var( --mej-dark-6);
     --mej-sidebar-document-color: var(--mej-dark-0);
 }
 
 :root[mejtheme='blue'] {
+    --apsj-primary-bright: rgb(191, 213, 255);
     --apsj-primary-light: rgb(41, 126, 255);
     --apsj-primary: rgb(1, 86, 255);
     --apsj-primary-dark: rgb(0, 46, 215);
-    --apsj-primary-bright: rgb(191, 213, 255);
     --apsj-primary-75: rgba(1, 86, 255, 0.75);
 	--mej-sidebar-document-color: var(--mej-light-0);
 }
 
 :root[mejtheme='purple'] {
+    --apsj-primary-bright: rgb(217, 197, 239);
     --apsj-primary-light: rgb(144, 65, 233);
     --apsj-primary: rgb(104, 25, 193);
     --apsj-primary-dark: rgb(64, 0, 153);
-    --apsj-primary-bright: rgb(217, 197, 239);
     --apsj-primary-75: rgba(104, 25, 193, 0.75);
 	--mej-sidebar-document-color: var(--mej-light-0);
 }
@@ -165,15 +172,6 @@
 
 :root[mejtheme] .editor-content blockquote {
     margin-bottom: 1.5em;
-}
-
-:root[mejtheme] .editor-content {
-    overflow-x: hidden; /* TODO Are you sure you need this?*/
-}
-
-/* TODO These are way too broad and will affect other people's modules.  They should be limited to monks-journal-sheet*/
-:root[mejtheme] li > .entity-link {
-    line-height: 1.75em;
 }
 
 :root[mejtheme] .monks-journal-sheet table {
@@ -278,7 +276,35 @@
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
 }
 
+.monks-enhanced-journal[background-image='darkParchment'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-medium.webp') repeat;
+}
+
+.monks-enhanced-journal[sidebar-image='granite'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='parchment'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='darkParchment'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-medium.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-medium.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
 .monks-enhanced-journal[sidebar-image='leather'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/light-leather.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/light-leather.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='darkLeather'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
     --mej-sidebar-document-color: var(--mej-light-0);
@@ -299,7 +325,11 @@
 
 :root[mejtheme] #journal-directory li.journalentry {
     background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
-	opacity: 75%;
+	opacity: 85%;
+}
+
+:root[mejtheme] #journal-directory li.journalentry:hover {
+    opacity: 100%;
 }
 
 :root[mejtheme] .directory .directory-item:last-child {
@@ -330,18 +360,20 @@
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate {
     text-shadow: 1px 1px 1px var(--mej-light-4);
-    box-shadow: 0 0 8px var(--mej-dark-750);
+    box-shadow: 0 0 5px var(--mej-dark-750);
 }
 
+:root[mejtheme] .monks-enhanced-journal .editor-edit:hover,
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button:hover,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate:not(.disabled):hover {
     color: var(--mej-dark-0);
-    box-shadow: 0 0 8px red;
+	background: var(--mej-cream);
+    box-shadow: 0 0 5px red;
 }
 
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled:hover {
-    box-shadow: 0 0 8px var(--mej-dark-750);
+    box-shadow: 0 0 5px var(--mej-dark-750);
 }
 
 /**
@@ -351,11 +383,12 @@
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .items-header {
     background: var(--apsj-primary) !important;
     color: var(--mej-light-0);
-    box-shadow: 0 0 8px var(--mej-dark-750);
+    box-shadow: 0 0 5px var(--mej-dark-750);
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .sheet-navigation {
-    text-shadow: 1px 1px 2px var(--mej-light-0);
+    text-shadow: 1px 1px 2px var(--mej-dark-4);
+	opacity: 85%;
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name,
@@ -402,18 +435,23 @@
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .item-from:hover,
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .item-from:focus {
     border-color: var(--mej-dark-3) !important;
-    box-shadow: 0 0 8px red !important;
+}
+
+:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-control:hover {
+	background: var(--mej-cream);
+    box-shadow: 0 0 5px red !important;
+	text-shadow: none;
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .item-controls a {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: var(--mej-dark-0);
+    text-shadow: 1px 1px 2px var(--mej-light-4);
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .tab.items .currency-group {
     width: 100%;
-    background: var(--apsj-primary);
     border: 2px groove #eeede0;
+	opacity: 85%;
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .tab.items .currency-group label {
@@ -622,7 +660,7 @@
 
 .apsj-block.apsj-card a:hover,
 .apsj-block.purple-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-blue);
+    text-shadow: 0 0 5px var(--apsj-blue);
 }
 
 .apsj-block.apsj-scroll,
@@ -704,7 +742,7 @@
 
 .apsj-block.apsj-scroll a:hover,
 .apsj-block.green-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-green);
+    text-shadow: 0 0 5px var(--apsj-green);
 }
 
 .apsj-block.black-item {
@@ -761,7 +799,7 @@
 }
 
 .apsj-block.black-item a:hover {
-    text-shadow: 0 0 8px var(--mej-light-7);
+    text-shadow: 0 0 5px var(--mej-light-7);
 }
 
 .apsj-block.blue-item {
@@ -818,7 +856,7 @@
 }
 
 .apsj-block.blue-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-blue);
+    text-shadow: 0 0 5px var(--apsj-blue);
 }
 
 .apsj-block.cyan-item {
@@ -875,7 +913,7 @@
 }
 
 .apsj-block.cyan-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-cyan);
+    text-shadow: 0 0 5px var(--apsj-cyan);
 }
 
 .apsj-block.orange-item {
@@ -932,7 +970,7 @@
 }
 
 .apsj-block.orange-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-orange);
+    text-shadow: 0 0 5px var(--apsj-orange);
 }
 
 .apsj-block.red-item {
@@ -989,7 +1027,7 @@
 }
 
 .apsj-block.red-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-primary);
+    text-shadow: 0 0 5px var(--apsj-primary);
 }
 
 .apsj-block.yellow-item {
@@ -1046,7 +1084,7 @@
 }
 
 .apsj-block.yellow-item a:hover {
-    text-shadow: 0 0 8px var(--apsj-yellow);
+    text-shadow: 0 0 5px var(--apsj-yellow);
 }
 
 .apsj-block.apsj-encounter {
