@@ -22,16 +22,27 @@ export const registerSettings = function () {
 	let backgroundImages = {
 		'none': "None",
 		'darkParchment': "Parchment - Dark",
-		'parchment': "Parchment - Light"
+		'parchment': "Parchment - Light",
+		"marbleWhite": "Marble - White",
+		"metalBrushed": "Metal - Brushed",
+		"woodAlpine": "Wood - Alpine",
+		"woodPine": "Wood - Pine"
 	};
 
 	let sidebarImages = {
 		'none': "None",
 		"granite": "Granite",
+		"marbleBlack": "Marble - Black",
+		"marbleWhite": "Marble - White",
+		"metalBrushed": "Metal - Brushed",
+		"metalGalvanized": "Metal - Galvanized",
 		'darkParchment': "Parchment - Dark",
 		'parchment': "Parchment - Light",
 		'darkLeather': "Leather - Dark",
-		'leather': "Leather - Light"
+		'leather': "Leather - Light",
+		"woodAlpine": "Wood - Alpine",
+		"woodCottagePine": "Wood - Cottage Pine",
+		"woodPine": "Wood - Pine",
 	};
 
 	let backgroundColour = {

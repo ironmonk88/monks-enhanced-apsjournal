@@ -269,9 +269,10 @@
 }
 
 /**
-* MEJ Overrides
+* Background Overrides
 **/
 
+/*-----------------------------------Page Backgrounds-----------------------------------*/
 .monks-enhanced-journal[background-image='parchment'] {
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
 }
@@ -280,9 +281,50 @@
     --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-medium.webp') repeat;
 }
 
+.monks-enhanced-journal[background-image='marbleWhite'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-white.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='metalBrushed'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-brushed.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='woodAlpine'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-alpine.webp') repeat;
+}
+
+.monks-enhanced-journal[background-image='woodPine'] {
+    --mej-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-pine.webp') repeat;
+}
+
+/*---------------------------------Sidebar Backgrounds---------------------------------*/
 .monks-enhanced-journal[sidebar-image='granite'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='marbleBlack'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-black.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-black.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='marbleWhite'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-white.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-white.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='metalBrushed'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-brushed.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-brushed.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='metalGalvanized'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-galvanized.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-galvanized.webp') repeat;
     --mej-sidebar-document-color: var(--mej-light-0);
 }
 
@@ -310,6 +352,24 @@
     --mej-sidebar-document-color: var(--mej-light-0);
 }
 
+.monks-enhanced-journal[sidebar-image='woodAlpine'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-alpine.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-alpine.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='woodCottagePine'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-cottage-pine.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-cottage-pine.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
+.monks-enhanced-journal[sidebar-image='woodPine'] {
+    --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-pine.webp') repeat;
+    --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-pine.webp') repeat;
+    --mej-sidebar-document-color: var(--mej-light-0);
+}
+
 .monks-enhanced-journal[background-image='parchment'] .window-content {
     background-size: cover;
 }
@@ -318,6 +378,10 @@
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-bloody.webp') no-repeat center;
     background-size: cover;
 }
+
+/**
+* MEJ Overrides
+**/
 
 :root[mejtheme] .monks-journal-sheet.sheet .currency-group .form-fields input {
     background: var(--mej-light-750);
