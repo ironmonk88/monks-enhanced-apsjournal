@@ -375,7 +375,46 @@ export class ShopSheet extends EnhancedJournalSheet {
                 }
             }
         } else if (data.type == 'JournalEntry') {
-            this.addRelationship(data);
+            if (this._tabs[0].active == "items") {
+                let shop = await fromUuid(data.uuid);
+                if (shop.pages.size == 1 && (getProperty(shop.pages.contents[0], "flags.monks-enhanced-journal.type") == "shop" || getProperty(shop, "flags.monks-enhanced-journal.type") == "shop")) {
+                    let page = shop.pages.contents[0];
+                    let items = duplicate(getProperty(page, "flags.monks-enhanced-journal.items") || []);
+                    let shopPage = this.object instanceof JournalEntry ? this.object.pages.contents[0] : this.object;
+                    let oldItems = duplicate(getProperty(shopPage, "flags.monks-enhanced-journal.items") || []);
+
+                    if (oldItems.length) {
+                        await Dialog.wait({
+                            title: "Add Shop Items",
+                            content: "Would you like to replace the items in the shop with these items, or add to the items already in the shop?",
+                            focus: true,
+                            default: "replace",
+                            close: () => {
+                                return true;
+                            },
+                            buttons: {
+                                replace: {
+                                    label: "Replace",
+                                    callback: () => {
+                                        shopPage.setFlag('monks-enhanced-journal', 'items', items);
+                                    }
+                                },
+                                add: {
+                                    label: "Add",
+                                    callback: () => {
+                                        shopPage.setFlag('monks-enhanced-journal', 'items', items.concat(oldItems));
+                                    }
+                                }
+                            }
+                        });
+                    } else {
+                        shopPage.setFlag('monks-enhanced-journal', 'items', items);
+                    }
+                } else {
+                    this.addRelationship(data);
+                }
+            } else
+                this.addRelationship(data);
         } else if (data.type == 'JournalEntryPage') {
             let doc = await fromUuid(data.uuid);
             data.id = doc?.parent.id;

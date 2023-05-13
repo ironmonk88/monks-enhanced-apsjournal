@@ -137,7 +137,7 @@ export class SlideshowSheet extends EnhancedJournalSheet {
     async _render(force, options = {}) {
         await super._render(force, options);
 
-        if (this.object.testUserPermission(game.user, "OBSERVER", { exact: true }) || options.play) {
+        if (!this.object.testUserPermission(game.user, "OWNER") || options.play) {
             this.playSlideshow();
         }
     }

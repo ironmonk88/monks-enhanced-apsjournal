@@ -898,14 +898,18 @@ span.unknown-link {
 
 .inline-roll-styling a.content-link,
 .inline-roll-styling a.picture-link,
-.inline-roll-styling a.inline-request-roll {
+.inline-roll-styling a.inline-request-roll,
+.inline-roll-styling a.tile-trigger-link {
     color: var(--color-text-hyperlink);
     background: transparent;
     padding: 0px;
     border: 0px;
 }
 
-.inline-roll-styling a.content-link i {
+.inline-roll-styling a.content-link i,
+.inline-roll-styling a.picture-link i,
+.inline-roll-styling a.inline-request-roll i,
+.inline-roll-styling a.tile-trigger-link i {
     color: var(--color-text-hyperlink);
 }
 

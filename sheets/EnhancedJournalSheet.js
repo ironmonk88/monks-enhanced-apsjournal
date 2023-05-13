@@ -1196,7 +1196,7 @@ export class EnhancedJournalSheet extends JournalPageSheet {
             };
 
             if (game.system.id == "dnd5e") {
-                itemData.rarity = item.system.rarity;
+                itemData.rarity = item.system?.rarity;
             } else if (game.system.id == "pf2e") {
                 itemData.rarity = i18n(CONFIG.PF2E.rarityTraits[item.system.traits.rarity]);
             }

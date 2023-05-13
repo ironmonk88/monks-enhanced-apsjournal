@@ -131,7 +131,7 @@ export class EnhancedJournal extends Application {
                 if (options?.pageId && this.subsheet.goToPage) {
                     this.subsheet.goToPage(options.pageId, options?.anchor);
                 }
-            });*/
+            });*/  //Removing this because goToPage requires the toc to be loaded, and it's not loaded yet
         }
 
         return result;
@@ -267,7 +267,7 @@ export class EnhancedJournal extends Application {
             let templateData = await this.subsheet.getData(options);
             if (this.object instanceof JournalEntry) {
                 game.user.setFlag("monks-enhanced-journal", `pagestate.${this.object.id}.pageId`, options?.pageId);
-                game.user.setFlag("monks-enhanced-journal", `pagestate.${this.object.id}.anchor`, options?.anchor);
+                //game.user.setFlag("monks-enhanced-journal", `pagestate.${this.object.id}.anchor`, options?.anchor);
 
                 templateData.mode = (options?.mode || templateData.mode);
                 if (templateData.mode == modes.SINGLE) {
@@ -304,9 +304,23 @@ export class EnhancedJournal extends Application {
             if (this.subsheet.refresh)
                 this.subsheet.refresh();
             else if (this.object instanceof JournalEntry) {
+                /*
+                let old_render = this.subsheet._render;
+                this.subsheet._render = async function (...args) {
+                    let result = await old_render(...args);
+                    this._saveScrollPositions();
+                    return result;
+                }*/
                 this.subsheet.render(true, options);
-                if (templateData.mode != this.subsheet.mode)
-                    this.toggleViewMode({ preventDefault: () => { }, currentTarget: { dataset: { action: "toggleView" }}});
+                if (templateData.mode != this.subsheet.mode) {
+                    if (options.anchor) {
+                        window.setTimeout(() => {
+                            this.subsheet._saveScrollPositions(this.subsheet._element);
+                            this.toggleViewMode({ preventDefault: () => { }, currentTarget: { dataset: { action: "toggleView" } } }, options);
+                        }, 100);
+                    } else
+                        this.toggleViewMode({ preventDefault: () => { }, currentTarget: { dataset: { action: "toggleView" } } }, options);
+                }
             }
 
             $('.window-title', this.element).html((this.subsheet.title || i18n("MonksEnhancedJournal.NewTab")) + ' - ' + i18n("MonksEnhancedJournal.Title"));
@@ -401,7 +415,7 @@ export class EnhancedJournal extends Application {
                 this.subsheet.goToPage = function (...args) {
                     let [pageId, anchor] = args;
                     game.user.setFlag("monks-enhanced-journal", `pagestate.${that.object.id}.pageId`, pageId);
-                    game.user.setFlag("monks-enhanced-journal", `pagestate.${that.object.id}.anchor`, anchor);
+                    //game.user.setFlag("monks-enhanced-journal", `pagestate.${that.object.id}.anchor`, anchor);
                     return oldGoToPage.call(this, ...args);
                 }
             }
@@ -417,7 +431,7 @@ export class EnhancedJournal extends Application {
 
             this.object._sheet = this.subsheet;
 
-            if (this.subsheet.options.scrollY) {
+            if (this.subsheet.options.scrollY && !options.anchor) {
                 let resetScrollPos = () => {
                     let savedScroll = flattenObject(game.user.getFlag("monks-enhanced-journal", `pagestate.${this.object.id}.scrollPositions`) || {});
                     this._scrollPositions = flattenObject(mergeObject(this._scrollPositions || {}, savedScroll));
