@@ -25,6 +25,10 @@ body.system-wfrp4e {
     right: 0px;
 }
 
+.system-wfrp4e .monks-journal-sheet.sheet .sheet-container {
+    padding: 25px 25px 25px 20px;
+}
+
 .wfrp4e.monks-enhanced-journal .directory-sidebar > section .directory-list {
     margin-left: 8px;
     padding-right: 0px;
@@ -154,6 +158,12 @@ body.system-wfrp4e {
 /* AGE System */
 .age-system .sheet-container .form-group label {
     font-size: var(--font-size-16);
+}
+
+/* PF1 System */
+.system-pf1 .pf1.monks-enhanced-journal table tr td:not(.nocenter),
+.system-pf1 .pf1.monks-enhanced-journal table tr th:not(.nocenter) {
+    text-align: left;
 }
 
 /* PF2E System */
@@ -487,6 +497,11 @@ body.system-vaesen {
 .shadowrun5e.monks-enhanced-journal .loot-container .loot-items:not(.currency-group),
 .shadowrun5e.monks-enhanced-journal .list-list {
     flex: 1;
+}
+
+ /* Simple World Builder */
+.system-worldbuilding .monks-enhanced-journal form.journal-header {
+    height: unset;
 }
 
 /* EMU Layout */

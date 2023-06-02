@@ -18,7 +18,9 @@
         </div>
     </div>
 
-    {{editor data.enrichedText target="data.text" editable=true button=true owner=data.owner}}
+    <div style="height: 302px; border: 1px solid rgb(var(--mej-light-6)); border-radius: 4px;">
+        {{editor data.enrichedText target="data.text" editable=true button=true owner=data.owner}}
+    </div>
 
     {{#if (or (eq hasNumber "count") (eq hasNumber "full"))}}
     <div class="form-group">
@@ -37,8 +39,8 @@
         </div>
     </div>
     {{/if}}
-    <footer class="sheet-footer flexrow">
-        <button type="button" name="submit">
+    <footer class="sheet-footer flexrow" style="margin-top: 4px;">
+        <button type="submit" name="submit">
             <i class="far fa-save"></i> {{localize 'MonksEnhancedJournal.SaveChanges'}}
         </button>
     </footer>

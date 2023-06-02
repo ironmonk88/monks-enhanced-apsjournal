@@ -1,6 +1,6 @@
 <form class="flexcol journal-subsheet sheet-body {{entrytype}}{{#if isGM}} gm{{/if}}{{#if owner}} owner{{/if}}" editable="{{editable}}">
     <div class="sheet-container detailed loot-container flexcol">
-        <header class="journal-sheet-header flexrow" style="max-height: 162px; overflow: hidden;">
+        <header class="journal-sheet-header flexrow">
             <div class="sheet-image">
                 <img class="profile nopopout" src="{{data.src}}" data-edit="src" onerror="if (!this.imgerr) { this.imgerr = true; this.src = 'modules/monks-enhanced-journal/assets/loot.png' }">
             </div>
@@ -21,7 +21,7 @@
                     </select>
                 </div>
                 {{#if isGM }}
-                <div class="loot-characters" style=" ">
+                <div class="loot-characters" style="">
                     <ol class="loot-character-list flexrow">
                         {{#each characters}}
                         <li class="loot-character" title="{{this.name}}" id="{{this.id}}">
@@ -31,7 +31,7 @@
                         </li>
                         {{else}}
                         {{#if owner}}
-                        <li class="instruction">{{localize 'MonksEnhancedJournal.msg.DragActorsHere'}}</li>
+                        <li class="instruction" style="height: 90px;">{{localize 'MonksEnhancedJournal.msg.DragActorsHere'}}</li>
                         {{/if}}
                         {{/each}}
                     </ol>
@@ -44,6 +44,13 @@
             <div class="items-list loot-items currency-group">
                 <div class="item-header flexrow">
                     <h3 class="item-name noborder flexrow">{{localize 'MonksEnhancedJournal.Currency'}}</h3>
+                    <div class="item-controls flexrow">
+                        {{#if canTransferCurrency}}
+                        <a class="item-control text transfer-currency" title="{{localize 'MonksEnhancedJournal.TransferCurrency'}}">
+                            <i class="fas fa-money-bill-transfer"></i> {{localize 'MonksEnhancedJournal.Transfer'}}
+                        </a>
+                        {{/if}}
+                    </div>
                     <div class="item-controls flexrow owner-only">
                         <a class="item-control text split-money" title="{{localize 'MonksEnhancedJournal.SplitBetweenPlayers'}}">
                             <i class="fas fa-dollar-sign"></i> {{localize 'MonksEnhancedJournal.Distribute'}}

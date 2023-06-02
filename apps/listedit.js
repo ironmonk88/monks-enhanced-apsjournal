@@ -37,8 +37,15 @@ export class ListEdit extends FormApplication {
     }
 
     _updateObject(event, formData) {
-        let data = expandObject(formData);
+        mergeObject(this.object.data, formData);
+        let items = duplicate(this.sheet.object.flags["monks-enhanced-journal"].items || []);
+        if (this.object.id == undefined) {
+            this.object.id = makeid();
+            items.push(this.object);
+        } else {
+            items.findSplice((i) => i.id == this.object.id, this.object.data);
+        }
 
-        
+        this.sheet.object.setFlag('monks-enhanced-journal', 'items', items);
     }
 }

@@ -59,27 +59,27 @@ export class APSJ {
             title: game.i18n.format('APSJournal.stylish-text-menu.name'),
             items: [
                 {
-                    title: game.i18n.format('APSJournal.textHeadingTitleName'),
+                    title: game.i18n.format('APSJournal.text-heading-title.name'),
                     selector: 'h1,h2,h3,h4,h5,h6,th,td,p',
                     classes: 'apsj-title',
                 },
                 {
-                    title: game.i18n.format('APSJournal.textHeadingName'),
+                    title: game.i18n.format('APSJournal.text-heading.name'),
                     selector: 'h1,h2,h3,h4,h5,h6,th,td,p',
                     classes: 'apsj-heading',
                 },
                 {
-                    title: game.i18n.format('APSJournal.textDataHeadingName'),
+                    title: game.i18n.format('APSJournal.text-data-heading.name'),
                     selector: 'h1,h2,h3,h4,h5,h6,th,td,p',
                     classes: 'apsj-data-heading',
                 },
                 {
-                    title: game.i18n.format('APSJournal.textDataName'),
+                    title: game.i18n.format('APSJournal.text-data.name'),
                     selector: 'h1,h2,h3,h4,h5,h6,th,td,p',
                     classes: 'apsj-data',
                 },
                 {
-                    title: game.i18n.format('APSJournal.textParagraphName'),
+                    title: game.i18n.format('APSJournal.text-paragraph.name'),
                     selector: 'td,p',
                     classes: 'apsj-text',
                 },

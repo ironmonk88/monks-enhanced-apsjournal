@@ -1,5 +1,5 @@
 <form class="flexcol journal-subsheet {{entrytype}}" editable="{{editable}}">
-    <div class="sheet-container detailed quest-container">
+    <div class="sheet-container detailed quest-container flexcol">
         <header class="journal-sheet-header flexrow">
             <div class="sheet-image">
                 <img class="profile nopopout" src="{{data.src}}" data-edit="src" onerror="if (!this.imgerr) { this.imgerr = true; this.src = 'modules/monks-enhanced-journal/assets/quest.png' }">
@@ -231,7 +231,7 @@
                             <ol class="item-list">
                                 {{#each reward.groups}}
                                 <li class="item-header collapsible flexrow{{#if this.collapsed}} collapsed{{/if}}" data-id="{{this.id}}">
-                                    <h3 class="item-name noborder flexrow">{{localize this.name}} <span class="item-count">({{this.items.length}} {{localize 'MonksEnhancedJournal.items'}})</span></h3>
+                                    <h3 class="item-name noborder flexrow">{{localize this.name}} <span class="collapse-text item-count">({{this.items.length}} {{localize 'MonksEnhancedJournal.items'}})</span></h3>
                                 </li>
                                 <li {{#if this.collapsed}} style="display: none;" {{/if}}>
                                     <ul>

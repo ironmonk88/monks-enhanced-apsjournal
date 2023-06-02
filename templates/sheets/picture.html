@@ -12,8 +12,13 @@
         </header>
         <section class="sheet-body flexcol">
             <!--<div class="img-background" style="background-image: url('{{data.src}}')"></div>-->
-            <div class="picture-img lightbox-image" name="src" src="{{data.src}}" style="background-image: url('{{data.src}}')" data-edit="src" onerror="$(this).css({ backgroundImage: 'url(icons/svg/mystery-man.svg)' }"></div>
+            <div class="picture-outer">
+                <div class="picture-img lightbox-image" name="src" src="{{data.src}}" style="background-image: url('{{data.src}}')" data-edit="src" onerror="$(this).css({ backgroundImage: 'url(icons/svg/mystery-man.svg)' }"></div>
+            </div>
+            {{#if owner}}
             <div class="instruction" style="{{#if data.src}}display:none;{{/if}}">Click to add an Image</div>
+            {{/if}}
+            <div class="reset-scale" title="Clear scaling"><i class="fas fa-eraser"></i></div>
         </section>
     </div>
 </form>

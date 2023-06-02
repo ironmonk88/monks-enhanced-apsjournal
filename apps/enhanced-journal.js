@@ -64,7 +64,7 @@ export class EnhancedJournal extends Application {
             height: 700,
             resizable: true,
             editable: true,
-            dragDrop: [{ dragSelector: ".journal-tab", dropSelector: "null" }],
+            dragDrop: [{ dragSelector: ".journal-tab", dropSelector: ".enhanced-journal-header" }],
             closeOnSubmit: false,
             submitOnClose: false,
             submitOnChange: true,
@@ -388,7 +388,8 @@ export class EnhancedJournal extends Application {
 
             this.subsheet.activateListeners($(this.subdocument), this);
 
-            $('button[type="submit"]', $(this.subdocument)).attr('type', 'button').on("click", this.subsheet._onSubmit.bind(this.subsheet))
+            $('button[type="submit"]', $(this.subdocument)).attr('type', 'button').on("click", this.subsheet._onSubmit.bind(this.subsheet));
+            $('form.journal-header', $(this.subdocument)).on("submit", () => { return false; });
 
             if (this.subsheet.updateStyle && this.object.type != 'blank')
                 this.subsheet.updateStyle(null, this.subdocument);
@@ -759,6 +760,19 @@ export class EnhancedJournal extends Application {
         else if (typeof tab == 'number')
             tab = this.tabs[tab];
 
+        if (event?.altKey) {
+            // Open this outside of the Enhnaced Journal
+            let document = await this.findEntity(tab?.entityId, tab?.text);
+            if (document) {
+                MonksEnhancedJournal.fixType(document);
+                document.sheet.render(true);
+            }
+        } else if (event?.shiftKey) {
+            // Close this tab
+            this.removeTab(tab, event);
+            tab = this.tabs.active(false);
+        }
+
         let currentTab = this.tabs.active(false);
         if (currentTab?.id != tab.id || this.subdocument == undefined) {
             tab.entity = await this.findEntity(tab.entityId, tab.text);
@@ -897,6 +911,9 @@ export class EnhancedJournal extends Application {
                 $(`.journal-tab[data-tabid="${tab.id}"] .tab-content`, this.element).attr("title", name).html(name);
                 tab.text = name;
                 this.saveTabs();
+                if (tab.active) {
+                    $('.window-title', this.element).html((tab.text || i18n("MonksEnhancedJournal.NewTab")) + ' - ' + i18n("MonksEnhancedJournal.Title"));
+                }
             }
         }
     }
@@ -1054,10 +1071,14 @@ export class EnhancedJournal extends Application {
                 else
                     this.addTab(entity);
             } else {
-                if (await this?.subsheet?.close() !== false)
-                    //this.addTab(entity, { activate: false, refresh: false }); //If we're editing, then open in a new tab but don't activate
-                //else
-                    this.updateTab(this.tabs.active(), entity, options);
+                if (await this?.subsheet?.close() !== false) {
+                    // Check to see if this entity already exists in the tab list
+                    let tab = this.tabs.find(t => t.entityId?.endsWith(entity.id));
+                    if (tab != undefined)
+                        this.activateTab(tab, null, options);
+                    else
+                        this.updateTab(this.tabs.active(), entity, options);
+                }
             }
         }
     }
@@ -1078,12 +1099,14 @@ export class EnhancedJournal extends Application {
     expandSidebar() {
         this._collapsed = false;
         $('.enhanced-journal', this.element).removeClass('collapse');
+        $('.sidebar-toggle', this.element).attr('data-tooltip', i18n("MonksEnhancedJournal.CollapseDirectory"));
         $('.sidebar-toggle i', this.element).removeClass('fa-caret-left').addClass('fa-caret-right');
     }
 
     collapseSidebar() {
         this._collapsed = true;
         $('.enhanced-journal', this.element).addClass('collapse');
+        $('.sidebar-toggle', this.element).attr('data-tooltip', i18n("MonksEnhancedJournal.ExpandDirectory"));
         $('.sidebar-toggle i', this.element).removeClass('fa-caret-right').addClass('fa-caret-left');
     }
 
@@ -1150,6 +1173,7 @@ export class EnhancedJournal extends Application {
             let tab = this.tabs.find(t => t.id == tabid);
             dragData.uuid = tab.entityId;
             dragData.type = "JournalTab";
+            dragData.tabid = tabid;
 
             log('Drag Start', dragData);
 
@@ -1158,9 +1182,12 @@ export class EnhancedJournal extends Application {
             return this.subsheet._onDragStart(event);
     }
 
-    _onDrop(event) {
+    async _onDrop(event) {
         log('enhanced journal drop', event);
-        let result = this.subsheet._onDrop(event);
+        let result = $(event.currentTarget).hasClass('enhanced-journal-header') ? false : this.subsheet._onDrop(event);
+
+        if (result instanceof Promise)
+            result = await result;
 
         if (result === false) {
             let data;
@@ -1170,15 +1197,37 @@ export class EnhancedJournal extends Application {
             catch (err) {
                 return false;
             }
-    
-            if (data.type == 'Actor') {
+
+            if (data.tabid) {
+                const target = event.target.closest(".journal-tab") || null;
+                let tabs = duplicate(this.tabs);
+
+                if (data.tabid === target.dataset.tabid) return; // Don't drop on yourself
+
+                let from = tabs.findIndex(a => a.id == data.tabid);
+                let to = tabs.findIndex(a => a.id == target.dataset.tabid);
+                log('moving tab from', from, 'to', to);
+                tabs.splice(to, 0, tabs.splice(from, 1)[0]);
+
+                this.tabs = tabs;
+                if (from < to)
+                    $('.journal-tab[data-tabid="' + data.tabid + '"]', this.element).insertAfter(target);
+                else
+                    $('.journal-tab[data-tabid="' + data.tabid + '"]', this.element).insertBefore(target);
+
+                game.user.update({
+                    flags: { 'monks-enhanced-journal': { 'tabs': tabs } }
+                }, { render: false });
+            } else if (data.type == 'Actor') {
                 if (data.pack == undefined) {
-                    let actor = game.actors.get(data.id);
-                    this.open(actor, setting("open-new-tab"));
+                    let actor = await fromUuid(data.uuid);
+                    if (actor && actor instanceof Actor)
+                        this.open(actor, setting("open-new-tab"));
                 }
             } else if (data.type == 'JournalEntry') {
-                let entity = game.journal.get(data.id);
-                this.open(entity, setting("open-new-tab"));
+                let entity = await fromUuid(data.uuid);
+                if (entity)
+                    this.open(entity, setting("open-new-tab"));
             }     
             log('drop data', event, data);
         }
@@ -1282,8 +1331,42 @@ export class EnhancedJournal extends Application {
                 }
             }
         ]);
+
+        this._tabcontext = new ContextMenu(html, ".tab-bar .journal-tab", [
+            {
+                name: "Open outside Enhanced Journal",
+                icon: '<i class="fas fa-file-export"></i>',
+                callback: li => {
+                    let tab = this.tabs.find(t => t.id == li[0].dataset.tabid);
+                    let document = tab.entity;
+                    if (document) {
+                        MonksEnhancedJournal.fixType(document);
+                        document.sheet.render(true);
+                    }
+                }
+            },
+            {
+                name: "Close Tab",
+                icon: '<i class="fas fa-trash"></i>',
+                callback: li => {
+                    let tab = this.tabs.find(t => t.id == li[0].dataset.tabid);
+                    if (tab)
+                        this.removeTab(tab);
+                }
+            },
+            {
+                name: "Close All Tabs",
+                icon: '<i class="fas fa-dumpster"></i>',
+                callback: li => {
+                    this.tabs = [];
+                    this.saveTabs();
+                    this.addTab();
+                }
+            }
+        ]);
+
         let history = await this.getHistory();
-        this._tabcontext = new ContextMenu(html, ".mainbar .navigation .nav-button.history", history);
+        this._historycontext = new ContextMenu(html, ".mainbar .navigation .nav-button.history", history);
         this._imgcontext = new ContextMenu(html, ".journal-body.oldentry .tab.picture", [
             {
                 name: "MonksEnhancedJournal.Delete",
@@ -1428,6 +1511,8 @@ export class EnhancedJournal extends Application {
     activateListeners(html) {
         super.activateListeners(html);
 
+        let that = this;
+
         this._contextMenu(html);
 
         $('.sidebar-toggle', html).on('click', $.proxy(function () {
@@ -1441,9 +1526,10 @@ export class EnhancedJournal extends Application {
         html.find('.bookmark-button:not(.add-bookmark)').click(this.activateBookmark.bind(this));
 
         html.find('.tab-add').click(this.addTab.bind(this));
-        html.find('.journal-tab').click(this.activateTab.bind(this));
+        $('.journal-tab', html).each((idx, elem) => {
+            $(elem).click(this.activateTab.bind(that, $(elem).attr('data-tabid')));
+        });
 
-        let that = this;
         $('.journal-tab .close').each(function () {
             let tabid = $(this).closest('.journal-tab')[0].dataset.tabid;
             let tab = that.tabs.find(t => t.id == tabid);

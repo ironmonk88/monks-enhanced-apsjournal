@@ -35,13 +35,12 @@
     --apsj-font-scalycaps: 'ScalySansCaps', sans-serif;
     --apsj-font-signika: 'Signika', sans-serif;
 
-    --apsj-btn-background: linear-gradient(var(--mej-light-5), var(--mej-light-2), var(--mej-light-5));
+    --apsj-btn-background: linear-gradient(rgb(var(--mej-light-5)), rgb(var(--mej-light-2)), rgb(var(--mej-light-5)));
 }
 
 /**
 * Color Themes
 **/
-
 :root[mejtheme]:not([mejtheme="clear"]) {
     --mej-adventure-toc-border-highlight: var(--apsj-primary);
     --mej-footer-background: var(--apsj-primary-bright);
@@ -50,113 +49,111 @@
 }
 
 :root[mejtheme] {
-	--mej-footer-btn-background: var(--apsj-btn-background);
-    --mej-footer-btn-background-disabled: var(--mej-light-3);
-    --mej-footer-btn-background-hover: var(--mej-light-2);
-    --mej-footer-btn-border: var(--mej-dark-7);
-    --mej-footer-btn-border-disabled: var(--mej-light-5);
-    --mej-footer-btn-disabled: var(--mej-light-5);
-    --mej-footer-color: var(--mej-dark-2);
+    --apsj-primary-bright: rgb(var(--apsj-primary-color-bright));
+    --apsj-primary-light: rgb(var(--apsj-primary-color-light));
+    --apsj-primary: rgb(var(--apsj-primary-color));
+    --apsj-primary-dark: rgb(var(--apsj-primary-color-dark));
+    --apsj-primary-75: rgba(var(--apsj-primary-color), 0.75);
+    --mej-footer-btn-background: var(--apsj-btn-background);
+    --mej-footer-btn-background-disabled: rgb(var(--mej-light-3));
+    --mej-footer-btn-background-hover: rgb(var(--mej-light-2));
+    --mej-footer-btn-border: rgb(var(--mej-dark-7));
+    --mej-footer-btn-border-disabled: rgb(var(--mej-light-5));
+    --mej-footer-btn-disabled: rgb(var(--mej-light-5));
+    --mej-footer-color: rgb(var(--mej-dark-2));
     --mej-header-nav-btn-background: var(--apsj-btn-background);
-    --mej-header-nav-btn-background-disabled: var(--mej-light-3);
-    --mej-header-nav-btn-background-hover: var(--mej-light-2);
-    --mej-header-nav-btn-border: var(--mej-dark-7);
-    --mej-header-nav-btn-border-disabled: var(--mej-light-5);
-    --mej-header-nav-btn-disabled: var(--mej-light-5);
+    --mej-header-nav-btn-background-disabled: rgb(var(--mej-light-3));
+    --mej-header-nav-btn-background-hover: rgb(var(--mej-light-2));
+    --mej-header-nav-btn-border: rgb(var(--mej-dark-7));
+    --mej-header-nav-btn-border-disabled: rgb(var(--mej-light-5));
+    --mej-header-nav-btn-disabled: rgb(var(--mej-light-5));
     --mej-header-add-bookmark-background: var(--apsj-btn-background);
-    --mej-header-add-bookmark-border: var(--mej-dark-7);
-    --mej-header-add-bookmark-color: var(--mej-dark-2);
-    --mej-header-add-bookmark-hover: var(--mej-light-2);
+    --mej-header-add-bookmark-border: rgb(var(--mej-dark-7));
+    --mej-header-add-bookmark-color: rgb(var(--mej-dark-2));
+    --mej-header-add-bookmark-hover: rgb(var(--mej-light-2));
     --mej-header-bookmark-background: var(--mej-header-tab-background);
-    --mej-header-bookmark-color: var(--mej-dark-0);
+    --mej-header-bookmark-color: rgb(var(--mej-dark-0));
     --mej-header-bookmark-hover: var(--mej-cream);
     --mej-header-tab-active: var(--mej-cream);
-    --mej-header-tab-active-hover: var(--mej-light-0);
-    --mej-header-tab-btn-color: var(--mej-dark-0);
+    --mej-header-tab-active-hover: rgb(var(--mej-light-0));
+    --mej-header-tab-btn-color: rgb(var(--mej-dark-0));
     --mej-header-tab-color: var(--mej-header-color);
     --mej-header-tab-hover: var(--mej-cream);
-	--mej-itemlist-background: var(--apsj-primary-bright);
-	--mej-itemlist-colour: var(--mej-dark-0);
-	--mej-itemlist-control-background: var(--apsj-btn-background);
+    --mej-itemlist-background: var(--apsj-primary-bright);
+    --mej-itemlist-colour: rgb(var(--mej-dark-0));
+    --mej-itemlist-control-background: var(--apsj-btn-background);
     --mej-sheet-button-background: var(--apsj-btn-background);
-    --mej-sheet-button-color: var(--mej-dark-2);
-    --mej-sheet-header-input-color: var(--mej-light-0);
+    --mej-sheet-button-color: rgb(var(--mej-dark-2));
+    --mej-sheet-header-input-color: rgb(var(--mej-light-0));
     --mej-sheet-page-control-background: var(--apsj-btn-background);
-    --mej-sheet-page-control-color: var(--mej-dark-2);
-	--mej-sheet-tab-background: var(--apsj-primary-light);
-    --mej-sheet-tab-color: var(--mej-light-0);
+    --mej-sheet-page-control-color: rgb(var(--mej-dark-2));
+    --mej-sheet-tab-background: rgba(var(--apsj-primary-color-light), 0.4);
+    --mej-sheet-tab-color: rgb(var(--mej-light-0));
     --mej-sheet-tab-color-active: var(--mej-sheet-color);
-    --mej-sheet-tab-color-hover: var(--mej-dark-3);
+    --mej-sheet-tab-color-hover: rgb(var(--mej-dark-3));
     --mej-sidebar-button-background: var(--apsj-btn-background);
 }
 
 :root[mejtheme='clear'] {
-    --mej-header-bookmark-color: var( --mej-dark-6);
+    --mej-header-bookmark-color: rgb(var(--mej-dark-6));
 }
 
 :root[mejtheme='red'] {
-    --apsj-primary-bright: rgb(231, 191, 191);
-    --apsj-primary-light: rgb(200, 40, 40);
-    --apsj-primary: rgb(160, 0, 0);
-    --apsj-primary-dark: rgb(120, 0, 0);
-    --apsj-primary-75: rgba(160, 0, 0, 0.75);
-	--mej-sidebar-document-color: var(--mej-light-0);
+    --apsj-primary-color: 160, 0, 0;
+    --apsj-primary-color-light: 200, 40, 40;
+    --apsj-primary-color-dark: 120, 0, 0;
+    --apsj-primary-color-bright: 231, 191, 191;
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 :root[mejtheme='orange'] {
-    --apsj-primary-bright: rgb(255, 223, 191);
-    --apsj-primary-light: rgb(255, 168, 40);
-    --apsj-primary: rgb(255, 128, 0);
-    --apsj-primary-dark: rgb(215, 88, 0);
-    --apsj-primary-75: rgba(255, 128, 0, 0.75);
-	--mej-sidebar-document-color: var(--mej-light-0);
+    --apsj-primary-color: 255, 128, 0;
+    --apsj-primary-color-light: 255, 168, 40;
+    --apsj-primary-color-dark: 215, 88, 0;
+    --apsj-primary-color-bright: 255, 223, 191;
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 :root[mejtheme='yellow'] {
-    --apsj-primary-bright: rgb(245, 245, 191);
-    --apsj-primary-light: rgb(255, 255, 40);
-    --apsj-primary: rgb(215, 215, 0);
-    --apsj-primary-dark: rgb(175, 175, 0);
-    --apsj-primary-75: rgba(215, 215, 0, 0.75);
-    --mej-header-bookmark-color: var( --mej-dark-6);
-	--mej-sidebar-document-color: var(--mej-dark-0);
+    --apsj-primary-color: 215, 215, 0;
+    --apsj-primary-color-light: 255, 255, 40;
+    --apsj-primary-color-dark: 175, 175, 0;
+    --apsj-primary-color-bright: 245, 245, 191;
+    --mej-header-bookmark-color: rgb(var( --mej-dark-6));
+    --mej-sidebar-document-color: rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme='green'] {
-    --apsj-primary-bright: rgb(191, 223, 191);
-    --apsj-primary-light: rgb(40, 188, 40);
-    --apsj-primary: rgb(0, 128, 0);
-    --apsj-primary-dark: rgb(0, 88, 0);
-    --apsj-primary-75: rgba(0, 128, 0, 0.75);
-	--mej-sidebar-document-color: var(--mej-light-0);
+    --apsj-primary-color: 0, 128, 0;
+    --apsj-primary-color-light: 40, 188, 40;
+    --apsj-primary-color-dark: 0, 88, 0;
+    --apsj-primary-color-bright: 191, 223, 191;
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 :root[mejtheme='cyan'] {
-    --apsj-primary-bright: rgb(191, 255, 255);
-    --apsj-primary-light: rgb(60, 255, 255);
-    --apsj-primary: rgb(0, 255, 255);
-    --apsj-primary-dark: rgb(0, 195, 195);
-    --apsj-primary-75: rgba(0, 255, 255, 0.75);
-    --mej-header-bookmark-color: var( --mej-dark-6);
-    --mej-sidebar-document-color: var(--mej-dark-0);
+    --apsj-primary-color: 0, 255, 255;
+    --apsj-primary-color-light: 60, 255, 255;
+    --apsj-primary-color-dark: 0, 195, 195;
+    --apsj-primary-color-bright: 191, 255, 255;
+    --mej-header-bookmark-color: rgb(var( --mej-dark-6));
+    --mej-sidebar-document-color: rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme='blue'] {
-    --apsj-primary-bright: rgb(191, 213, 255);
-    --apsj-primary-light: rgb(41, 126, 255);
-    --apsj-primary: rgb(1, 86, 255);
-    --apsj-primary-dark: rgb(0, 46, 215);
-    --apsj-primary-75: rgba(1, 86, 255, 0.75);
-	--mej-sidebar-document-color: var(--mej-light-0);
+    --apsj-primary-color: 1, 86, 255;
+    --apsj-primary-color-light: 41, 126, 255;
+    --apsj-primary-color-dark: 0, 46, 215;
+    --apsj-primary-color-bright: 191, 213, 255;
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 :root[mejtheme='purple'] {
-    --apsj-primary-bright: rgb(217, 197, 239);
-    --apsj-primary-light: rgb(144, 65, 233);
-    --apsj-primary: rgb(104, 25, 193);
-    --apsj-primary-dark: rgb(64, 0, 153);
-    --apsj-primary-75: rgba(104, 25, 193, 0.75);
-	--mej-sidebar-document-color: var(--mej-light-0);
+    --apsj-primary-color: 104, 25, 193;
+    --apsj-primary-color-light: 144, 65, 233;
+    --apsj-primary-color-dark: 64, 0, 153;
+    --apsj-primary-color-bright: 217, 197, 239;
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 /**
@@ -181,11 +178,11 @@
 
 :root[mejtheme] table thead,
 :root[mejtheme] table tfoot {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     background: var(--apsj-primary);
     font-family: var(--apsj-font-scalycaps);
     font-weight: 700;
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme] table thead a.hyperlink,
@@ -204,16 +201,16 @@
 :root[mejtheme] body:not(.inline-roll-styling) a.picture-link,
 :root[mejtheme] body:not(.inline-roll-styling) a.inline-request-roll {
     padding: 3px 5px;
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     font-family: var(--apsj-font-scalysans);
     font-weight: 700;
     line-height: 1.5em;
-    border: 1px solid var(--mej-dark-0);
+    border: 1px solid rgb(var(--mej-dark-0));
     border-radius: 0.35em;
-    text-shadow: 1px 1px 1px var(--mej-light-4);
-    box-shadow: 0 0 4px var(--mej-dark-750);
+    text-shadow: 1px 1px 1px rgb(var(--mej-light-4));
+    box-shadow: 0 0 4px rgba(var(--mej-dark-0), 0.75);
     background: var(--apsj-btn-background);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme] body:not(.inline-roll-styling) a.entity-link i,
@@ -221,7 +218,7 @@
 :root[mejtheme] body:not(.inline-roll-styling) a.inline-roll i,
 :root[mejtheme] body:not(.inline-roll-styling) a.picture-link i,
 :root[mejtheme] body:not(.inline-roll-styling) a.inline-request-roll i {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 /**
@@ -229,17 +226,17 @@
 **/
 
 .monks-enhanced-journal[sidebar-image='leather'] .sheet.journal-entry .pages-list .directory-item.active {
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .monks-enhanced-journal[sidebar-image='leather'] .sheet.journal-entry .sidebar-directory li.journalentry {
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active {
     background: linear-gradient(var(--apsj-primary-light), var(--apsj-primary-dark));
-	opacity: 75%;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    opacity: 75%;
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 :root[mejtheme] .sheet.journal-entry .pages-list .directory-item.active:first-of-type,
@@ -263,8 +260,8 @@
     font-size: 4em;
     padding: 5px;
     height: 60px;
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     background: var(--apsj-primary);
 }
 
@@ -321,67 +318,67 @@
 .monks-enhanced-journal[sidebar-image='granite'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/granite.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='marbleWhite'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-white.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/marble-white.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='metalBrushed'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-brushed.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-brushed.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='metalGalvanized'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-galvanized.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/metal-galvanized.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='parchment'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='darkParchment'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-medium.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-medium.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='leather'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/light-leather.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/light-leather.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='darkLeather'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/leather.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='woodAlpine'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-alpine.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-alpine.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='woodCottagePine'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-cottage-pine.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-cottage-pine.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[sidebar-image='woodPine'] {
     --mej-sidebar-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-pine.webp') repeat;
     --mej-adventure-toc-background: url('/modules/monks-enhanced-journal/assets/apsjournal/wood-pine.webp') repeat;
-    --mej-sidebar-document-color: var(--mej-light-0);
+    --mej-sidebar-document-color: rgb(var(--mej-light-0));
 }
 
 .monks-enhanced-journal[background-image='parchment'] .window-content {
@@ -398,7 +395,7 @@
 **/
 
 :root[mejtheme] .monks-journal-sheet.sheet .currency-group .form-fields input {
-    background: var(--mej-light-750);
+    background: rgba(var(--mej-light-0), 0.75);
 }
 
 :root[mejtheme] #journal-directory li.journalentry {
@@ -410,25 +407,25 @@
     opacity: 100%;
 }
 
-:root[mejtheme] .directory .directory-item:last-child {
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+:root[mejtheme] .monks-enhanced-journal .directory .directory-item:last-child {
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 :root[mejtheme] .monks-enhanced-journal .tab-bar .tab-button {
-    color: var(--mej-dark-0);
+    color: rgb(var(--mej-dark-0));
     opacity: 1 !important;
 }
 
 :root[mejtheme] .monks-enhanced-journal .tab-bar .tab-button.sidebar-toggle,
 :root[mejtheme] .monks-enhanced-journal .tab-bar .tab-button.tab-add,
 :root[mejtheme] .monks-enhanced-journal .header-search.flexrow {
-    color: var(--mej-light-0);
-    text-shadow: 2px 3px 5px var(--mej-dark-750);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 2px 3px 5px rgba(var(--mej-dark-0), 0.75);
 }
 
 :root[mejtheme] .monks-enhanced-journal .editor-edit {
-    text-shadow: 1px 1px 1px var(--mej-light-4);
-    background: linear-gradient(var(--mej-light-5), var(--mej-light-2), var(--mej-light-5));
+    text-shadow: 1px 1px 1px rgb(var(--mej-light-4));
+    background: linear-gradient(rgb(var(--mej-light-5)), rgb(var(--mej-light-2)), rgb(var(--mej-light-5)));
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-tab.directory .directory-item.journalentry .permissions {
@@ -437,21 +434,21 @@
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate {
-    text-shadow: 1px 1px 1px var(--mej-light-4);
-    box-shadow: 0 0 5px var(--mej-dark-750);
+    text-shadow: 1px 1px 1px rgb(var(--mej-light-4));
+    box-shadow: 0 0 5px rgba(var(--mej-dark-0), 0.75);
 }
 
 :root[mejtheme] .monks-enhanced-journal .editor-edit:hover,
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory .action-buttons button:hover,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate:not(.disabled):hover {
-    color: var(--mej-dark-0);
-	background: var(--mej-cream);
+    color: rgb(var(--mej-dark-0));
+    background: var(--mej-cream);
     box-shadow: 0 0 5px red;
 }
 
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled,
 :root[mejtheme] .monks-enhanced-journal footer.navigation .nav-button.navigate.disabled:hover {
-    box-shadow: 0 0 5px var(--mej-dark-750);
+    box-shadow: 0 0 5px rgba(var(--mej-dark-0), 0.75);
 }
 
 /**
@@ -460,18 +457,18 @@
 
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .items-header {
     background: var(--apsj-primary) !important;
-    color: var(--mej-light-0);
-    box-shadow: 0 0 5px var(--mej-dark-750);
+    color: rgb(var(--mej-light-0));
+    box-shadow: 0 0 5px rgba(var(--mej-dark-0), 0.75);
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .sheet-navigation {
-    text-shadow: 1px 1px 2px var(--mej-dark-4);
-	opacity: 85%;
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-4));
+    opacity: 85%;
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name,
 :root[mejtheme] .monks-journal-sheet .header-name input {
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name input {
@@ -479,27 +476,27 @@
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name input:hover {
-    background-color: var(--mej-light-250);
+    background-color: rgba(var(--mej-light-0), 0.25);
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input {
-    background-color: var(--mej-light-250);
+    background-color: rgba(var(--mej-light-0), 0.25);
 }
 
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:hover,
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:active,
 :root[mejtheme] .monks-enhanced-journal .sidebar-directory.directory .directory-header .header-search input:focus {
-    background-color: var(--mej-light-750);
+    background-color: rgba(var(--mej-light-0), 0.75);
 }
 
 :root[mejtheme] .monks-journal-sheet .journal-subsheet .encounter-buttons > div {
-    color: var(--mej-dark-0);
+    color: rgb(var(--mej-dark-0));
     background: var(--apsj-cream) !important;
 }
 
 :root[mejtheme] .monks-journal-sheet .journal-subsheet .encounter-buttons > div:hover {
-    color: var(--mej-dark-2);
-    background: var(--mej-light-0) !important;
+    color: rgb(var(--mej-dark-2));
+    background: rgb(var(--mej-light-0)) !important;
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .journal-subsheet .items-list .item-controls.item-quantity input[type='text'],
@@ -507,23 +504,31 @@
 :root[mejtheme] .monks-journal-sheet.sheet .journal-subsheet .items-list .item-controls.item-remaining input[type='number'],
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .item-from input[type='text'] {
     background: var(--apsj-cream);
-    border-color: var(--mej-dark-3) !important;
+    border-color: rgb(var(--mej-dark-3)) !important;
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .item-from:hover,
 :root[mejtheme] .monks-journal-sheet.sheet .items-list .item-from:focus {
-    border-color: var(--mej-dark-3) !important;
+    border-color: rgb(var(--mej-dark-3)) !important;
 }
 
-:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-control:hover {
+:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-header .item-control:hover {
 	background: var(--mej-cream);
     box-shadow: 0 0 5px red !important;
 	text-shadow: none;
 }
 
-:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-controls a {
-    color: var(--mej-dark-0);
-    text-shadow: 1px 1px 2px var(--mej-light-4);
+:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-list .item-control:hover {
+    color: rgb(var(--mej-dark-0));
+}
+
+:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-header .item-controls a {
+    color: rgb(var(--mej-dark-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-light-4));
+}
+
+:root[mejtheme] .monks-journal-sheet.sheet .items-list .item-list .item-controls a {
+    color: rgb(var(--mej-dark-5));
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .tab.items .currency-group {
@@ -533,37 +538,37 @@
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .tab.items .currency-group label {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .items-list > .item-list {
-    color: var(--mej-dark-0);
+    color: rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme] .loot-character > .character-name {
-    color: var(--mej-dark-0);
+    color: rgb(var(--mej-dark-0));
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name .header-search {
-    color: var(--mej-dark-3);
+    color: rgb(var(--mej-dark-3));
     text-shadow: none;
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name .header-search input {
     background: var(--apsj-cream);
-    border: var(--mej-dark-0) 1px solid;
+    border: rgb(var(--mej-dark-0)) 1px solid;
     font-family: var(--apsj-font-signika);
-    color: var(--mej-dark-3);
+    color: rgb(var(--mej-dark-3));
     text-shadow: none;
 }
 
 :root[mejtheme] .monks-journal-sheet .header-name .header-search input:focus {
-    color: var(--mej-dark-0) !important;
+    color: rgb(var(--mej-dark-0)) !important;
 }
 
 :root[mejtheme] .monks-journal-sheet.sheet .list button:hover {
-    background: var(--mej-light-2);
+    background: rgb(var(--mej-light-2));
 }
 /**
 * Stylish Text
@@ -626,7 +631,7 @@
 .apsj-block h1 {
     font-family: var(--mej-font-family);
     font-weight: 700;
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block h2,
@@ -636,7 +641,7 @@
 .apsj-block h6 {
     font-family: var(--apsj-font-mreaves);
     font-weight: 700;
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.apsj-card img,
@@ -661,12 +666,12 @@
 
 .apsj-block.apsj-card,
 .apsj-block.purple-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-purple-light);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/purple-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-card-aside {
@@ -699,20 +704,20 @@
 .apsj-block.purple-item h4,
 .apsj-block.purple-item h5,
 .apsj-block.purple-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-purple-light);
 }
 
 .apsj-block.apsj-card .apsj-text,
 .apsj-block.purple-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.apsj-card hr,
 .apsj-block.purple-item hr {
     color: var(--apsj-blue);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-purple-light);
 }
 
@@ -722,9 +727,9 @@
 .apsj-block.purple-item a.entity-link,
 .apsj-block.purple-item a.content-link,
 .apsj-block.purple-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-purple-light);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.apsj-card a.entity-link i,
@@ -733,7 +738,7 @@
 .apsj-block.purple-item a.entity-link i,
 .apsj-block.purple-item a.content-link i,
 .apsj-block.purple-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.apsj-card a:hover,
@@ -743,12 +748,12 @@
 
 .apsj-block.apsj-scroll,
 .apsj-block.green-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-green);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/green-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-scroll-aside {
@@ -781,20 +786,20 @@
 .apsj-block.green-item h4,
 .apsj-block.green-item h5,
 .apsj-block.green-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-green);
 }
 
 .apsj-block.apsj-scroll .apsj-text,
 .apsj-block.green-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.apsj-scroll hr,
 .apsj-block.green-item hr {
     color: var(--apsj-blue);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-green);
 }
 
@@ -804,9 +809,9 @@
 .apsj-block.green-item a.entity-link,
 .apsj-block.green-item a.content-link,
 .apsj-block.green-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-green);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.apsj-scroll a.entity-link i,
@@ -815,7 +820,7 @@
 .apsj-block.green-item a.entity-link i,
 .apsj-block.green-item a.content-link i,
 .apsj-block.green-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.apsj-scroll a:hover,
@@ -824,12 +829,12 @@
 }
 
 .apsj-block.black-item {
-    color: var(--mej-light-0);
-    border: 2px solid var(--mej-light-7);
+    color: rgb(var(--mej-light-0));
+    border: 2px solid rgb(var(--mej-light-7));
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/black-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-black-item {
@@ -847,46 +852,46 @@
 .apsj-block.black-item h4,
 .apsj-block.black-item h5,
 .apsj-block.black-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
-    border-bottom: 2px solid var(--mej-light-7);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
+    border-bottom: 2px solid rgb(var(--mej-light-7));
 }
 
 .apsj-block.black-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.black-item hr {
     color: var(--apsj-light);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
-    border-bottom: 2px solid var(--mej-light-7);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
+    border-bottom: 2px solid rgb(var(--mej-light-7));
 }
 
 .apsj-block.black-item a.entity-link,
 .apsj-block.black-item a.content-link,
 .apsj-block.black-item a.inline-roll {
-    color: var(--mej-light-0);
-    border: 1px solid var(--mej-light-7);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    border: 1px solid rgb(var(--mej-light-7));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.black-item a.entity-link i,
 .apsj-block.black-item a.content-link i,
 .apsj-block.black-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.black-item a:hover {
-    text-shadow: 0 0 5px var(--mej-light-7);
+    text-shadow: 0 0 5px rgb(var(--mej-light-7));
 }
 
 .apsj-block.blue-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-blue);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/blue-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-blue-item {
@@ -904,33 +909,33 @@
 .apsj-block.blue-item h4,
 .apsj-block.blue-item h5,
 .apsj-block.blue-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-blue);
 }
 
 .apsj-block.blue-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.blue-item hr {
     color: var(--apsj-blue);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-blue);
 }
 
 .apsj-block.blue-item a.entity-link,
 .apsj-block.blue-item a.content-link,
 .apsj-block.blue-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-blue);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.blue-item a.entity-link i,
 .apsj-block.blue-item a.content-link i,
 .apsj-block.blue-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.blue-item a:hover {
@@ -938,12 +943,12 @@
 }
 
 .apsj-block.cyan-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-cyan);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/cyan-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-cyan-item {
@@ -961,33 +966,33 @@
 .apsj-block.cyan-item h4,
 .apsj-block.cyan-item h5,
 .apsj-block.cyan-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-cyan);
 }
 
 .apsj-block.cyan-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.cyan-item hr {
     color: var(--apsj-cyan);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-cyan);
 }
 
 .apsj-block.cyan-item a.entity-link,
 .apsj-block.cyan-item a.content-link,
 .apsj-block.cyan-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-cyan);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.cyan-item a.entity-link i,
 .apsj-block.cyan-item a.content-link i,
 .apsj-block.cyan-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.cyan-item a:hover {
@@ -995,12 +1000,12 @@
 }
 
 .apsj-block.orange-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-orange);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/orange-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-orange-item {
@@ -1018,33 +1023,33 @@
 .apsj-block.orange-item h4,
 .apsj-block.orange-item h5,
 .apsj-block.orange-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-orange);
 }
 
 .apsj-block.orange-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.orange-item hr {
     color: var(--apsj-orange);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-orange);
 }
 
 .apsj-block.orange-item a.entity-link,
 .apsj-block.orange-item a.content-link,
 .apsj-block.orange-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-orange);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.orange-item a.entity-link i,
 .apsj-block.orange-item a.content-link i,
 .apsj-block.orange-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.orange-item a:hover {
@@ -1052,12 +1057,12 @@
 }
 
 .apsj-block.red-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-primary);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/red-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-red-item {
@@ -1075,33 +1080,33 @@
 .apsj-block.red-item h4,
 .apsj-block.red-item h5,
 .apsj-block.red-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-primary);
 }
 
 .apsj-block.red-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.red-item hr {
     color: var(--apsj-primary);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-primary);
 }
 
 .apsj-block.red-item a.entity-link,
 .apsj-block.red-item a.content-link,
 .apsj-block.red-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-primary);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.red-item a.entity-link i,
 .apsj-block.red-item a.content-link i,
 .apsj-block.red-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.red-item a:hover {
@@ -1109,12 +1114,12 @@
 }
 
 .apsj-block.yellow-item {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-yellow);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/yellow-item-bg.webp') no-repeat center;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-yellow-item {
@@ -1132,33 +1137,33 @@
 .apsj-block.yellow-item h4,
 .apsj-block.yellow-item h5,
 .apsj-block.yellow-item h6 {
-    color: var(--mej-light-0);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    color: rgb(var(--mej-light-0));
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-yellow);
 }
 
 .apsj-block.yellow-item .apsj-text {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
 }
 
 .apsj-block.yellow-item hr {
     color: var(--apsj-yellow);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     border-bottom: 2px solid var(--apsj-yellow);
 }
 
 .apsj-block.yellow-item a.entity-link,
 .apsj-block.yellow-item a.content-link,
 .apsj-block.yellow-item a.inline-roll {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 1px solid var(--apsj-yellow);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
 }
 
 .apsj-block.yellow-item a.entity-link i,
 .apsj-block.yellow-item a.content-link i,
 .apsj-block.yellow-item a.inline-roll i {
-    color: var(--mej-light-750);
+    color: rgba(var(--mej-light-0), 0.75);
 }
 
 .apsj-block.yellow-item a:hover {
@@ -1166,12 +1171,12 @@
 }
 
 .apsj-block.apsj-encounter {
-    color: var(--mej-light-0);
+    color: rgb(var(--mej-light-0));
     border: 2px solid var(--apsj-red);
     border-radius: 0.5em;
     background: url('/modules/monks-enhanced-journal/assets/apsjournal/parchment-bloody.webp') no-repeat;
     background-size: cover;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-ra-icon {
@@ -1182,8 +1187,8 @@
 .apsj-block.apsj-read-aloud {
     border: 2px solid var(--apsj-primary);
     border-radius: 0.5em;
-    background: linear-gradient(var(--mej-light-750), var(--mej-light-754));
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    background: linear-gradient(rgba(var(--mej-light-0), 0.75), rgba(var(--mej-light-4), 0.75));
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-ra-icon::before {
@@ -1191,7 +1196,7 @@
     font-weight: 900;
     font-size: xxx-large;
     color: var(--apsj-primary);
-    text-shadow: 1px 1px 2px var(--mej-dark-0);
+    text-shadow: 1px 1px 2px rgb(var(--mej-dark-0));
     content: '\f4ad';
 }
 
@@ -1208,8 +1213,8 @@
 }
 
 .apsj-block.apsj-dialogue {
-    background: linear-gradient(var(--mej-light-750), var(--mej-light-754));
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    background: linear-gradient(rgba(var(--mej-light-0), 0.75), rgba(var(--mej-light-4), 0.75));
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-block.apsj-dialogue.apsj-blue {
@@ -1373,10 +1378,10 @@
 .apsj-black-overlay {
     margin: 0;
     padding: 10px;
-    background: linear-gradient(var(--mej-dark-757), var(--mej-light-754));
-    border: 2px solid var(--mej-dark-0);
+    background: linear-gradient(rgba(var(--mej-light-7), 0.75), rgba(var(--mej-light-4), 0.75));
+    border: 2px solid rgb(var(--mej-dark-0));
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-blue-overlay {
@@ -1385,7 +1390,7 @@
     background: linear-gradient(var(--apsj-blue), var(--apsj-blue-dark));
     border: 2px solid var(--apsj-blue);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-cyan-overlay {
@@ -1394,7 +1399,7 @@
     background: linear-gradient(var(--apsj-cyan), var(--apsj-cyan-dark));
     border: 2px solid var(--apsj-cyan);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-green-overlay {
@@ -1403,26 +1408,26 @@
     background: linear-gradient(var(--apsj-green), var(--apsj-green-dark));
     border: 2px solid var(--apsj-green);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-light-overlay {
     margin: 0;
     padding: 10px;
-    color: var(--mej-dark-0);
-    background: linear-gradient(var(--mej-light-750), var(--mej-light-754));
+    color: rgb(var(--mej-dark-0));
+    background: linear-gradient(rgba(var(--mej-light-0), 0.75), rgba(var(--mej-light-4), 0.75));
     border: 2px solid var(--apsj-primary);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-light-overlay-bb {
     margin: 0;
     padding: 10px;
-    background: linear-gradient(var(--mej-light-750), var(--mej-light-754));
-    border: 2px solid var(--mej-dark-0);
+    background: linear-gradient(rgba(var(--mej-light-0), 0.75), rgba(var(--mej-light-4), 0.75));
+    border: 2px solid rgb(var(--mej-dark-0));
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-orange-overlay {
@@ -1431,7 +1436,7 @@
     background: linear-gradient(var(--apsj-orange), var(--apsj-orange-dark));
     border: 2px solid var(--apsj-orange);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-purple-overlay {
@@ -1440,7 +1445,7 @@
     background: linear-gradient(var(--apsj-purple), var(--apsj-purple-dark));
     border: 2px solid var(--apsj-purple);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-red-overlay {
@@ -1449,7 +1454,7 @@
     background: linear-gradient(var(--apsj-red), var(--apsj-red-dark));
     border: 2px solid var(--apsj-red);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 .apsj-yellow-overlay {
@@ -1458,7 +1463,7 @@
     background: linear-gradient(var(--apsj-yellow), var(--apsj-yellow-dark));
     border: 2px solid var(--apsj-yellow);
     border-radius: 0.5em;
-    box-shadow: 0 3px 15px var(--mej-dark-750);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
 }
 
 /**
@@ -1470,11 +1475,11 @@
     margin: 1em 5%;
     padding: 6px 8px;
     line-height: 20px;
-    border: 2px solid var(--mej-light-0);
+    border: 2px solid rgb(var(--mej-light-0));
     border-radius: 5px;
-    background: var(--mej-dark-750);
-    box-shadow: 0 3px 15px var(--mej-dark-750);
-    color: var(--mej-light-0);
+    background: rgba(var(--mej-dark-0), 0.75);
+    box-shadow: 0 3px 15px rgba(var(--mej-dark-0), 0.75);
+    color: rgb(var(--mej-light-0));
     list-style: none;
     font-family: var(--font-awesome);
     font-weight: 900;

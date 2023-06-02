@@ -1,5 +1,5 @@
 <form class="flexcol journal-subsheet {{entrytype}}{{#if isGM}} gm{{/if}}{{#if owner}} owner{{/if}}" editable="{{editable}}">
-    <div class="sheet-container detailed shop-container">
+    <div class="sheet-container detailed shop-container flexcol">
         <header class="journal-sheet-header flexrow">
             <div class="sheet-image">
                 <img class="profile nopopout" src="{{data.src}}" data-edit="src" onerror="if (!this.imgerr) { this.imgerr = true; this.src = 'modules/monks-enhanced-journal/assets/shop.png' }">
@@ -20,31 +20,17 @@
                     {{/if}}
                 </h1>
                 <div class="form-group">
-                    <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.ShopType'}}</label>
+                    <label>{{localize 'MonksEnhancedJournal.ShopType'}}</label>
                     <input type="text" name="flags.monks-enhanced-journal.shoptype" value="{{data.flags.monks-enhanced-journal.shoptype}}" />
                 </div>
                 <div class="form-group">
-                    <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.Location'}}</label>
+                    <label>{{localize 'MonksEnhancedJournal.Location'}}</label>
                     <input type="text" name="flags.monks-enhanced-journal.location" value="{{data.flags.monks-enhanced-journal.location}}" />
                 </div>
-                <div class="form-group owner-only">
-                    <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.PlayerPurchasing'}}</label>
-                    <select class="shop-state" name="flags.monks-enhanced-journal.purchasing">
-                        {{ selectGroups purchaseOptions selected=data.flags.monks-enhanced-journal.purchasing localize=true }}
-                    </select>
-                </div>
-                <div class="form-group owner-only">
-                    <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.PlayerSelling'}}</label>
-                    <select class="shop-state" name="flags.monks-enhanced-journal.selling">
-                        {{ selectOptions sellingOptions selected=data.flags.monks-enhanced-journal.selling localize=true }}
-                    </select>
-                </div>
-                {{#unless owner}}
                 <div class="form-group">
-                    <label>{{localize 'MonksEnhancedJournal.State'}}</label>
-                    <div>{{#if hideitems}}{{localize 'MonksEnhancedJournal.Closed'}}{{else}}{{localize 'MonksEnhancedJournal.Open'}}{{/if}}</div>
+                    <label>{{localize 'MonksEnhancedJournal.HoursOfOperation'}}</label>
+                    <div>{{hours}}{{#if open}}{{localize 'MonksEnhancedJournal.Open'}}{{else}}{{localize 'MonksEnhancedJournal.Closed'}}{{/if}}</div>
                 </div>
-                {{/unless}}
             </section>
             {{#if (and actor canViewActor)}}
             <section class="flexcol actor-img-container">
@@ -57,6 +43,9 @@
         </header>
         <nav class="sheet-navigation tabs" data-group="primary">
             <a class="item" data-tab="description">{{localize 'MonksEnhancedJournal.Description'}}</a>
+            {{#if owner}}
+            <a class="item" data-tab="details">{{localize 'MonksEnhancedJournal.Details'}}</a>
+            {{/if}}
             <a class="item{{#if has.items}} hasitems{{/if}}" data-tab="items">{{localize 'MonksEnhancedJournal.Items'}}</a>
             <a class="item{{#if has.relationships}} hasitems{{/if}}" data-tab="relationships">{{localize 'MonksEnhancedJournal.Relationships'}}</a>
             <a class="item" data-tab="notes">{{localize 'MonksEnhancedJournal.Notes'}}</a>
@@ -67,6 +56,81 @@
                     {{editor enrichedText target="text.content" editable=true button=true owner=owner}}
                 </div>
             </div>
+            {{#if owner}}
+            <div class="tab details" data-group="primary" data-tab="details">
+                <div class="tab-inner flexcol" style="overflow-y: hidden !important;">
+                    <div class="flexcol details-section no-border" style="flex-grow:0;margin-bottom: 8px;width: 100%;align-content: center;">
+                        <div class="form-group owner-only">
+                            <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.Hours'}}</label>
+                            <input type="text" class="time-field" name="opening" value="{{opening}}" style="text-align: right;" /><span style="flex: 0 0 50px;text-align:center;">to</span><input type="text" class="time-field" name="closing" value="{{closing}}" style="text-align: right;" />
+                        </div>
+                        <div class="form-group owner-only">
+                            <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.ShopOpen'}}</label>
+                            <select class="shop-state" name="flags.monks-enhanced-journal.state">
+                                {{ selectOptions openOptions selected=data.flags.monks-enhanced-journal.state localize=true }}
+                            </select>
+                        </div>
+                        <div class="form-group owner-only">
+                            <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.AutoOpen'}}</label>
+                            <input type="checkbox" name="flags.monks-enhanced-journal.autoopen" {{checked data.flags.monks-enhanced-journal.autoopen}} />
+                        </div>
+                        <div class="form-group owner-only">
+                            <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.PlayerPurchasing'}}</label>
+                            <select class="shop-state" name="flags.monks-enhanced-journal.purchasing">
+                                {{ selectOptions purchaseOptions selected=data.flags.monks-enhanced-journal.purchasing localize=true }}
+                            </select>
+                        </div>
+                        <div class="form-group owner-only">
+                            <label style="background: none; border: none;">{{localize 'MonksEnhancedJournal.PlayerSelling'}}</label>
+                            <select class="shop-state" name="flags.monks-enhanced-journal.selling">
+                                {{ selectOptions sellingOptions selected=data.flags.monks-enhanced-journal.selling localize=true }}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flexcol" style="overflow: hidden;">
+                        <div class="items-list shop-items">
+                            <div class="item-header flexrow">
+                                <h3 class="item-name noborder flexrow">Name</h3>
+                                <h3 class="item-name noborder flexrow">Item</h3>
+                                <h3 class="item-detail noborder flexrow" style="justify-content: center;">Quantity</h3>
+                                <h3 class="item-detail noborder flexrow" style="justify-content: center;">Price</h3>
+                                <h3 class="item-detail noborder flexrow">Type</h3>
+                                <h3 class="item-detail noborder flexrow">Date <a class="item-control clear-log" style="position: absolute; right: 2px;" title="{{localize 'MonksEnhancedJournal.ClearAllItems'}}"><i class="fas fa-trash"></i></a></h3>
+                            </div>
+                            <ol class="item-list">
+                                {{#each log}}
+                                <li class="item flexrow" data-id="{{this.id}}" data-uuid="{{this.uuid}}" data-container="relationships" data-document="JournalEntry" draggable="false">
+                                    <div class="item-name">
+                                        <h4>{{this.actor}}</h4>
+                                    </div>
+
+                                    <div class="item-name">
+                                        <h4>{{this.item}}</h4>
+                                    </div>
+
+                                    <div class="item-detail" style="text-align: center;">
+                                        <h4>{{this.quantity}}</h4>
+                                    </div>
+
+                                    <div class="item-detail" style="text-align: center;">
+                                        <h4>{{this.price}}</h4>
+                                    </div>
+
+                                    <div class="item-detail">
+                                        <h4>{{this.type}}</h4>
+                                    </div>
+
+                                    <div class="item-detail">
+                                        <h4>{{this.time}}</h4>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/if}}
             <div class="tab items active" data-group="primary" data-tab="items">
                 <div class="tab-inner flexcol">
                     {{#if nocharacter}}
@@ -93,7 +157,7 @@
                             {{#each groups}}
                             {{#if this.id}}
                             <li class="item-header collapsible flexrow{{#if this.collapsed}} collapsed{{/if}}" data-id="{{this.id}}">
-                                <h3 class="item-name noborder flexrow">{{localize this.name}} <span class="item-count">({{this.items.length}} items)</span></h3>
+                                <h3 class="item-name noborder flexrow">{{localize this.name}} <span class="collapse-text item-count">({{this.items.length}} items)</span></h3>
                             </li>
                             {{/if}}
                             <li {{#if this.collapsed}} style="display: none;" {{/if}}>
@@ -147,11 +211,11 @@
                                 </ul>
                             </li>
                             {{else}}
-                                {{#if owner}}
-                                <li class="instruction">{{localize 'MonksEnhancedJournal.msg.DragItemsToAddToShop'}}</li>
-                                {{else}}
-                                <li class="instruction">{{localize 'MonksEnhancedJournal.msg.NoItemsAtTheMoment'}}</li>
-                                {{/if}}
+                            {{#if owner}}
+                            <li class="instruction">{{localize 'MonksEnhancedJournal.msg.DragItemsToAddToShop'}}</li>
+                            {{else}}
+                            <li class="instruction">{{localize 'MonksEnhancedJournal.msg.NoItemsAtTheMoment'}}</li>
+                            {{/if}}
                             {{/each}}
                             {{else}}
                             <li class="instruction">{{localize 'MonksEnhancedJournal.msg.ShopCurrentlyClosed'}}</li>

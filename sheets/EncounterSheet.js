@@ -45,6 +45,20 @@ export class EncounterSheet extends EnhancedJournalSheet {
             this.object.unsetFlag("monks-enhanced-journal", "monsters");
         }
 
+        data.actors = await Promise.all((data.data.flags["monks-enhanced-journal"].actors || []).map(async (ea) => {
+            let result = duplicate(ea);
+            let actor = await EnhancedJournalSheet.getDocument(ea);
+
+            if (actor) {
+                result.name = actor.name;
+                result.img = actor.img;
+            } else {
+                result.failed = true
+            }
+
+            return result;
+        }));
+
         let safeGet = function (container, value) {
             if (config == undefined) return;
             if (config[container] == undefined) return;
@@ -449,11 +463,14 @@ export class EncounterSheet extends EnhancedJournalSheet {
             this.setFlag('monks-enhanced-journal', 'tokens', tokenids);
 
             let that = this;
-            window.setTimeout(function () {
+            window.setTimeout(async function () {
                 EncounterSheet.selectEncounter.call(that);
                 if (options.combat) {
-                    canvas.tokens.toggleCombat();
+                    let combatants = await canvas.tokens.toggleCombat();
                     ui.sidebar.activateTab("combat");
+                    if (combatants.length) {
+                        combatants[0].combat.setFlag("monks-enhanced-journal", "encounterid", that.id);
+                    }
                 }
             }, 500);
         }

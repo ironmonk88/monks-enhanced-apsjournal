@@ -1,37 +1,20 @@
 ﻿:root {
-    --mej-light-0: rgb(255, 255, 255);
-    --mej-light-1: rgb(238, 238, 238);
-    --mej-light-2: rgb(221, 221, 221);
-    --mej-light-3: rgb(204, 204, 204);
-    --mej-light-4: rgb(187, 187, 187);
-    --mej-light-5: rgb(170, 170, 170);
-    --mej-light-6: rgb(153, 153, 153);
-    --mej-light-7: rgb(136, 136, 136);
-    --mej-dark-7: rgb(119, 119, 119);
-    --mej-dark-6: rgb(102, 102, 102);
-    --mej-dark-5: rgb(85, 85, 85);
-    --mej-dark-4: rgb(68, 68, 68);
-    --mej-dark-3: rgb(51, 51, 51);
-    --mej-dark-2: rgb(34, 34, 34);
-    --mej-dark-1: rgb(17, 17, 17);
-    --mej-dark-0: rgb(0, 0, 0);
-    --mej-light-750: rgba(255, 255, 255, 0.75);
-    --mej-light-751: rgba(238, 238, 238, 0.75);
-    --mej-light-752: rgba(221, 221, 221, 0.75);
-    --mej-light-753: rgba(204, 204, 204, 0.75);
-    --mej-light-754: rgba(187, 187, 187, 0.75);
-    --mej-light-755: rgba(170, 170, 170, 0.75);
-    --mej-light-756: rgba(153, 153, 153, 0.75);
-    --mej-light-757: rgba(136, 136, 136, 0.75);
-    --mej-dark-757: rgba(119, 119, 119, 0.75);
-    --mej-dark-756: rgba(102, 102, 102, 0.75);
-    --mej-dark-755: rgba(85, 85, 85, 0.75);
-    --mej-dark-754: rgba(68, 68, 68, 0.75);
-    --mej-dark-753: rgba(51, 51, 51, 0.75);
-    --mej-dark-752: rgba(34, 34, 34, 0.75);
-    --mej-dark-751: rgba(17, 17, 17, 0.75);
-    --mej-dark-750: rgba(0, 0, 0, 0.75);
-    --mej-light-250: rgba(255, 255, 255, 0.25);
+    --mej-light-0: 255, 255, 255;
+    --mej-light-1: 238, 238, 238;
+    --mej-light-2: 221, 221, 221;
+    --mej-light-3: 204, 204, 204;
+    --mej-light-4: 187, 187, 187;
+    --mej-light-5: 170, 170, 170;
+    --mej-light-6: 153, 153, 153;
+    --mej-light-7: 136, 136, 136;
+    --mej-dark-7: 119, 119, 119;
+    --mej-dark-6: 102, 102, 102;
+    --mej-dark-5: 85, 85, 85;
+    --mej-dark-4: 68, 68, 68;
+    --mej-dark-3: 51, 51, 51;
+    --mej-dark-2: 34, 34, 34;
+    --mej-dark-1: 17, 17, 17;
+    --mej-dark-0: 0, 0, 0;
     --mej-cream: rgba(255, 255, 240, 0.8);
     --mej-font-family: 'Modesto Condensed', 'Palatino Linotype', serif;
     --mej-background: url(../../../ui/parchment.jpg) repeat;
@@ -160,6 +143,8 @@
     --mej-adventure-toc-border-highlight: var(--color-border-highlight);
     --mej-sheet-button-background: rgb(192, 192, 192);
     --mej-sheet-button-color: var(--mej-sheet-color);
+    --mej-context-x: 0px;
+    --mej-context-y: 0px;
 }
 
 .monks-enhanced-journal .window-content {
@@ -552,8 +537,7 @@
     width: 100%;
 }
 
-.monks-enhanced-journal .enhanced-journal .enhanced-journal-body .content[document-type='actor']
-    form {
+.monks-enhanced-journal .enhanced-journal .enhanced-journal-body .content[document-type='actor'] form {
     overflow-y: auto;
 }
 
@@ -834,6 +818,13 @@
 }
 
 /* -----------------Foundry changes----------------------- */
+.dialog p.notes {
+    font-size: var(--font-size-12);
+    line-height: var(--line-height-16);
+    color: var(--color-text-dark-secondary);
+    margin: 3px 0;
+}
+
 /* Inline links */
 a.journal-link {
     background: #ddd;
@@ -989,6 +980,10 @@ span.unknown-link {
 
 .sheet.journal-entry .pages-list .page-icon {
     margin-right: 4px;
+}
+
+.sheet.journal-entry .pages-list .directory-item {
+    align-items: flex-start;
 }
 
 .sheet.journal-entry .pages-list .directory-item.active:first-of-type {

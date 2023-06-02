@@ -21,11 +21,14 @@
                 </div>
             </div>
             <div class="tab picture active" data-group="primary" data-tab="picture" style="position:relative;">
-                <div class="tab-inner flexrow">
-                    <div class="picture-img lightbox-image" name="src" src="{{data.src}}" style="background-image: url('{{data.src}}')" data-edit="src" onerror="$(this).css({opacity:0});"></div>
+                <div class="tab-inner picture-container flexrow">
+                    <div class="picture-outer">
+                        <div class="picture-img lightbox-image" name="src" src="{{data.src}}" style="background-image: url('{{data.src}}')" data-edit="src" onerror="$(this).css({opacity:0});"></div>
+                    </div>
                     {{#if owner}}
                     <div class="instruction" style="{{#if data.src}}display:none;{{/if}}">Click to add an Image</div>
                     {{/if}}
+                    <div class="reset-scale" title="Clear scaling"><i class="fas fa-eraser"></i></div>
                 </div>
             </div>
         </section>

@@ -1,5 +1,5 @@
 {{#*inline "folderPartial"}}
-<li class="checklist-item folder flexcol {{#unless folder.data.expanded}}collapsed{{/unless}}"
+<li class="list-item folder flexcol {{#unless folder.data.expanded}}collapsed{{/unless}}"
     data-folder-id="{{folder.data.id}}" data-folder-depth="{{folder.depth}}">
     <header class="folder-header flexrow">
         <h3 class="noborder"><i class="fas fa-folder-open fa-fw"></i>{{folder.data.name}}</h3>
@@ -21,7 +21,7 @@
 {{/inline}}
 
 {{#*inline "documentPartial"}}
-<li class="checklist-item document item flexrow{{#if this.data.checked}} checked{{/if}}" data-document-id="{{this.data.id}}">
+<li class="list-item document item flexrow{{#if this.data.checked}} checked{{/if}}" data-document-id="{{this.data.id}}">
     <div class="flexrow">
         <input class="item-checked" style="flex: 0 0 30px;" type="checkbox" name="data.checked" {{checked this.data.checked}}>
         <h3 class="noborder">{{this.data.text}}</h3>

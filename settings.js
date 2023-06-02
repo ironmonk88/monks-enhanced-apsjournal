@@ -91,7 +91,7 @@ export const registerSettings = function () {
 	game.settings.register(modulename, 'background-colour', {
 		name: i18n('APSJournal.background-colour.name'),
 		hint: i18n('APSJournal.background-colour.hint'),
-		scope: 'world',
+		scope: 'client',
 		config: true,
 		default: "none",
 		choices: backgroundColour,
@@ -104,7 +104,7 @@ export const registerSettings = function () {
 	game.settings.register(modulename, 'background-image', {
 		name: i18n('APSJournal.background-image.name'),
 		hint: i18n('APSJournal.background-image.hint'),
-		scope: 'world',
+		scope: 'client',
 		config: true,
 		default: "none",
 		choices: backgroundImages,
@@ -117,7 +117,7 @@ export const registerSettings = function () {
 	game.settings.register(modulename, 'sidebar-image', {
 		name: i18n('APSJournal.sidebar-image.name'),
 		hint: i18n('APSJournal.sidebar-image.hint'),
-		scope: 'world',
+		scope: 'client',
 		config: true,
 		default: "none",
 		choices: sidebarImages,
@@ -424,7 +424,8 @@ export const registerSettings = function () {
 		scope: "world",
 		config: false,
 		default: [
-			{ id: 'race', name: "MonksEnhancedJournal.Race", hidden: false, full: false },
+			{ id: 'race', name: "MonksEnhancedJournal.Race", hidden: true, full: false },
+			{ id: 'ancestry', name: "MonksEnhancedJournal.Ancestry", hidden: false, full: false },
 			{ id: 'gender', name: "MonksEnhancedJournal.Gender", hidden: true, full: false },
 			{ id: 'age', name: "MonksEnhancedJournal.Age", hidden: false, full: false },
 			{ id: 'eyes', name: "MonksEnhancedJournal.Eyes", hidden: false, full: false },
@@ -501,6 +502,13 @@ export const registerSettings = function () {
 	});
 
 	game.settings.register(modulename, "fix-checklist", {
+		scope: "world",
+		default: true,
+		type: Boolean,
+		config: false
+	});
+
+	game.settings.register(modulename, "fix-person", {
 		scope: "world",
 		default: true,
 		type: Boolean,

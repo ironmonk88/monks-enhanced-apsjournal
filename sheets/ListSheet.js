@@ -120,10 +120,15 @@ export class ListSheet extends EnhancedJournalSheet {
         depths[0] = depths[0].concat(folders);
 
         // Filter folder visibility
+        let ownershipLevels = CONST.DOCUMENT_OWNERSHIP_LEVELS;
         for (let i = CONST.FOLDER_MAX_DEPTH - 1; i >= 0; i--) {
             depths[i] = depths[i].reduce((arr, f) => {
-                //f.children = f.children.filter(c => c.displayed);
-                //if (!f.displayed) return arr;
+                f.children = f.children.filter(c => {
+                    let ownership = c.ownership || { default: 0 };
+                    return game.user.isGM || ownership?.default >= ownershipLevels.LIMITED || ownership[game.user.id] >= ownershipLevels.LIMITED;
+                });
+                //let ownership = f.ownership || {};
+                //if (!(game.user.isGM || f.ownership?.default >= ownershipLevels.LIMITED || f.ownership[game.user.id] >= ownershipLevels.LIMITED)) return arr;
                 f.depth = i + 1;
                 arr.push(f);
                 return arr;
@@ -227,7 +232,13 @@ export class ListSheet extends EnhancedJournalSheet {
         if (game.user.isGM) html.find('.create-folder').click(ev => this._onCreateFolder(ev));
 
         // Entry-level events
-        list.on("dblclick", ".document.item", this._onClickDocumentName.bind(this));
+        list.on("dblclick", ".document.item", (event) => {
+            let id = event.currentTarget.closest("li.document").dataset.documentId;
+            const item = this.items.find(i => i.id == id);
+            if (!item) return;
+
+            new ListEdit(item, this).render(true);
+        });
         list.on("click", ".folder-header", this._toggleFolder.bind(this));
         const dh = this._onDragHighlight.bind(this);
         html.find(".folder").on("dragenter", dh).on("dragleave", dh);
@@ -236,6 +247,12 @@ export class ListSheet extends EnhancedJournalSheet {
             f.callback = this._onSearchFilter.bind(this);
             return new SearchFilter(f);
         }).forEach(f => f.bind(html[0]));
+
+        $('.document', html).on("contextmenu", (event) => {
+            var r = document.querySelector(':root');
+            r.style.setProperty('--mej-context-x', event.originalEvent.offsetX + "px");
+            r.style.setProperty('--mej-context-y', event.originalEvent.offsetY + "px");
+        });
     }
 
     _onClickDocumentName(event) {
@@ -349,7 +366,7 @@ export class ListSheet extends EnhancedJournalSheet {
             const isFolder = li.classList.contains("folder");
             const dragData = isFolder ?
                 { type: "Folder", id: li.dataset.folderId } :
-                { type: "Item", id: li.dataset.documentId };
+                { type: "ListItem", id: li.dataset.documentId, uuid: `${this.object.uuid}.Item.${li.dataset.documentId}` };
             event.dataTransfer.setData("text/plain", JSON.stringify(dragData));
             this._dragType = dragData.type;
         }
@@ -395,13 +412,13 @@ export class ListSheet extends EnhancedJournalSheet {
 
         // Identify the drop target
         const selector = this._dragDrop[0].dropSelector;
-        const target = event.target.closest(".klist-item") || null;
+        const target = event.target.closest(".list-item") || null;
 
         // Call the drop handler
         switch (data.type) {
             case "Folder":
                 return this._handleDroppedFolder(target, data);
-            case "Item":
+            case "ListItem":
                 return this._handleDroppedDocument(target, data);
         }
     }
@@ -639,6 +656,46 @@ export class ListSheet extends EnhancedJournalSheet {
                     items.push(newItem);
                     that.object.setFlag('monks-enhanced-journal', 'items', items);
                 }
+            },
+            {
+                name: "OWNERSHIP.Configure",
+                icon: '<i class="fas fa-lock"></i>',
+                condition: () => game.user.isGM,
+                callback: li => {
+                    let items = (that.object.flags['monks-enhanced-journal'].items || []);
+                    const document = items.find(i => i.id == li.data("documentId"));
+                    document.ownership = document.ownership || { default: 0 };
+                    document.apps = [];
+                    document.uuid = document.id;
+                    document.isOwner = game.user.isGM;
+                    let docOwnership = new DocumentOwnershipConfig(document, {
+                        top: Math.min(li[0].offsetTop, window.innerHeight - 350),
+                        left: window.innerWidth - 720
+                    })
+
+                    docOwnership._updateObject = async function (event, formData) {
+                        event.preventDefault();
+                        if (!game.user.isGM) throw new Error("You do not have the ability to configure permissions.");
+                        // Collect new ownership levels from the form data
+                        const ownershipLevels = {};
+                        for (let [user, level] of Object.entries(formData)) {
+                            ownershipLevels[user] = level;
+                        }
+
+                        // Update a single Document
+                        document.ownership = ownershipLevels;
+                        delete document.apps;
+                        delete document.uuid;
+                        delete document.isOwner;
+                        that.object.setFlag('monks-enhanced-journal', 'items', items);
+                    }
+
+                    docOwnership._canUserView = function(user) {
+                        return user.isGM;
+                    }
+
+                    docOwnership.render(true, { editable: true });
+                }
             }
         ];
     }
@@ -862,6 +919,10 @@ export class ProgressListSheet extends ListSheet {
         super.activateListeners(html, enhancedjournal);
 
         $('.progress-button', html).click(this.updateProgress.bind(this));
+        $('.progress-expand', html).on("click", (ev) => {
+            $(ev.currentTarget).prev().toggleClass("expand");
+            $(ev.currentTarget).html($(ev.currentTarget).prev().hasClass("expand") ? "Show less..." : "Show more...");
+        });
     }
 
     async updateProgress(ev) {

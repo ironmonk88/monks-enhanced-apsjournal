@@ -49,7 +49,11 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     line-height: 16px;
     border: 1px solid #999;
     border-radius: 3px;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(var(--mej-dark-0), 0.05);
+    padding: 4px 8px;
+    flex-grow: 0;
+    height: 24px;
+    margin-top: 2px;
 }
 
 /* Header */
@@ -65,7 +69,7 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 .monks-journal-sheet .sheet-container.detailed .journal-sheet-header {
     align-items: flex-start;
     padding-bottom: 4px;
-    flex: 0 0 162px;
+    /*flex: 0 0 162px;*/
     border-bottom: 2px groove var(--mej-sheet-detailed-header-border);
     margin: 0px;
     padding-left: 0px;
@@ -256,7 +260,7 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 }
 
 .monks-enhanced-journal .nav-button.convert #context-menu {
-    margin-left: -60px;
+    margin-left: -95px;
 }
 
 /* Page Controls (Mostly for list)*/
@@ -283,9 +287,11 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     position: relative;
 }
 
+/*
 .monks-journal-sheet.sheet .sheet-container.detailed .sheet-body {
     height: calc(100% - 200px);
 }
+*/
 
 /* Dialog */
 .monks-journal-sheet.sheet .dialog-content {
@@ -296,7 +302,7 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 .monks-journal-sheet.sheet .journal-sheet-header .header-details {
     font-size: var(--font-size-20);
     font-weight: 700;
-    overflow-x: hidden;
+    overflow: hidden;
     /*width: calc(100% - 160px);*/
 }
 
@@ -321,6 +327,8 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     max-width: 175px;
     color: var(--mej-sheet-header-label-color);
     text-align: left;
+    background: none;
+    border: none;
 }
 .monks-journal-sheet.sheet .journal-sheet-header .header-details .form-group input {
     font-size: var(--font-size-20);
@@ -380,6 +388,11 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 .monks-journal-sheet.sheet .sheet-body .details-section textarea {
     border: var(--mej-sheet-input-border);
     background: var(--mej-sheet-input-background);
+}
+
+.monks-journal-sheet.sheet .sheet-body .details-section select {
+    font-size: var(--font-size-20);
+    height: 24px;
 }
 
 .monks-journal-sheet.sheet .sheet-body .details-section button {
@@ -573,11 +586,15 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 }
 .monks-journal-sheet .items-list .item-list {
     overflow-y: auto;
-    /*height: 100%;*/
+    height: 100%; /* Unlocked this for the shop instructions */
     list-style: none;
     margin: 0;
     padding: 0;
     scrollbar-width: thin;
+    position: relative;
+}
+.monks-journal-sheet .items-list .item-list.min-height {
+    min-height: 80px;
 }
 
 .monks-journal-sheet .items-list .item-list ul {
@@ -748,6 +765,14 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     object-fit: contain;
 }
 
+.monks-journal-sheet .items-list .item .item-name .item-image + .no-actor {
+    font-size: 20px;
+    position: absolute;
+    color: #ee8e26;
+    top: 10px;
+    left: 50px;
+}
+
 .monks-journal-sheet .items-list .item .item-name .item-image.large {
     flex: 0 0 70px;
     width: 70px;
@@ -871,6 +896,7 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     justify-content: center;
     align-items: center;
     position: absolute;
+    top: 0px;
     width: 100%;
     pointer-events: none;
     line-height: 60px;
@@ -932,17 +958,10 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     max-width: 200px;
 }
 
-.monks-journal-sheet.sheet .journal-subsheet div[data-tab='picture'] .picture-img {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    border: 0px;
-    z-index: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.monks-journal-sheet.sheet .journal-subsheet div[data-tab='picture'].tab,
+.monks-journal-sheet.sheet .journal-subsheet div[data-tab='picture'] .tab-inner.picture-container {
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
 }
 
 /* Picture */
@@ -952,17 +971,42 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     position: relative;
 }
 
+.monks-journal-sheet.sheet .picture-container .picture-outer {
+    height: 100%;
+    width: 100%;
+}
+
 .monks-journal-sheet.sheet .picture-container .picture-img {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
     width: 100%;
-    border: 0px;
+    border: 1px dotted #C0C0C0;
     z-index: 1;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.monks-journal-sheet.sheet .picture-container .picture-outer.scaling {
+    cursor: move;
+}
+
+.monks-journal-sheet.sheet .picture-container .reset-scale {
+    display: none;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 9999;
+    cursor: pointer;
+}
+.monks-journal-sheet.sheet .picture-container .reset-scale.scale {
+    display: inline-block;
 }
 /*
 .monks-journal-sheet.sheet .picture-container .img-background {
@@ -984,7 +1028,6 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     opacity: 0.4;
 }
 */
-
 /* Actor sheet */
 .monks-enhanced-journal .content .actor.sheet {
     min-height: 100%;
@@ -1035,8 +1078,17 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     border-right: 1px solid #000;
 }
 
-.monks-journal-sheet .list-list .list-item h3 {
+.monks-journal-sheet .list-list .list-item.document h3 {
     margin-bottom: 0px;
+    flex-grow: 0;
+}
+
+.monks-journal-sheet .list-list .list-item h3.progress-title {
+    padding: 4px;
+    border: 1px solid rgb(var(--mej-light-5));
+    background: rgba(var(--mej-light-1), 0.2);
+    border-radius: 4px;
+    text-align: center;
 }
 
 .monks-journal-sheet .list-list .list-item.checked h3 {
@@ -1111,6 +1163,33 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     color: var(--mej-sheet-button-color);
 }
 
+.monks-journal-sheet .list .list-list .progress-text {
+    max-height: 200px;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    overflow: hidden;
+}
+
+.monks-journal-sheet .list .list-list .progress-text.expand {
+    max-height: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+    transition: max-height 1s linear;
+}
+
+.monks-journal-sheet .list .list-list .progress-expand {
+    flex-grow: 0;
+    color: rgb(var(--mej-dark-6));
+    cursor: pointer;
+}
+.monks-journal-sheet .list .list-list .progress-expand:hover {
+    color: rgb(var(--mej-dark-4));
+}
+
+.monks-journal-sheet .list .list-list .progress-container {
+    flex-grow: 0;
+}
+
 .monks-journal-sheet .list .list-list .vote-button {
     height: 34px;
     flex: 0 0 100px;
@@ -1155,6 +1234,19 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
 
 .monks-journal-sheet .list .list-list .list-item .poll-description.collapsed {
     display: none;
+}
+
+.list-edit .editor {
+    height: 100%;
+}
+
+.list-edit .editor .tox.tox-tinymce {
+    height: 300px !important;
+}
+
+.monks-journal-sheet .list .list-list .list-item #context-menu {
+    left: var(--mej-context-x);
+    top: var(--mej-context-y);
 }
 
 /* Quest */
@@ -1222,6 +1314,7 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     padding: 0;
     font-family: var(--mej-font-family);
     font-size: var(--font-size-14);
+    position: relative;
 }
 
 .monks-journal-sheet .loot-container .loot-player {
@@ -1276,6 +1369,16 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+/* Shop */
+.monks-journal-sheet.sheet .shop-container .time-field {
+    flex: 0 0 100px;
+}
+
+.monks-journal-sheet.sheet .shop-container .tab.details .details-section .form-group label {
+    flex: 2;
+
 }
 
 /* Slideshow */
@@ -1774,6 +1877,14 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     margin-right: 0px;
 }
 
+/* Transfer Currency */
+#transfer-currency .actor-icon {
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+    object-fit: contain;
+}
+
 /* Offering */
 #make-offering .actor-icon {
     width: 60px;
@@ -1790,6 +1901,14 @@ body:not(.system-pf2e) .monks-journal-sheet .sheet-container .tag {
     flex-grow: 0;
 }
 
+.offering-list .items-list .item-list li.complete {
+    background-color: rgba(var(--mej-light-6), 0.25);
+}
+
+.offering-list .items-list .item-list li.complete img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
 /* Objective */
 #objective-display {
     display: none;

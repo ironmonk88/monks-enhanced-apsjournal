@@ -39,18 +39,19 @@ export class QuestSheet extends EnhancedJournalSheet {
             failed: "MonksEnhancedJournal.queststatus.failed"
         };
 
-        data.objectives = duplicate(this.object.flags["monks-enhanced-journal"].objectives || [])?.filter(o => {
+        data.objectives = await Promise.all(duplicate(this.object.flags["monks-enhanced-journal"].objectives || [])?.filter(o => {
             return this.object.isOwner || o.available;
-        }).map(o => {
+        }).map(async (o) => {
             let counter = { counter: ($.isNumeric(o.required) ? (o.done || 0) + '/' + o.required : '') };
-            
-            if (!this.object.isOwner) {
-                let content = $("<div>").html(o.content);
-                $("section.secret", content).remove();
-                o.content = content[0].innerHTML;
-            }
+
+            o.content = await TextEditor.enrichHTML(o.content, {
+                relativeTo: this.object,
+                secrets: this.object.isOwner,
+                async: true
+            })
+
             return mergeObject(o, counter);
-        });
+        }));
 
         data.useobjectives = setting('use-objectives');
         data.canxp = game.modules.get("monks-tokenbar")?.active && this.object.isOwner;

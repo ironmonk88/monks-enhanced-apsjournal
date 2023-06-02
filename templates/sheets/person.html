@@ -1,5 +1,5 @@
 <form class="flexcol journal-subsheet {{entrytype}}" editable="{{editable}}">
-    <div class="sheet-container detailed person-container">
+    <div class="sheet-container detailed person-container flexcol">
         <header class="journal-sheet-header flexrow">
             <div class="sheet-image">
                 <img class="profile nopopout" src="{{data.src}}" data-edit="src" onerror="if (!this.imgerr) { this.imgerr = true; this.src = 'modules/monks-enhanced-journal/assets/person.png' }">
@@ -128,7 +128,7 @@
                             <div class="item-header flexrow">
                                 <h3 class="item-name noborder flexrow">Actor</h3>
                                 <h3 class="item-name noborder flexrow">Items</h3>
-                                <h3 class="item-name noborder flexrow">State</h3>
+                                <h3 class="item-detail noborder flexrow">Status</h3>
 
                                 {{#if @root.owner}}
                                 <div class="item-controls flexrow" buttons="2">
@@ -140,7 +140,7 @@
                             </div>
                             <ol class="item-list">
                                 {{#each offerings}}
-                                <li class="item flexrow" data-id="{{this.id}}" data-actor-id="{{this.actorId}}" data-container="offerings" draggable="false">
+                                <li class="item flexrow{{#if this.done}} complete{{/if}}" data-id="{{this.id}}" data-actor-id="{{this.actorId}}" data-container="offerings" draggable="false">
                                     <div class="item-name flexrow">
                                         <img class="item-image actor-icon" src="{{this.img}}" />
                                         <span>{{this.name}}</span>
@@ -149,13 +149,13 @@
                                     <div class="item-name item-offered flexcol">
                                         {{#each this.items}}
                                         <div class="flexrow" style="width: 100%; line-height: 32px;">
-                                            <img class="item-image item-icon" src="{{this.img}}" />
-                                            <span class="tag">{{this.name}}</span>
+                                            <img class="item-image item-icon" src="{{this.img}}" onerror="if ($(this).attr('src') != 'icons/svg/item-bag.svg') { $(this).attr('src', 'icons/svg/item-bag.svg'); }" />
+                                            <span class="tag">{{{this.name}}}</span>
                                         </div>
                                         {{/each}}
                                     </div>
 
-                                    <div class="item-name item-offered">
+                                    <div class="item-detail item-offered">
                                         {{this.stateName}}
                                     </div>
 

@@ -1,5 +1,5 @@
-<form class="flexcol journal-subsheet{{#if playing}} playing{{/if}} {{entrytype}}">
-    <div class="sheet-container slideshow-container flexcol">
+<form class="flexcol journal-subsheet {{entrytype}}">
+    <div class="sheet-container slideshow-container flexcol{{#if playing}} playing{{/if}}">
         <header class="journal-sheet-header header-name flexrow">
             <i class="fas {{data.icon}} sheet-icon"></i>
             <input name="name" type="text" value="{{data.name}}" placeholder="{{localize 'MonksEnhancedJournal.SlideshowName'}}">

@@ -257,7 +257,11 @@ export class PersonSheet extends EnhancedJournalSheet {
         let actor = await this.getItemData(data);
 
         if (actor) {
-            this.object.setFlag("monks-enhanced-journal", "actor", actor);
+            await this.object.update({
+                name: actor.name,
+                src: actor.img
+            });
+            await this.object.setFlag("monks-enhanced-journal", "actor", actor);
         }
     }
 
@@ -308,18 +312,33 @@ export class PersonSheet extends EnhancedJournalSheet {
         let pack = game.packs.get("monks-enhanced-journal.person-names");
         await pack.getDocuments();
 
-        let race = getProperty(this.object, "flags.monks-enhanced-journal.attributes.race.value") || "Human"
+        let race = getProperty(this.object, "flags.monks-enhanced-journal.attributes.race.value") || getProperty(this.object, "flags.monks-enhanced-journal.attributes.ancestry.value") || "Human"
 
+        let firstName = "";
+        let secondName = "";
+
+        let nosecond = false;
         let first = pack.contents.find(c => c.name.toLowerCase() == (`${race} First Name`).toLowerCase());
-        if (!first)
-            first = first = pack.contents.find(c => c.name == "Human First Name");
-        let second = pack.contents.find(c => c.name.toLowerCase() == (`${race} Last name`).toLowerCase());
-        if (!second)
-            second = pack.contents.find(c => c.name == "Human Last Name");
+        if (!first) {
+            first = pack.contents.find(c => c.name.toLowerCase() == (`${race} Name`).toLowerCase());
+            if (!first)
+                first = first = pack.contents.find(c => c.name == "Human First Name");
+            else
+                nosecond = true;
+        }
 
-        let firstName = await first.draw({ displayChat: false });
-        let secondName = await second.draw({ displayChat: false });
+        if (first) firstName = await first.draw({ displayChat: false });
+            
+        let second = "";
+        if (!nosecond) {
+            second = pack.contents.find(c => c.name.toLowerCase() == (`${race} Last name`).toLowerCase());
+            if (!second)
+                second = pack.contents.find(c => c.name == "Human Last Name");
+        }
 
-        $('[name="name"]', this.element).val(`${firstName.results[0].text} ${secondName.results[0].text}`).change();
+        if (second) secondName = await second.draw({ displayChat: false });
+
+        if (firstName || secondName)
+            $('[name="name"]', this.element).val(`${firstName ? firstName.results[0].text : ""}${firstName && secondName ? " " : ""}${secondName ? secondName.results[0].text : ""}`).change();
     }
 }

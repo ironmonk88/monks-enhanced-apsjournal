@@ -46,10 +46,11 @@
                         </div>
                     </div>
                     <ol class="item-list">
-                        {{#each data.flags.monks-enhanced-journal.actors}}
+                        {{#each actors}}
                         <li class="item flexrow " data-pack="{{this.pack}}" data-id="{{this.id}}" data-uuid="{{this.uuid}}" data-container="actors" data-type="Actor" draggable="false" style="position:relative;">
                             <div class="item-name clickable flexrow">
                                 <div class="item-image large monster-icon" data-id="{{this.id}}" data-type="Actor" style="background-image: url('{{this.img}}')" draggable="false"></div>
+                                {{#if this.failed}}<i class="fas fa-triangle-exclamation no-actor" data-tooltip="Couldn't find this Actor"></i>{{/if}}
                                 <h4>{{this.name}}</h4>
                             </div>
 
